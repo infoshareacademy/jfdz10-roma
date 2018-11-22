@@ -1,0 +1,19 @@
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    background-color: #CC3333;
+}
+
+.main-nav__logo {
+    width: 200px;
+    height: 100%;
+    background: blue;
+}
+
+.navToggle {
+    display: none;
+}

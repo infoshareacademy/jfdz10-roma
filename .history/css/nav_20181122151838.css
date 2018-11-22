@@ -1,0 +1,38 @@
+.main-nav {
+    position: sticky;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    background-color: #CC3333;
+    font-family: 'KG Skinny Latte W04 Reg';
+}
+
+.nav-container {
+    width: 1100px;
+    height: inherit;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+}
+
+.main-nav__logo {
+    width: 10px;
+    height: 100%;
+    background: blue;
+}
+
+.navToggle {
+    display: none;
+}
+
+.main-nav__menu {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.main-nav__menu li {
+    padding: 15px;
+}

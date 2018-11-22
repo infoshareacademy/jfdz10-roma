@@ -1,0 +1,11 @@
+.main-nav {
+    background-color: #CC3333;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    margin-b
+}
+
+.navToggle {
+    display: none;
+}
