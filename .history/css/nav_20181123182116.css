@@ -61,10 +61,6 @@
         align-items: flex-start;
     }
 
-    .main-nav__logo {
-        width: 260px;
-    }
-
     .navToggle {
         display: flex;
         flex-direction: column;

@@ -15,11 +15,10 @@
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    align-items: center;
 }
 
 .main-nav__logo {
-    width: 25%;
+    width: 290px;
     height: 100%;
     display: flex;
     flex-flow: row;
@@ -56,14 +55,6 @@
     }
 
     /********* menu hamburger *********/
-
-    .nav-container {
-        align-items: flex-start;
-    }
-
-    .main-nav__logo {
-        width: 260px;
-    }
 
     .navToggle {
         display: flex;

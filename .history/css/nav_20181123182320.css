@@ -49,6 +49,18 @@
     font-size: 1.4rem;
 }
 
+@media (max-width: 980px) {
+
+    .main-nav__logo {
+        width: 40%;
+    }
+
+    .main-nav__menu a {
+        font-size: 1.2rem;
+    }
+
+}
+
 @media (max-width: 780px) {
     
     .main-nav__menu {
@@ -62,7 +74,7 @@
     }
 
     .main-nav__logo {
-        width: 260px;
+        width: 40%;
     }
 
     .navToggle {

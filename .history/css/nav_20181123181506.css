@@ -15,11 +15,10 @@
     display: flex;
     flex-flow: row;
     justify-content: space-between;
-    align-items: center;
 }
 
 .main-nav__logo {
-    width: 25%;
+    width: 180px;
     height: 100%;
     display: flex;
     flex-flow: row;
@@ -32,7 +31,8 @@
 }
 
 .navToggle input {
-    display: none;
+    opacity: 0;
+    position: relative;
 }
 
 .main-nav__menu {
@@ -46,7 +46,7 @@
     margin: 0 15px;
     color: #fff;
     text-transform: uppercase;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 780px) {
@@ -56,14 +56,6 @@
     }
 
     /********* menu hamburger *********/
-
-    .nav-container {
-        align-items: flex-start;
-    }
-
-    .main-nav__logo {
-        width: 260px;
-    }
 
     .navToggle {
         display: flex;
