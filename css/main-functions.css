@@ -4,10 +4,12 @@
 }
 
 .main-functions__heading {	
-    font-size: 3rem;	
+    font-size: 4rem;	
     text-align: center;	
     padding: 2rem;	
+    font-family: 'Mali', cursive;
 }	
+
 .main-function__box {		
     display: flex;	
     flex-flow: row wrap;
@@ -30,4 +32,6 @@
     font-size: 1.5rem;	
     text-align: center;	
     padding: 0 0 1rem 0;
+    font-family: 'Mali', cursive;
+
 }
