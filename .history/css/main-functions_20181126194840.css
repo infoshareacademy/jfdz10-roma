@@ -1,6 +1,7 @@
 .main-functions {
     width: 100%;
     background-color: #ffcc66;
+    height: 100vh;
 }
 
 .main-functions__heading {	
@@ -12,6 +13,7 @@
     display: flex;	
     flex-flow: row wrap;
     justify-content: space-evenly;	
+    height: 20rem;
     align-content: space-between;
 }	
 
@@ -29,5 +31,26 @@
 .main-function__img-container__caption {	
     font-size: 1.5rem;	
     text-align: center;	
-    padding: 0 0 1rem 0;
+}
+
+/******************* rwd ***************************/
+@media only screen and (max-width:900px) and (min-width:441px) {
+    .main-function__box {		
+       display: flex;	
+       flex-direction: row;	
+       justify-content: space-evenly;	
+       flex-wrap: wrap;
+       height: 55vh;
+  }	
+}
+
+@media only screen and (orientation: landscape) {
+    .main-function__box {		
+        height: 50vh;
+      }	  
+}
+
+@media only screen and (max-width:440px) {
+    .main-function__box {
+      height: 150vh;
 }
