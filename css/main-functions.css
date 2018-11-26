@@ -8,7 +8,7 @@
     text-align: center;	
     padding: 2rem;	
 }	
- .main-function__box {		
+.main-function__box {		
     display: flex;	
     flex-flow: row wrap;
     justify-content: space-evenly;	
