@@ -12,7 +12,7 @@
     background-image: url(../img/hero__img.jpg);
     background-position: bottom;
     height: 60vh;
-    width: 100vw;
+    width: 100%;
     /* size of the img to adapt */
 }
 
