@@ -22,13 +22,18 @@
     margin: 4ex 38ch;
     position: absolute;
     text-align: center;
+    text-shadow: 7px 7px 10px black; 
     width: 30vw;
 }
 
 .hero h2 {
+    border: 1px solid white;
     color: white;
     font-size: 2rem;
-    margin: 25ex 75ch;
-    border: 1px solid white;
+    margin: 25ex 76ch;
+    text-shadow: 3px 3px 5px black; 
+}
 
+.hero h2:hover {
+    border: 2px double red;
 }
