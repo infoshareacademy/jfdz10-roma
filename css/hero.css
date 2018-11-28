@@ -13,6 +13,7 @@
     background-position-y: bottom;
     background-position-x: right;
     background-size: cover;
+    font-family: 'Mali', cursive;
     height: 60vh;
     width: 100%;
     /* TODO: opacity na background */
@@ -32,15 +33,15 @@
 
 .hero h1 {
     color: white;
-    font-size: 3.5vw;
-    text-shadow: 7px 7px 10px black; 
+    font-size: 3.3vw;
+    text-shadow: 5px 6px 10px black; 
 }
 
 .hero h2 {
     border: 1px solid white;
     color: white;
-    font-size: 1.8vw;
-    margin-top: 5%;
+    font-size: 1.5vw;
+    margin: 10% 15%;
     text-shadow: 3px 3px 5px black;
 }
 
