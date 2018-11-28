@@ -1,0 +1,39 @@
+/********* JIRA HERO TASKS **********
+
+1.One big picture 100% vw.
+2.One big header on the picture.
+3.Two sentences of description.
+4.[pl] Odniesienie do formularza (jeśli istnieje) ????
+
+************************************/
+
+.hero {
+    background-attachment: fixed;
+    background-image: url(../img/hero__img.jpg);
+    background-position: bottom;
+    height: 60vh;
+    width: 100%;
+    /* size of the img to adapt */
+}
+
+.hero h1, h2 {
+    color: white;
+    font-size: 4rem;
+    margin: 4ex 38ch;
+    position: absolute;
+    text-align: center;
+    text-shadow: 7px 7px 10px black; 
+    width: 30vw;
+}
+
+.hero h2 {
+    border: 1px solid white;
+    color: white;
+    font-size: 2rem;
+    margin: 25ex 76ch;
+    text-shadow: 3px 3px 5px black; 
+}
+
+.hero h2:hover {
+    border: 2px double red;
+}

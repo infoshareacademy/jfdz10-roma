@@ -9,23 +9,54 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/hero.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/nav.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main-functions.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/all-functions.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Mali:400,600,700" rel="stylesheet">
 </head>
 <body>
-    
-    <nav class="main-nav">
-        
-    </nav>
+  
+  <nav class="main-nav" role="navigation">
+    <div class="main-nav__container">
+      <div class="logo-container">
+        <img class="logo-container__logo" src="images/logo-txt.svg" alt="pizzerium logo">
+      </div>
+      <div class="nav-toggle">
+        <input class="nav-toggle__input" type="checkbox" />
+        <span></span>
+        <span></span>
+        <span></span>
+        <ul class="menu-desktop menu-device">
+          <li class="menu-device__element"><a class="menu-desktop__link menu-device__link" href="#">funkcje</a></li>
+          <li class="menu-device__element"><a class="menu-desktop__link menu-device__link" href="#">oferta</a></li>
+          <li class="menu-device__element"><a class="menu-desktop__link menu-device__link" href="#">o nas</a></li>
+          <li class="menu-device__element"><a class="menu-desktop__link menu-device__link" href="#">newsletter</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
     <section class="hero">
-
+        <h1>Zamów swoją ulubioną pizzę!</h1>
+        <h2>Zapisz się na premierę aplikacji!</h2>
     </section>
-
+    
     <section class="main-functions">
+            <h2 class="main-functions__heading">Z naszą aplikacją:</h2>	
+            <div class="main-function__box">
 
-    </section>
+                <figure class="main-function__img-container">
+                  <img class="main-function__img-container__img" src="img/vita-marija-murenaite-484774-unsplash.jpg" alt="">
+                  <figcaption class="main-function__img-container__caption">Skomponujesz swoją pizzę</figcaption>
+                </figure>
 
+                <figure class="main-function__img-container">
+                  <img class="main-function__img-container__img" src="img/roberto-valdivia-1058125-unsplash.jpg" alt="">
+                  <figcaption class="main-function__img-container__caption">Znajdziesz pizzerię</figcaption>
+                </figure>
+              
+                <figure class="main-function__img-container">
+                  <img class="main-function__img-container__img" src="img/dayne-topkin-81631-unsplash.jpg" alt="">
+                  <figcaption class="main-function__img-container__caption">Wybierzesz najlepszą ofertę</figcaption>
+                </figure>
     <section class="all-functions">
         <div class="feature">
           <div class="feature__title">
@@ -91,6 +122,5 @@
         <div class="feature__description">A teraz możesz się cieszyć z powodu zjedzenia smacznej pizzy.</div>
       </div>
     </section>
-
 </body>
 </html>
