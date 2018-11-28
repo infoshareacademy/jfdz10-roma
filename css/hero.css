@@ -15,10 +15,14 @@
     background-size: cover;
     height: 60vh;
     width: 100%;
+    /* TODO: opacity na background */
 }
 
 .hero__header {
     border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     float: right;
     height: 100%;
     text-align: center;
@@ -29,7 +33,6 @@
 .hero h1 {
     color: white;
     font-size: 3.5vw;
-    margin-top: 20%;
     text-shadow: 7px 7px 10px black; 
 }
 
@@ -37,7 +40,7 @@
     border: 1px solid white;
     color: white;
     font-size: 1.8vw;
-    margin-top: 7%;
+    margin-top: 5%;
     text-shadow: 3px 3px 5px black;
 }
 
