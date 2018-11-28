@@ -10,28 +10,36 @@
 .hero {
     background-attachment: fixed;
     background-image: url(../img/hero__img.jpg);
-    background-position: bottom;
+    background-position-y: center;
+    background-position-x: right;
+    background-size: cover;
     height: 60vh;
     width: 100%;
-    /* size of the img to adapt */
 }
 
-.hero h1, h2 {
+.hero__header {
+    border: 2px solid red;
+    float: right;
+    height: 100%;
+    width: 50%;
+    padding: 7% 4% 20% 10%;
+}
+
+.hero h1 {
     color: white;
-    font-size: 4rem;
-    margin: 4ex 38ch;
-    position: absolute;
+    font-size: 3.5vw;
     text-align: center;
     text-shadow: 7px 7px 10px black; 
-    width: 30vw;
 }
 
 .hero h2 {
     border: 1px solid white;
     color: white;
-    font-size: 2rem;
-    margin: 25ex 76ch;
+    font-size: 1.8vw;
+    margin: 10% 0 10% 10%;
+    text-align: center;
     text-shadow: 3px 3px 5px black; 
+    width: 75%;
 }
 
 .hero h2:hover {
