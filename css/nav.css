@@ -7,6 +7,7 @@
     width: 100%;
     background-color: #CC3333;
     border-bottom: 1px solid #9d2c37;
+    z-index: 9000;
 }
 
 .main-nav__container {
