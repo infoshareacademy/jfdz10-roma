@@ -1,0 +1,20 @@
+.form {
+    font-family: 'Mali', cursive;
+    border: 5px double #ffcc66;
+    padding: 4ex;
+    width: 50vw;
+    text-align: center;
+}
+
+.form__input {
+    height: 4ex;
+    width: 40ch;
+    text-align: center;
+    margin: 1ex 5ch;
+}
+
+.form__input-send {
+    margin: 1ex;
+    width: 15ch;
+    height: 4ex;
+}
