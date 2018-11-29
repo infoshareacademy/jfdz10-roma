@@ -7,6 +7,7 @@
     width: 100%;
     background-color: #CC3333;
     border-bottom: 1px solid #9d2c37;
+    z-index: 9000;
 }
 
 .main-nav__container {
@@ -138,6 +139,7 @@
         display: block;
         position: fixed;
         right: -190px;
+        top: 0;
         width: 180px;
         height: 100vh;
         box-shadow: 0 0 10px #85888C;
