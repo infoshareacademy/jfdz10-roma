@@ -1,3 +1,11 @@
+/* logo colors
+fire-1: #F1BA32, fire-2: #FCD050
+cake-1: #F1CD7C, cake-2: #CEAE6C
+pizza-red: #F1CD7C, pizza-orange: #DC8627, pizza-green: #20955E, pizza-brown: #FCE5727, pizza-olive: #3E2723
+pizza-wheel: #3E2723
+background-proposition: ##F1CD7C
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -8,4 +16,15 @@ html, body {
     font-size: 16px;
     line-height: 1.5;
     scroll-behavior: smooth;
+}
+
+
+ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
 }
