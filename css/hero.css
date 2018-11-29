@@ -49,3 +49,28 @@
 .hero h2:hover {
     border: 2px double red;
 }
+
+@media (max-width: 1400px) {
+    .hero__header {
+        width: 45%
+    }
+}
+
+@media (orientation:portrait) {
+    .hero {
+        background-position: center;
+        background-size: cover;
+        height: 50vh;
+        width: 100%;
+    }
+    .hero__header {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.432);
+    }
+    .hero h1 {
+        font-size: 6vw;
+    }
+    .hero h2 {
+        font-size: 3vw;
+    }
+}
