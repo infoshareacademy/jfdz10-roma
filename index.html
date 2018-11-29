@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/hero.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/nav.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/form.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/main-functions.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/all-functions.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -15,11 +16,6 @@
 </head>
 <body>
 
-    <nav class="main-nav">
-        
-    </nav>
-
-  
   <nav class="main-nav" role="navigation">
     <div class="main-nav__container">
       <div class="logo-container">
@@ -134,6 +130,21 @@
       </div>
     </section>
   
+    <section class="form">
+      <h1 class="form__title">Zapisz się na premierę aplikacji:</h1>
+      <form class="form__table">
+        <div>
+          <input class="form__input" type="text" id="name" name="user_name" placeholder="Twoje imię">
+        </div>
+        <div>
+          <input class="form__input" type="email" id="mail" name="user_mail" placeholder="Twój e-mail" required>
+        </div>
+      </form>
+        <input class="form__input-send" type="submit" value="Wyślij">
+      <p class="form__info">* Zostanie wysłany jeden mail z informacją o premierze produktu.<br>
+        Twoje dane są u nas bezpieczne - możesz spać spokojnie 😊</p>
+    </section>
+
     <a href="javascript:scroll(0,0);">Wróć na początek strony</a>
 </body>
 </html>
