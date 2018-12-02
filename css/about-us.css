@@ -1,0 +1,145 @@
+
+
+a:link 
+{
+    color: #fff;;
+    text-decoration: none;
+    display: flex;
+    align-content: center;    
+
+
+}
+
+a:visited 
+{
+    color: #fff;
+}
+
+a:hover 
+{
+    color: #fff;
+}
+
+a:active 
+{    
+	color: #fff;
+}
+
+.container
+{
+
+    font-family: 'Mali', cursive;	
+    justify-content: space-evenly;	
+	margin-left: auto;
+	margin-right: auto;
+	width: 1200px;
+	text-align: center;
+	padding: 0;
+	
+}
+
+.persons
+{
+	display: inline-block;
+	
+	text-align: center;
+    padding: 5px;
+    overflow: hidden;
+
+}
+
+.persons p
+{
+	
+    margin-top: 0px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+
+h1
+{
+	font-size: 32px;
+	font-weight: 400;
+	color: #666666;
+	margin-top: 45px;	
+	margin-bottom: 30px;
+	letter-spacing: 10px;
+    text-transform: uppercase;
+    
+}
+
+/* Hover effects */
+
+.photo
+{
+    max-width: 450px;   
+    border-radius: 25px;
+
+}
+
+.photo img {
+   transition: all 0.5s ease-in-out;
+  
+}
+
+.photo:hover img {
+
+ }
+.overlay__about-us {
+    position: relative;
+    width: 450px;
+    height: 278px;
+    border-radius: 25px;
+}
+.overlay__about-us .link {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: #20955E;
+    left: 0px;
+    top: 0px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    border-radius: 25px;
+}
+
+.overlay__about-us:hover .link {
+    opacity: 0.9;
+}
+
+.icon {
+    display: block;
+    top:5%;
+    position: relative;
+    font-size: 2rem;
+}
+
+.icon p {
+    font-size: 1rem;
+}
+
+/* if able to add
+
+
+.photo
+{
+    width: 450px;
+    height: 278px;
+    overflow: hidden;
+
+}
+
+.photo img
+{
+    transition: all 0.5s ease-in-out;
+}
+.photo:hover img
+{
+    -webkit-transform: scale(1.15) rotate(-5deg);
+    -ms-transform: scale(1.15) rotate(-5deg);
+    transform: scale(1.15) rotate(-5deg);
+}
