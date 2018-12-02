@@ -10,24 +10,66 @@
 .hero {
     background-attachment: fixed;
     background-image: url(../img/hero__img.jpg);
-    height: 100vh;
+    background-position-y: bottom;
+    background-position-x: right;
+    background-size: cover;
+    font-family: 'Mali', cursive;
+    height: 60vh;
     width: 100%;
-    /* size of the img to adapt */
+    /* TODO: opacity na background */
+    /* TODO: responsibility */
+}
+
+.hero__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: right;
+    height: 100%;
+    text-align: center;
+    width: 38%;
+        /* no-pizza background :) */
 }
 
 .hero h1 {
-    background-color: rgba(65, 28, 3, 0.692);
-    border: 0.2rem solid white;
-    border-radius: 10px;
     color: white;
-    font-size: 6rem;
-    margin: 5ex 3.5ch;
-    padding: 3rem;
-    position: absolute;
-    text-align: center;
-    width: 70vw;
+    font-size: 3.3vw;
+    text-shadow: 5px 6px 10px black; 
 }
 
-.parallax {
-    height: 1000px;
+.hero h2 {
+    border: 1px solid white;
+    color: white;
+    font-size: 1.5vw;
+    margin: 10% 15%;
+    text-shadow: 3px 3px 5px black;
+}
+
+.hero h2:hover {
+    border: 2px double red;
+}
+
+@media (max-width: 1400px) {
+    .hero__header {
+        width: 45%
+    }
+}
+
+@media (orientation:portrait) {
+    .hero {
+        background-position: center;
+        background-size: cover;
+        height: 50vh;
+        width: 100%;
+    }
+    .hero__header {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.432);
+    }
+    .hero h1 {
+        font-size: 6vw;
+    }
+    .hero h2 {
+        font-size: 3vw;
+    }
 }
