@@ -1,14 +1,6 @@
 
 
-a:link 
-{
-    color: #fff;;
-    text-decoration: none;
-    display: flex;
-    align-content: center;    
 
-
-}
 
 a:visited 
 {
@@ -34,7 +26,8 @@ a:active
 	margin-right: auto;
 	max-width: 1200px;
 	text-align: center;
-	padding: 0;
+    padding: 0;
+    color: #fff;;
 	
 }
 
@@ -48,10 +41,11 @@ a:active
 
 }
 .persons__box {
-   flex: 1 50%;
+
    display: flex;
    flex-direction: column;
-   align-items: center; 
+   align-items: center;
+   flex-wrap: wrap; 
    padding: 1rem;
 }
 .persons p
@@ -64,8 +58,10 @@ a:active
     font-size: 1rem;
 }
 
+.name__about-us
+{}
 
-h1
+.title__about-us
 {
 	font-size: 32px;
 	font-weight: 400;
@@ -93,6 +89,7 @@ h1
 .img__abouts-us {
     border-radius: 25px;
     width: 100%;
+    height: 100%;
 }
 
 .photo:hover img {
@@ -100,9 +97,9 @@ h1
  }
 .overlay__about-us {
     position: relative;
-    max-width: 450px;
-    max-height: 278px;
+    max-width: 278px;
     border-radius: 25px;
+    color: #fff;
 }
 .overlay__about-us .link {
     position: absolute;
@@ -115,12 +112,18 @@ h1
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     border-radius: 25px;
+    color: #fff;
 }
 
 .overlay__about-us:hover .link {
     opacity: 0.9;
 }
-
+.text__about-us {
+    display: block;
+    top:5%;
+    position: relative;
+    font-size: 1rem;
+}
 .icon {
     display: block;
     top:5%;
@@ -132,6 +135,30 @@ h1
     font-size: 1rem;
 }
 
+.describe__person {
+    font-size: 1rem;
+
+}
+
+.name__person {
+    font-size: 1rem;
+    color: #666666;
+}
+
+@media (max-width: 986px) {
+
+    .persons__box {
+        flex: 1 23%;
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+ .persons__box {
+        flex: 1 23%;
+        margin: 0 1rem;
+    }
+}
 @media (max-width: 480px) {
 
     .persons__box {
