@@ -19,3 +19,21 @@
     width: 15ch;
     height: 4ex;
 }
+
+@media (max-width: 850px) {
+    .form__input {
+        height: 4ex;
+        width: 80%;
+        text-align: center;
+        margin: 1ex auto;
+    }
+    .form p {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .form {
+        width: 70vw;
+    }
+}
