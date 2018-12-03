@@ -25,14 +25,14 @@ a:active
 	color: #fff;
 }
 
-.container
+.container__about__us
 {
 
     font-family: 'Mali', cursive;	
     justify-content: space-evenly;	
 	margin-left: auto;
 	margin-right: auto;
-	width: 1200px;
+	max-width: 1200px;
 	text-align: center;
 	padding: 0;
 	
@@ -40,14 +40,20 @@ a:active
 
 .persons
 {
-	display: inline-block;
-	
-	text-align: center;
+    text-align: center;
     padding: 5px;
     overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
 
 }
-
+.persons__box {
+   flex: 1 50%;
+   display: flex;
+   flex-direction: column;
+   align-items: center; 
+   padding: 1rem;
+}
 .persons p
 {
 	
@@ -84,14 +90,18 @@ h1
    transition: all 0.5s ease-in-out;
   
 }
+.img__abouts-us {
+    border-radius: 25px;
+    width: 100%;
+}
 
 .photo:hover img {
 
  }
 .overlay__about-us {
     position: relative;
-    width: 450px;
-    height: 278px;
+    max-width: 450px;
+    max-height: 278px;
     border-radius: 25px;
 }
 .overlay__about-us .link {
@@ -122,6 +132,15 @@ h1
     font-size: 1rem;
 }
 
+@media (max-width: 480px) {
+
+    .persons__box {
+        flex: 1 100%;
+        margin: 0 1rem;
+    }
+
+}
+
 /* if able to add
 
 
@@ -143,3 +162,4 @@ h1
     -ms-transform: scale(1.15) rotate(-5deg);
     transform: scale(1.15) rotate(-5deg);
 }
+
