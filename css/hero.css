@@ -13,11 +13,8 @@
     background-position-y: bottom;
     background-position-x: right;
     background-size: cover;
-    font-family: 'Mali', cursive;
     height: 60vh;
     width: 100%;
-    /* TODO: opacity na background */
-    /* TODO: responsibility */
 }
 
 .hero__header {
@@ -33,20 +30,22 @@
 
 .hero h1 {
     color: white;
-    font-size: 3.3vw;
+    font-size: 3vw;
     text-shadow: 5px 6px 10px black; 
 }
 
 .hero h2 {
-    border: 1px solid white;
+    border: 2px solid white;
     color: white;
     font-size: 1.5vw;
+    font-weight: 200;
     margin: 10% 15%;
     text-shadow: 3px 3px 5px black;
+    padding: 0 2%;
 }
 
 .hero h2:hover {
-    border: 2px double red;
+    border: 2px solid red;
 }
 
 @media (max-width: 1400px) {
