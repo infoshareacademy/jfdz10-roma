@@ -1,56 +1,39 @@
-
-
-a:link 
-{
-    color: #fff;;
-    text-decoration: none;
-    display: flex;
-    align-content: center;    
-
-
-}
-
-a:visited 
-{
-    color: #fff;
-}
-
-a:hover 
-{
-    color: #fff;
-}
-
-a:active 
-{    
-	color: #fff;
-}
-
-.container
+.container__about__us
 {
 
     font-family: 'Mali', cursive;	
     justify-content: space-evenly;	
 	margin-left: auto;
 	margin-right: auto;
-	width: 1200px;
+
 	text-align: center;
-	padding: 0;
+    padding: 0;
+    color: #fff;;
 	
 }
 
 .persons
 {
-	display: inline-block;
-	
-	text-align: center;
+    text-align: center;
     padding: 5px;
     overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
 
 }
+.persons__box {
 
+   display: flex;
+   flex-flow: row wrap;
+   align-content: space-around;
+   justify-content: space-evenly;
+   flex-wrap: wrap; 
+
+}
 .persons p
 {
-	
+    display: flex;
+    justify-content: center;
     margin-top: 0px;
     margin-bottom: 20px;
     margin-left: 10px;
@@ -59,7 +42,7 @@ a:active
 }
 
 
-h1
+.title__about-us
 {
 	font-size: 32px;
 	font-weight: 400;
@@ -75,13 +58,22 @@ h1
 
 .photo
 {
-    max-width: 450px;   
-    border-radius: 25px;
 
 }
 
 .photo img {
    transition: all 0.5s ease-in-out;
+  
+}
+.img__abouts-us {
+    border-radius: 25px;
+    max-width: 270px;
+    width: 100%; 
+    height: 100%;
+    border-radius: 25px;
+    align-content: center;
+    padding: 1rem;
+
   
 }
 
@@ -90,11 +82,11 @@ h1
  }
 .overlay__about-us {
     position: relative;
-    width: 450px;
-    height: 278px;
     border-radius: 25px;
+    color: #fff;
 }
 .overlay__about-us .link {
+    padding: 1rem;
     position: absolute;
     display: block;
     width: 100%;
@@ -105,12 +97,19 @@ h1
     opacity: 0;
     transition: opacity 0.5s ease-in-out;
     border-radius: 25px;
+    color: #fff;
+    padding: 1rem;
 }
 
 .overlay__about-us:hover .link {
     opacity: 0.9;
 }
-
+.text__about-us {
+    display: block;
+    top:5%;
+    position: relative;
+    font-size: 1rem;
+}
 .icon {
     display: block;
     top:5%;
@@ -121,6 +120,33 @@ h1
 .icon p {
     font-size: 1rem;
 }
+
+.describe__person {
+    font-size: 1rem;
+
+}
+
+.name__person {
+    font-size: 1rem;
+    color: #666666;
+}
+
+@media (max-width: 986px) {
+
+    .persons__box {
+        flex: 1 23%;
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+ .persons__box {
+        flex: 1 49%;
+        margin: 0 1rem;
+    }
+}
+
+@media (max-width: 1024px) {
 
 /* if able to add
 
@@ -143,3 +169,4 @@ h1
     -ms-transform: scale(1.15) rotate(-5deg);
     transform: scale(1.15) rotate(-5deg);
 }
+
