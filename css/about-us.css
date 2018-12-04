@@ -72,7 +72,7 @@
     height: 100%;
     border-radius: 25px;
     align-content: center;
-    
+    padding: 1rem;
 
   
 }
@@ -86,6 +86,7 @@
     color: #fff;
 }
 .overlay__about-us .link {
+    padding: 1rem;
     position: absolute;
     display: block;
     width: 100%;
@@ -97,6 +98,7 @@
     transition: opacity 0.5s ease-in-out;
     border-radius: 25px;
     color: #fff;
+    padding: 1rem;
 }
 
 .overlay__about-us:hover .link {
@@ -139,18 +141,12 @@
 
 @media (max-width: 768px) {
  .persons__box {
-        flex: 1 23%;
+        flex: 1 49%;
         margin: 0 1rem;
     }
 }
-@media (max-width: 480px) {
 
-    .persons__box {
-        flex: 1 100%;
-        margin: 0 1rem;
-    }
-
-}
+@media (max-width: 1024px) {
 
 /* if able to add
 
