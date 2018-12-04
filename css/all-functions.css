@@ -36,6 +36,11 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    transition: 0.1s ease-in-out color;
+}
+
+.feature:hover {
+    color: #F1BA32;
 }
 
 .feature__title {
