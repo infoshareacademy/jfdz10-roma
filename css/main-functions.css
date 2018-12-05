@@ -1,37 +1,50 @@
 .main-functions {
-    width: 100%;
-    background-color: #ffcc66;
+    max-width: 100%;
 }
 
 .main-functions__heading {	
-    font-size: 4rem;	
+    font-size: 2.5rem;	
     text-align: center;	
     padding: 2rem;	
-    font-family: 'Mali', cursive;
+    font-family: 'Lato', cursive;
 }	
 
 .main-function__box {		
     display: flex;	
     flex-flow: row wrap;
     justify-content: space-evenly;	
-    align-content: space-between;
+    align-content: space-between;   
 }	
 
 .main-function__img-container {	
   display: inline-block;	
   height: auto;	
-  width: min-content;	
+  width: min-content;
+  border: 5px double #ffcc66;
+  border-radius: 15px;
+  
 }	
 
- .main-function__img-container__img {	
+.main-function__img-container:hover {
+    background: #ffcc66;
+}
+
+.main-function__img-container__img {	
     max-width: 14rem;	
     height: auto;	
-    padding: 5px;	
+    padding: 15px;	
 }	
+
 .main-function__img-container__caption {	
     font-size: 1.5rem;	
     text-align: center;	
     padding: 0 0 1rem 0;
-    font-family: 'Mali', cursive;
+    font-family: 'Lato', cursive;
+}
 
+@media (max-width: 935px) {
+
+    .main-function__img-container {
+        margin: 5px;
+    }    
 }

@@ -42,7 +42,7 @@
     <section class="hero">
       <div class="hero__header">
         <h1><br>Zamów swoją<br>ulubioną pizzę!</h1>
-        <h2>Zapisz się na premierę aplikacji!</h2>
+        <a href="#form"><h2>Zapisz się na premierę aplikacji!</h2></a>
       </div>
     </section>
     
@@ -51,18 +51,23 @@
       <div class="main-function__box">
 
       <figure class="main-function__img-container">
-        <img class="main-function__img-container__img" src="img/vita-marija-murenaite-484774-unsplash.jpg" alt="">
+        <img class="main-function__img-container__img" src="img/vita-marija-murenaite-484774-unsplash.jpg">
         <figcaption class="main-function__img-container__caption">Skomponujesz swoją pizzę</figcaption>
       </figure>
 
       <figure class="main-function__img-container">
-        <img class="main-function__img-container__img" src="img/roberto-valdivia-1058125-unsplash.jpg" alt="">
+        <img class="main-function__img-container__img" src="img/roberto-valdivia-1058125-unsplash.jpg">
         <figcaption class="main-function__img-container__caption">Znajdziesz pizzerię</figcaption>
       </figure>
     
       <figure class="main-function__img-container">
-        <img class="main-function__img-container__img" src="img/dayne-topkin-81631-unsplash.jpg" alt="">
+        <img class="main-function__img-container__img" src="img/dayne-topkin-81631-unsplash.jpg">
         <figcaption class="main-function__img-container__caption">Wybierzesz najlepszą ofertę</figcaption>
+      </figure>
+
+      <figure class="main-function__img-container">
+        <img class="main-function__img-container__img" src="img/fatima-akram-1140510-unsplash.jpg">
+        <figcaption class="main-function__img-container__caption">Zjesz pizzę <br> 😍 </figcaption>
       </figure>
     </section>
 
@@ -133,7 +138,8 @@
             <i class="feature__title--icon far fa-smile-beam"></i>
             <h3 class="feature__headline">Bądź szczęsliwy</h3>
           </div>
-          <div class="feature__description">Możesz się cieszyć z powodu smacznej pizzy.</div>
+          <div class="feature__description" id="form">Możesz się cieszyć z powodu smacznej pizzy.</div>
+            <!-- id="form" : scroll to form section from hero link [~ Mateusz] -->
         </div>
       </div>
     </section>
@@ -160,20 +166,14 @@
 
 
     
-    <article>
-		
-			<div class="container">
-			
-				<header>
-					<h1>O nas:</h1>
-				</header>
-			
-		
-				
-				<div class="persons">
-				
-					<div class="overlay__about-us"> 
-            <a href="#"><img src="img/01.jpg" alt="R"></a>
+
+
+			<div class="container__about__us">
+        <i class="title__about-us">O nas:</i>
+
+        <div class="persons__box">
+          <div class="overlay__about-us"> 
+            <a href="#"><img class="img__abouts-us" src="img/01.jpg" alt="R"></a>
             <a class="link" href="#">
                 <i class="icon"> R...</i>
               <span class="icon">
@@ -181,60 +181,63 @@
               <i class="icon-facebook-squared"></i>
               <i class="icon-linkedin-circled"></i>
 
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod nisl nulla. Proin congue risus eros, ut efficitur ligula posuere quis. Suspendisse euismod nec urna eu condimentum. Morbi sodales fringilla maximus.</p></span></a>
-					</div>
-          <p>Remek</p>
-          
+              <div class="describe__person">Hej, jestem Remek, z zawodu kreatywny grafik komputerowy i fan pizzy :) . Moja ulubiona pizza składa się z sera, kukurydzy, papryk i oczywiście kurczaka!</div></span></a>
+          </div>
+      
+
           <div class="overlay__about-us"> 
-              <a href="#"><img src="img/02.jpg" alt="O"></a>
-              <a class="link" href="#">
-                  <i class="icon"> ...O...</i>
-                <span class="icon">
+            <a href="#"><img class="img__abouts-us" src="img/02.jpg" alt="O"></a>
+            <a class="link" href="#">
+                <i class="icon"> ...O...</i>
+              <span class="icon">
+              <i class="icon-email"></i>
+              <i class="icon-facebook-squared"></i>
+              <i class="icon-linkedin-circled"></i>
+
+              <div class="describe__person">Jestem Oskar, najbardziej lubię spędzać wieczory z narzeczoną, grać na perkusji i kodować. Uwielbiam pizzę z karczochami.</div></span></a>
+          </div>
+      
+    
+          <div class="overlay__about-us"> 
+            <a href="#"><img class="img__abouts-us" src="img/03.jpg" alt="M"></a>
+            <a class="link" href="#">
+                <i class="icon"> ...M...</i>
+              <span class="icon">
                 <i class="icon-email"></i>
                 <i class="icon-facebook-squared"></i>
                 <i class="icon-linkedin-circled"></i>
   
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod nisl nulla. Proin congue risus eros, ut efficitur ligula posuere quis. Suspendisse euismod nec urna eu condimentum. Morbi sodales fringilla maximus.</p></span></a>
-            </div>
-            <p>Oskar</p>
-          
+                <div class="describe__person">Jestem Mateusz. W wolnych chwilach podróżuję i uczę się języków obcych. Moja ulubiona pizza to gyros z krewetkami, pieczarkami i cebulą.</div>
+              </span></a>
+          </div>
+            
+            
+
+            
             <div class="overlay__about-us"> 
-                <a href="#"><img src="img/03.jpg" alt="M"></a>
+                <a href="#"><img class="img__abouts-us" src="img/04.jpg" alt="A"></a>
                 <a class="link" href="#">
-                    <i class="icon"> ...M...</i>
-                  <span class="icon">
+                    <i class="icon"> ...A!</i>
+                <span class="icon">
                   <i class="icon-email"></i>
                   <i class="icon-facebook-squared"></i>
                   <i class="icon-linkedin-circled"></i>
     
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod nisl nulla. Proin congue risus eros, ut efficitur ligula posuere quis. Suspendisse euismod nec urna eu condimentum. Morbi sodales fringilla maximus.</p></span></a>
+                  <div class="describe__person">Asia. Dyplomowany nauczyciel Montessori i początkujący Front-End Developer. Nigdy nie odmawia dobrej Margherity.</div>
+              </span></a>
               </div>
-              <p>Mateusz</p>
 
-              <div class="overlay__about-us"> 
-                  <a href="#"><img src="img/04.jpg" alt="A"></a>
-                  <a class="link" href="#">
-                      <i class="icon"> ...A!</i>
-                    <span class="icon">
-                    <i class="icon-email"></i>
-                    <i class="icon-facebook-squared"></i>
-                    <i class="icon-linkedin-circled"></i>
-      
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum euismod nisl nulla. Proin congue risus eros, ut efficitur ligula posuere quis. Suspendisse euismod nec urna eu condimentum. Morbi sodales fringilla maximus.</p></span></a>
-                </div>
-                <p>Asia</p>
-				</div>				
-
-				
+            
+              </div>
+        
+          </div>				
+          
 	
 			</div>
 
-		</article>
+
 
   </div>
-
-
-    <a href="javascript:scroll(0,0);">Wróć na początek strony</a>
 
 </body>
 </html>
