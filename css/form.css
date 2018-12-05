@@ -1,21 +1,28 @@
 .form {
-    font-family: 'Mali', cursive;
     border: 5px double #ffcc66;
     padding: 4ex;
-    width: 50vw;
+    max-width: 1000px;
+    width: 80vw;
     text-align: center;
     margin: 0 auto;
 }
 
 .form__input {
     height: 4ex;
-    width: 40ch;
+    width: 80%;
+    max-width: 40ch;
     text-align: center;
-    margin: 1ex 5ch;
+    margin: 1.5ex auto;
 }
 
 .form__input-send {
     margin: 1ex;
     width: 15ch;
     height: 4ex;
+}
+
+@media (max-width: 750px) {
+    .form p {
+        font-size: 0.8rem;
+    }
 }
