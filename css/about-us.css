@@ -1,14 +1,13 @@
 .container__about__us
 {
 
-    font-family: 'Mali', cursive;	
-    justify-content: space-evenly;	
+
 	margin-left: auto;
 	margin-right: auto;
-
+    max-width: 1100px;
 	text-align: center;
-    padding: 0;
-    color: #fff;;
+    padding: 2rem;
+    color: #fff;
 	
 }
 
@@ -19,6 +18,7 @@
     overflow: hidden;
     display: flex;
     flex-wrap: wrap;
+    
 
 }
 .persons__box {
@@ -28,6 +28,8 @@
    align-content: space-around;
    justify-content: space-evenly;
    flex-wrap: wrap; 
+   font-family: 'Mali', cursive;	
+   justify-content: space-evenly;	
 
 }
 .persons p
@@ -44,22 +46,14 @@
 
 .title__about-us
 {
-	font-size: 32px;
-	font-weight: 400;
-	color: #666666;
-	margin-top: 45px;	
-	margin-bottom: 30px;
-	letter-spacing: 10px;
-    text-transform: uppercase;
+    padding: 1rem 0 3rem 0;
+    font-size: 2.4rem;
+    text-align: center;
+    color: black;
     
 }
 
 /* Hover effects */
-
-.photo
-{
-
-}
 
 .photo img {
    transition: all 0.5s ease-in-out;
@@ -121,8 +115,21 @@
     font-size: 1rem;
 }
 
+.icon__letter {
+    display: block;
+    top:5%;
+    position: relative;
+    font-size: 2rem;
+}
+
+.icon__letter p {
+    font-size: 1rem;
+}
+
+
 .describe__person {
     font-size: 1rem;
+    cursor: default
 
 }
 
@@ -131,6 +138,16 @@
     color: #666666;
 }
 
+.icon-facebook-squared{
+    cursor: pointer;
+
+}
+.icon-email{
+    cursor: pointer;
+}
+.icon-linkedin-circled{
+    cursor: pointer;
+}
 @media (max-width: 986px) {
 
     .persons__box {
@@ -169,4 +186,3 @@
     -ms-transform: scale(1.15) rotate(-5deg);
     transform: scale(1.15) rotate(-5deg);
 }
-
