@@ -13,6 +13,7 @@
     background-position-y: bottom;
     background-position-x: right;
     background-size: cover;
+    filter: saturate(70%);
     height: 60vh;
     width: 100%;
 }
@@ -70,19 +71,25 @@
 }
 
 @media (max-width: 950px) {
+    .hero {
+        background-position: center;
+        background-size: cover;
+    }
     .hero__header {
-        width: 50%;
-        margin-right: 5%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.212);
+        margin: 0;
     }
     .hero h1 {
         font-size: 3rem;
     }
     .hero h2 {
-        font-size: 1.5vw;
+        font-size: 2vw;
         font-weight: 200;
-        margin: 10% auto;
+        margin: 5% auto;
         text-shadow: 3px 3px 5px black;
         padding: 0 2%;
+        width: 50%;
     }
 }
 
@@ -105,6 +112,23 @@
         font-size: 1rem;
         margin: 4% auto;
         width: 50%
+    }
+}
+
+@media (max-width: 700px) and (orientation: landscape) {
+    .hero {
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+    }
+    .hero__header {
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.432);
+        margin-top: -10%;
+    }
+    .hero h2 {
+        font-size: 1rem;
+        margin: 2% auto;
     }
 }
 
