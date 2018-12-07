@@ -16,7 +16,7 @@
 .main-function__box {		
     display: flex;	
     flex-flow: row wrap;
-    justify-content: space-evenly;	
+    justify-content: space-evenly;
     align-content: space-between;   
 }	
 
@@ -25,8 +25,7 @@
   height: auto;	
   width: min-content;
   border: 5px double #ffcc66;
-  border-radius: 15px;
-  
+  border-radius: 15px;	
 }	
 
 .main-function__img-container:hover {
@@ -50,5 +49,12 @@
 
     .main-function__img-container {
         margin: 5px;
+    }    
+}
+
+@media (min-width: 1120px) {
+
+    .main-function__img-container {
+        margin: 2%;
     }    
 }
