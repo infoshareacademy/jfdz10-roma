@@ -21,14 +21,16 @@ function createAnimals() {
     box.appendChild(animalElement);
 }
 
+let displayElements = 10;
+
 
 
 var counter = 0;
 var animalsInterval = setInterval(function(){
     createAnimals();
     counter++;
-    if (counter === 3) {    
+    if (counter === displayElements) {    
         clearInterval(animalsInterval)
     }
-}, 1500);
+}, 100);
 
