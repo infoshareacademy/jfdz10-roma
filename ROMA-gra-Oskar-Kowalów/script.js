@@ -1,3 +1,4 @@
+const container = document.getElementById("container");
 const box = document.getElementById("box");
 const animal = document.querySelector(".animal")
 
@@ -10,18 +11,16 @@ function createAnimals() {
     
     animalElement.classList.add("animal");
     animalElement.textContent = animal;
-    animalElement.style.top = `${Math.random() * 100 - 50}vh`; 
-    animalElement.style.left = `${Math.random() * 100 - 50}vw`;
+    animalElement.style.top = `${Math.random() * 90}%`; 
+    animalElement.style.left = `${Math.random() * 90}%`;
 
     animalElement.addEventListener("click", function() {
         console.log(this);
         this.remove();
     });
 
-    box.appendChild(animalElement);
+    container.prepend(animalElement);
 }
-
-let displayElements = 10;
 
 
 
@@ -29,8 +28,8 @@ var counter = 0;
 var animalsInterval = setInterval(function(){
     createAnimals();
     counter++;
-    if (counter === displayElements) {    
+    if (counter === 3) {    
         clearInterval(animalsInterval)
     }
-}, 100);
+}, 200);
 
