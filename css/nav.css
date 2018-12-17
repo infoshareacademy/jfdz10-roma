@@ -1,6 +1,6 @@
 .main-nav {
     font-family: 'Mali', cursive;
-    position: sticky;
+    position: fixed;
     top: 0;
     left: 0;
     height: 70px;
