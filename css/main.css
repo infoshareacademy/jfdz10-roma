@@ -51,14 +51,25 @@ a {
     opacity: 0;
     visibility: hidden;
     transition: 0.4s all;
-  }
+}
   
-  .back-to-top-button:hover {
+.back-to-top-button:hover {
     background: #fae6a3;
-  }
-  
-  .back-to-top-button-show {
+}
+
+.back-to-top-button-show {
     opacity: 1;
     visibility: visible;
     transition: 0.4s all;
-  }
+}
+
+@media (max-width: 768px) {
+
+    .back-to-top-button{
+        bottom: 10px;
+        right: 10px;
+    }
+
+}
+
+
