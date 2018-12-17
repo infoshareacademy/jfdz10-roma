@@ -2,6 +2,7 @@ const container = document.getElementById("container");
 const box = document.getElementById("box");
 const howManyElements = 5; //level of hardness
 let countElements = 0; //for setInterval 
+let countFoundElements = 0;
 let chooseRightOnes = ["bird", "lion", "pinguin"]; //array of items to find
 const animals = [
     {
@@ -51,8 +52,16 @@ function createAnimals() {
         });
 
         // if you found item then remove it
+        
         if (isFound) {
+            countFoundElements += 1;
+            console.log(countFoundElements);
             this.remove();
+            if (countFoundElements === chooseRightOnes.length) {
+                console.log('You are a winner!')
+            } else {
+                console.log('play...');
+            }
         };
 
     });
