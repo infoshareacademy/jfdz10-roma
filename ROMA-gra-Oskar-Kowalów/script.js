@@ -1,9 +1,9 @@
 const container = document.getElementById("container");
 const box = document.getElementById("box");
-const howManyElements = 5; //level of hardness
-let countElements = 0; //for setInterval 
+const howManyElements = 5; // level of hardness
+let countElements = 0; // for setInterval
 let countFoundElements = 0;
-let chooseRightOnes = ["bird", "lion", "pinguin"]; //array of items to find
+let chooseRightOnes = ["bird", "lion", "pinguin"]; // array of items to find
 const animals = [
     {
         icon: "🦁",
@@ -73,10 +73,10 @@ let animalsInterval = setInterval(function(){
     createAnimals();
     countElements++;
     if (countElements === howManyElements) {    
-        clearInterval(animalsInterval)
+        clearInterval(animalsInterval);
+        console.log(document.querySelectorAll('.animal'));
     }
-}, 200);
-
+}, 50);
 
 
 console.log(document.querySelectorAll('.animal').length)
