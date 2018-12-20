@@ -153,7 +153,8 @@
         flex: 1 23%;
         margin: 0 1rem;
     }
-}
+
+    
 
 @media (max-width: 768px) {
  .persons__box {
@@ -164,9 +165,9 @@
 
 @media (max-width: 1024px) {
 .persons__box {
-        flex: 1 49%;
-        margin-left: 20%;
-        margin-right: 20%;
+        flex: 1 40%;
+        margin-left: 10%;
+        margin-right: 10%;
     }
 /* if able to add
 
