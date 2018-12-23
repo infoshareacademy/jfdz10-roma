@@ -7,6 +7,7 @@
     max-width: 1100px;
 	text-align: center;
     color: #fff;
+    padding: 70px 0 70px 0;
 	
 }
 
@@ -49,6 +50,8 @@
     font-size: 2.4rem;
     text-align: center;
     color: black;
+    font-style: normal;
+    font-weight: bold;
     
 }
 
