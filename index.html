@@ -151,7 +151,7 @@
   <h3 id="form" class="newsletter-heading">Newsletter</h3>
   
     <section class="form">
-      <h1 class="form__title">Zapisz się na premierę aplikacji:</h1>
+      <h1 class="form__title">Zapisz się na premierę aplikacji:</h1><br>
       <form class="form__table">
         <div>
           <input class="form__input" type="text" id="name" name="user_name" placeholder="Twoje imię">
@@ -160,7 +160,8 @@
           <input class="form__input" type="email" id="mail" name="user_mail" placeholder="Twój e-mail" required>
         </div>
       </form>
-        <input class="form__input-send" type="submit" value="Wyślij">
+      <input class="form__input-send" type="submit" id="button" value="Wyślij">
+        <br><br>
       <p class="form__info">* Zostanie wysłany jeden mail z informacją o premierze produktu.<br>
         Twoje dane są u nas bezpieczne - możesz spać spokojnie 😊</p>
     </section>
@@ -234,9 +235,8 @@
           </div>				
           
 	
-			</div>
-
-
+      </div>
+      
 
   </div>
   <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -245,6 +245,8 @@
 <a href="#hero" class="back-to-top-button">&uarr;</a>
 
 <script src="js/back-to-top-button.js"></script>
+
+<script src="js/form.js"></script>
 
 <div id="cookies-message-container">    
     <div id="cookies-message">Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej. Pliki cookies wygasają po 30 dniach.

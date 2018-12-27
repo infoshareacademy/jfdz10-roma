@@ -11,20 +11,25 @@
     width: 80vw;
     text-align: center;
     margin: 0 auto;
+    background-image: url(img/lukas-blazek-261682-unsplash.jpg);
+    background-repeat: round;
 }
 
 .form__input {
-    height: 4ex;
+    height: 5ex;
     width: 80%;
     max-width: 40ch;
     text-align: center;
     margin: 1.5ex auto;
+    border: 3px dotted #ffcc66;
 }
 
 .form__input-send {
     margin: 1ex;
     width: 15ch;
     height: 4ex;
+    background-image: linear-gradient(to right, #ffcc66, #fbc454, #f7bd41, #f2b52c, #eead08);    
+    box-shadow: 2px 2px 4px 1px;
 }
 
 @media (max-width: 750px) {
