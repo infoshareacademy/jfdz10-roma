@@ -26,8 +26,8 @@
 
 .main-function__img-container {	
     display: inline-block;	
-    height: auto;	
-    width: min-content;
+    height: auto;
+    flex-basis: 20%;	
     border: 5px solid #ffcc66;
     border-radius: 15px;	
 }	
