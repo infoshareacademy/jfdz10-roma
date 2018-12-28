@@ -149,25 +149,26 @@
   </div>
   
   <h3 id="form" class="newsletter-heading">Newsletter</h3>
-  
+
     <section class="form">
       <h1 class="form__title">Zapisz się na premierę aplikacji:</h1><br>
-      <form class="form__table">
+
+      <form class="form__table" action="#" method="post" id="contactform" onsubmit="return validation();">
         <div>
-          <input class="form__input" type="text" id="name" name="user_name" placeholder="Twoje imię">
+          <input class="form__input" type="text" id="name" name="name" placeholder="Twoje imię"> 
         </div>
+        <div id="iname" class="error"></div>
         <div>
-          <input class="form__input" type="email" id="mail" name="user_mail" placeholder="Twój e-mail" required>
+          <input class="form__input" type="email" id="mail" name="mail" placeholder="Twój e-mail">
         </div>
+        <div id="imail" class="error"></div>
+        <input class="form__input-send" type="submit" id="button" value="Wyślij">
       </form>
-      <input class="form__input-send" type="submit" id="button" value="Wyślij">
-        <br><br>
+
+        <br>
       <p class="form__info">* Zostanie wysłany jeden mail z informacją o premierze produktu.<br>
         Twoje dane są u nas bezpieczne - możesz spać spokojnie 😊</p>
     </section>
-
-
-
 
 
 			<div id="about-us" class="container__about__us">
@@ -239,14 +240,15 @@
       
 
   </div>
-  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
+  <script src="js/form.js"></script>
+
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
 <a href="#hero" class="back-to-top-button">&uarr;</a>
 
 <script src="js/back-to-top-button.js"></script>
 
-<script src="js/form.js"></script>
 
 <div id="cookies-message-container">    
     <div id="cookies-message">Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej. Pliki cookies wygasają po 30 dniach.
@@ -254,6 +256,7 @@
         <a href="javascript:WHCloseCookiesWindow();" id="accept-cookies-checkbox">Rozumiem, dzięki!
         </a> </div></div>
 
+      
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 <script src="js/cookies.js"></script>
 

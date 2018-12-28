@@ -32,6 +32,18 @@
     box-shadow: 2px 2px 4px 1px;
 }
 
+input:focus {
+    background-color: #FDFFC0;
+}
+
+.error {
+    color: rgba(248, 3, 23, 0.925);
+    margin: 10px center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    font-style: italic;
+}
+
 @media (max-width: 750px) {
     .form p {
         font-size: 0.8rem;
