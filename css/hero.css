@@ -51,7 +51,6 @@ TODO:
 	margin: 0 auto;
 	font-weight: 600;
 	padding: 0 13%;
-
 }
 
 .hero h2 {
@@ -125,8 +124,6 @@ TODO:
 	position: relative;
 }
 
-/*
-
 @keyframes slide {
 	0%{left: 0%;}
 	16%{left: 0%;}
@@ -142,7 +139,7 @@ TODO:
     98%{left: -100%;}
     100%{left: 0%;}
 }
-*/
+
 @media (max-width: 1260px) {
 	.hero h1 {
 		font-size: 3.5rem;
@@ -162,14 +159,17 @@ TODO:
 	}
 	.hero h1 {
 		font-size: 7vw;
-		background-color: #cc33337a;
+		background-color: #00000062;
 		padding: 10%;
 		margin: 0 10%;
+		border: 2px solid #cc3333c7;
+		border-radius: 15px;
 	}
 	.hero h2 {
 		background-color: #cc3333c7;
 		padding: 2%;
 		font-size: 7vw;
+		border-radius: 15px;
 	}
 	.slide__image4 {
 		background-position-x: center;
