@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/about-us.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="fontello-about-us/css/fontello.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/all-functions.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/cookies.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Mali:400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&amp;subset=latin-ext" rel="stylesheet">
@@ -148,24 +149,26 @@
   </div>
   
   <h3 id="form" class="newsletter-heading">Newsletter</h3>
-  
+
     <section class="form">
-      <h1 class="form__title">Zapisz się na premierę aplikacji:</h1>
-      <form class="form__table">
+      <h1 class="form__title">Zapisz się na premierę aplikacji:</h1><br>
+
+      <form class="form__table" action="#" method="post" id="contactform" onsubmit="return validation();">
         <div>
-          <input class="form__input" type="text" id="name" name="user_name" placeholder="Twoje imię">
+          <input class="form__input" type="text" id="name" name="name" placeholder="Twoje imię"> 
         </div>
+        <div id="iname" class="error"></div>
         <div>
-          <input class="form__input" type="email" id="mail" name="user_mail" placeholder="Twój e-mail" required>
+          <input class="form__input" type="email" id="mail" name="mail" placeholder="Twój e-mail">
         </div>
+        <div id="imail" class="error"></div>
+        <input class="form__input-send" type="submit" id="button" value="Wyślij">
       </form>
-        <input class="form__input-send" type="submit" value="Wyślij">
+
+        <br>
       <p class="form__info">* Zostanie wysłany jeden mail z informacją o premierze produktu.<br>
         Twoje dane są u nas bezpieczne - możesz spać spokojnie 😊</p>
     </section>
-
-
-
 
 
 			<div id="about-us" class="container__about__us">
@@ -233,15 +236,29 @@
           </div>				
           
 	
-			</div>
-
-
+      </div>
+      
 
   </div>
+
+  <script src="js/form.js"></script>
+
+  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 
 <a href="#hero" class="back-to-top-button">&uarr;</a>
 
 <script src="js/back-to-top-button.js"></script>
+
+
+<div id="cookies-message-container">    
+    <div id="cookies-message">Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej. Pliki cookies wygasają po 30 dniach.
+        <br/><img class="logo-cookies__logo" src="img/logo.svg" alt="pizzerium logo"> <br/>
+        <a href="javascript:WHCloseCookiesWindow();" id="accept-cookies-checkbox">Rozumiem, dzięki!
+        </a> </div></div>
+
+      
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="js/cookies.js"></script>
 
 </body>
 </html>
