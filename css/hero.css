@@ -1,9 +1,26 @@
 /********* JIRA HERO TASKS **********
 
-1.One big picture 100% vw.
-2.One big header on the picture.
-3.Two sentences of description.
-4.[pl] Odniesienie do formularza (jeśli istnieje) ????
+1.1.Jedno duże zdjęcie 100vw.
+1.2.Jeden duży nagłówek na zdjęciu.
+1.3.Dwa zdania opisu.
+1.4.Odniesienie do formularza (jeśli istnieje)
+
+2. Umieścić w zajawce więcej treści niż można w tej sekcji strony 
+wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
+- miałby własną nawigację pomiędzy slajdami,
+- same slajdy przewijałyby się w nim automatycznie co kilka sekund,
+- automatyczne przewijanie ustawałoby w momencie, gdy użytkownik sam 
+    wejdzie w interakcję z menu pokazu slajdów
+
+
+TODO:
+- Zamiast img dać div i background-image, zeby dopasować tło do rwd.
+- Dopasować wielkości obrazków i wyśrodkować tło.
+- Na każdym slajdzie inny header.
+    - Pizzerium, zamów swoją ulubioną pizzę!
+    - ...
+    - Zapisz się do newslettera (zdjecie z deskami po prawej).
+
 
 ************************************/
 
@@ -12,31 +29,6 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-}
-
-.hero__frame {
-    background: rgba(0, 0, 0, 0.349);
-    border: 5px solid #CC3333;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    height: 40%;
-    justify-content: center;
-    margin-top: 2%;
-    padding: 5%;
-    position: absolute;
-    width: 50%;
-    z-index: 8000;
-}
-
-.hero__frame p, h1 {
-    color: white;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-.hero__frame h1 {
-    font-size: 3rem;
 }
 
 .hero__slider{
@@ -63,22 +55,17 @@
 }
 
 @keyframes slide {
-	0%{left: 0%}
-	10%{left: 0%;}
-	12%{left: 0%;}
-	22%{left: 0%;}
-    24%{left: -100%;}
-	34%{left: -100%;}
-	36%{left: -100%;}
-	46%{left: -100%;}
+	0%{left: 0%;}
+	16%{left: 0%;}
+	18%{left: -100%;}
+	32%{left: -100%;}
+	34%{left: -200%;}
 	48%{left: -200%;}
-	58%{left: -200%;}
-	60%{left: -200%;}
-	70%{left: -200%;}
-	72%{left: -100%;}
+	50%{left: -300%;}
+	64%{left: -300%;}
+	66%{left: -200%;}
+	80%{left: -200%;}
 	82%{left: -100%;}
-	84%{left: -100%;}
-	94%{left: -100%;}
-	96%{left: 0%;}
-	100%{left: 0%;}
+    98%{left: -100%;}
+    100%{left: 0%;}
 }
