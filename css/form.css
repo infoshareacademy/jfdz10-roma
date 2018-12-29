@@ -13,6 +13,7 @@
     margin: 0 auto;
     background-image: url(../img/lukas-blazek-261682-unsplash.jpg);
     background-repeat: round;
+    border-radius: 15px;
 }
 
 .form__input {
