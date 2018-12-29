@@ -8,139 +8,77 @@
 ************************************/
 
 .hero {
-    background-attachment: fixed;
-    background-image: url(../img/hero__img.jpg);
-    background-position-y: bottom;
-    background-position-x: right;
-    background-size: cover;
-    filter: saturate(70%);
-    height: 60vh;
-    width: 100%;
-}
-
-.hero__header {
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    float: right;
-    height: 100%;
+}
+
+.hero__frame {
+    background: rgba(0, 0, 0, 0.349);
+    border: 5px solid #CC3333;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    height: 40%;
+    justify-content: center;
+    margin-top: 2%;
+    padding: 5%;
+    position: absolute;
+    width: 50%;
+    z-index: 8000;
+}
+
+.hero__frame p, h1 {
+    color: white;
+    font-size: 1.5rem;
     text-align: center;
-    width: 38%;
-        /* no-pizza background :) */
 }
 
-.hero h1 {
-    color: white;
-    font-size: 4rem;
-    text-shadow: 5px 6px 10px black; 
-    margin: 0 auto;
+.hero__frame h1 {
+    font-size: 3rem;
 }
 
-.hero h2 {
-    border: 2px solid white;
-    color: white;
-    font-size: 3rem
-    font-weight: 200;
-    margin: 10% auto;
-    text-shadow: 3px 3px 5px black;
-    padding: 0 2%;
-    width: 70%;
+.hero__slider{
+	height: 100vh;
+	overflow: hidden;
 }
 
-.hero h2:hover {
-    border: 2px solid red;
+.hero__slider figure div{
+	float: left;
+	width: 20%;
 }
 
-/** **************** MEDIA QUERIES **************** **/
-
-@media (max-width: 1450px) {
-    .hero__header {
-        width: 35%;
-        margin-right: 5%;
-    }
-    .hero h1 {
-        font-size: 3rem;
-    }
-    .hero h2 {
-        font-size: 1.5vw;
-        font-weight: 200;
-        margin: 10% auto;
-        text-shadow: 3px 3px 5px black;
-        padding: 0 2%;
-    }
+.hero__slider figure img{
+	float: left;
+	width: 100%;
 }
 
-@media (max-width: 950px) {
-    .hero {
-        background-position: center;
-        background-size: cover;
-    }
-    .hero__header {
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.212);
-        margin: 0;
-    }
-    .hero h1 {
-        font-size: 3rem;
-    }
-    .hero h2 {
-        font-size: 2vw;
-        font-weight: 200;
-        margin: 5% auto;
-        text-shadow: 3px 3px 5px black;
-        padding: 0 2%;
-        width: 50%;
-    }
+.hero__slider figure{
+	animation: 30s slide infinite;
+	left: 0;
+	margin: 0;
+	width: 500%;
+	position: relative;
 }
 
-@media (orientation:portrait) {
-    .hero {
-        background-position: center;
-        background-size: cover;
-        height: 50vh;
-        width: 100%;
-    }
-    .hero__header {
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.432);
-        margin: 0;
-    }
-    .hero h1 {
-        font-size: 3rem;
-    }
-    .hero h2 {
-        font-size: 1rem;
-        margin: 4% auto;
-        width: 50%
-    }
-}
-
-@media (max-width: 700px) and (orientation: landscape) {
-    .hero {
-        background-position: center;
-        background-size: cover;
-        height: 100vh;
-    }
-    .hero__header {
-        width: 100%;
-        background-color: rgba(0, 0, 0, 0.432);
-        margin-top: -10%;
-    }
-    .hero h2 {
-        font-size: 1rem;
-        margin: 2% auto;
-    }
-}
-
-@media (max-width: 400px) {
-    .hero h1 {
-        font-size: 2rem;
-    }
-    .hero h2 {
-        font-size: 0.6rem;
-        font-weight: 200;
-        margin: 10% auto;
-        text-shadow: 3px 3px 5px black;
-        padding: 0 2%;
-    }
+@keyframes slide {
+	0%{left: 0%}
+	10%{left: 0%;}
+	12%{left: 0%;}
+	22%{left: 0%;}
+    24%{left: -100%;}
+	34%{left: -100%;}
+	36%{left: -100%;}
+	46%{left: -100%;}
+	48%{left: -200%;}
+	58%{left: -200%;}
+	60%{left: -200%;}
+	70%{left: -200%;}
+	72%{left: -100%;}
+	82%{left: -100%;}
+	84%{left: -100%;}
+	94%{left: -100%;}
+	96%{left: 0%;}
+	100%{left: 0%;}
 }
