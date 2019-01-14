@@ -29,7 +29,7 @@ TODO:
 	margin-top: 70px;
 }
 
-.header__slide1 {
+.header__slide1, .header__slide2, .header__slide3 {
 	text-align: center;
 	position: absolute;
 	background-image: url(/img/hero__img1.jpeg);
@@ -44,17 +44,58 @@ TODO:
 	justify-content: center;
 	width:100%;
 	height: 100%;
-	text-shadow: 10px 10px 25px black;
+	text-shadow: 5px 5px 5px rgb(0, 0, 0);
+}
+
+.header__slide2 {
+	background-image: url(/img/hero__img2.jpg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+.header__slide3 {
+	background-image: url(/img/hero__img3.jpg);
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+
 }
 
 .header__slide1 h1{
+	margin-top: -5%;
 	font-size: 4rem;
 	font-weight: 800;
 }
 
 .header__slide1 h2{
-	font-size: 6rem;
-	font-weight: 700;
-	letter-spacing: 0.8rem;
+	font-size: 8rem;
+	font-weight: 800;
+	letter-spacing: 0rem;
+	color: #cc3333;
 }
 
+.header__slide3 h1{
+	font-size: 6rem;
+	font-weight: 800;	
+}
+
+.header__slide3 h2{
+	font-size: 4rem;
+	font-weight: 600;	
+}
+
+.header__slide3 h2 span {
+	color: #cc3333;
+}
+
+.header__slide2 h1{
+	font-size: 5rem;
+	font-weight: 800;	
+	color: #cc3333;
+}
+
+.header__slide2 h2{
+	font-size: 3rem;
+	font-weight: 600;	
+}
