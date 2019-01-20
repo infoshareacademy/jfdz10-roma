@@ -51,6 +51,7 @@
         setTimeout(() => {
             drivingEffect.classList.add("winner");
             drivingEffect.textContent = "Winner!";
+            deliverContainer.remove();
         }, 1000);
     };
 
@@ -238,7 +239,15 @@
     // Choose house to deliver
     function deliverTo() {
         const index = Math.floor(Math.random() * homes.length);
-        homes[index].classList.add("deliver");
+        const deliverTop = Number(getComputedStyle(homes[index]).getPropertyValue("top").slice(0, -2));
+        const deliverLeft = Number(getComputedStyle(homes[index]).getPropertyValue("left").slice(0, -2));
+        const deliverDiv = document.createElement("div");
+        deliverDiv.classList.add("deliver");
+        deliverDiv.style.setProperty("left", `${deliverLeft}px`);
+        deliverDiv.style.setProperty("top", `${deliverTop}px`);
+        deliverContainer.append(deliverDiv);
+        homes[index].classList.remove("deliver");
+        console.log(deliverDiv)
         return homesCords[index];
     };
     // Then I refer to that cords when car is driving (above in code)
