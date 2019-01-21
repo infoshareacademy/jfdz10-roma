@@ -92,17 +92,18 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 	background-color: rgba(0, 0, 0, 0.514);
 	border: 2px solid #cc3333;
 	border-radius: 25px;
+	width: 50%;
 }
 
 .header__slide2__text h1{
-	font-size: 6rem;
+	font-size: 4rem;
 	font-weight: 400;	
 	color: #ffe0ae;
 	text-transform: uppercase;
 }
 
 .header__slide2__text h2{
-	font-size: 3rem;
+	font-size: 2.5rem;
 	font-weight: 400;	
 }
 
@@ -114,7 +115,8 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 	.header__slide2__text {
 		margin-left: 5%;
 		margin-right: 5%;
-		padding: 4rem;
+		padding: 1.5rem;
+		width: auto;
 	}
 	.header__slide2__text h1 {
 		font-size: 2.5rem;
