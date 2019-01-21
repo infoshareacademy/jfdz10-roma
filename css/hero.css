@@ -42,7 +42,7 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 .header__slide1__text h1 {
 	text-align: center;
 	font-size: 3rem;
-	font-weight: 800;	
+	font-weight: 400;	
 	color: #ffe0ae;
 	background-color: #cc333380;
 	padding-bottom: 1rem;
@@ -52,10 +52,10 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 
 .header__slide1__text h2 {
 	font-size: 6rem;
-	font-weight: 800;
+	font-weight: 600;
 	letter-spacing: 0rem;
 	color: #cc3333;
-	background-color: #ffe0aea2;
+	background-color: #ffe0ae79;
 	padding: 0 4rem 1rem 4rem;
 	border-radius: 0px 0px 30px 30px;
 }
@@ -69,6 +69,34 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 	background-attachment: fixed;
 	width:100%;
 	height: 100%;
+	display: flex;
+}
+
+.header__slide2__text {
+	font-family: 'Mali';
+	text-shadow: 5px 5px 5px rgb(0, 0, 0);
+	color: #ffe0ae;
+	margin: auto;
+	text-align: center;
+	padding: 2rem 4rem;
+	background-color: rgba(0, 0, 0, 0.514);
+	border: 2px solid #cc3333;
+	border-radius: 25px;
+}
+
+.header__slide2__text h1{
+	font-size: 6rem;
+	font-weight: 600;	
+	color: #ffe0ae;
+}
+
+.header__slide2__text h2{
+	font-size: 3rem;
+	font-weight: 400;	
+}
+
+.header__slide2__text h2 span{
+	color: #cc3333;
 }
 
 
@@ -81,34 +109,28 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 	background-attachment: fixed;
 	width:100%;
 	height: 100%;
+	display: flex;
 }
 
-/* 
-
-
-
-.header__slide2 h1{
-	font-size: 5rem;
-	font-weight: 800;	
-	color: #cc3333;
+.header__slide3__text {
+	font-family: 'Mali';
+	text-shadow: 5px 5px 5px rgb(0, 0, 0);
+	color: #ffe0ae;
+	margin: auto;
+	text-align: center;
+	padding: 2rem 4rem;
+	background-color: rgba(0, 0, 0, 0.514);
+	border: 2px solid #cc3333;
+	border-radius: 25px;
 }
 
-.header__slide2 h2{
-	font-size: 3rem;
-	font-weight: 600;	
-}
-
-.header__slide3 h1{
+.header__slide3__text h1{
 	font-size: 6rem;
-	font-weight: 800;	
+	font-weight: 400;	
+	color: #ffe0ae;
 }
 
-.header__slide3 h2{
-	font-size: 4rem;
-	font-weight: 600;	
+.header__slide3__text h2{
+	font-size: 3rem;
+	font-weight: 400;	
 }
-
-.header__slide3 h2 span {
-	color: #cc3333;
-} */
-
