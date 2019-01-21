@@ -11,6 +11,7 @@ html, body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-image: url("img/background-image.png");
 }
 
 .container {
@@ -25,6 +26,10 @@ html, body {
 .box {
     font-size: 12rem;
     position: relative;
+    background-image: url("img/pizza.png");
+    width: 360px;
+    height: 360px;
+    
 }
 
 .animal {
