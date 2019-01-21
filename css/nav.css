@@ -41,6 +41,7 @@
     display: flex;
     flex-flow: row;
     align-items: center;
+    margin-bottom: 0;
 }
 
 .menu-desktop__link {
@@ -55,6 +56,7 @@
 .menu-desktop__link:hover {
     color: #241c14;
     opacity: 0.7;
+    text-decoration: none;
 }
 .active-link {
     text-shadow: 2px 2px 6px #FFF;
