@@ -7,7 +7,7 @@
 (function(){
 
     // Setup timer and total seconds for playing
-    const mins = 1;
+    const mins = .1;
     let totalSeconds = mins * 60;
 
     function createTimer() {
@@ -18,20 +18,24 @@
         timer.innerHTML = ':';
         body.prepend(timer);
         const minutes = document.createElement('span');
-        minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
+        minutes.textContent = '0' + mins;
         timer.prepend(minutes);
         const seconds = document.createElement('span');
-        seconds.textContent = formatTimer(totalSeconds % 60);
+        seconds.textContent = '00'; 
         timer.append(seconds);
 
         const counter = setInterval(function() {
-            console.log(formatTimer(parseInt(totalSeconds / 60)))
             --totalSeconds;
             seconds.textContent = formatTimer(totalSeconds % 60);
-            minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
+            minutes.textContent = totalSeconds !== 0 ? formatTimer(parseInt(totalSeconds / 60)) : '00';
             if (totalSeconds === 0) {
-                clearInterval(counter);
-                console.log("end time");
+                setTimeout(() => {
+                    const divs = document.querySelectorAll("div");
+                    divs.forEach((el) => {
+                        el.remove();
+                    });
+                    clearInterval(counter);
+                }, 1000);
             };
         }, 1000);
 
