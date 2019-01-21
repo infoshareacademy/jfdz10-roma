@@ -11,6 +11,7 @@ html, body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-image: url("img/background-image.png");
 }
 
 .container {
@@ -25,11 +26,15 @@ html, body {
 .box {
     font-size: 12rem;
     position: relative;
+    background-image: url("img/pizza.png");
+    width: 360px;
+    height: 360px;
+    
 }
 
 .animal {
     position: absolute;
-    font-size: 3rem;
+    font-size: 4rem;
     padding: 0.4rem;
     top: -4rem;
     line-height: 1;
@@ -91,8 +96,8 @@ html, body {
 
 .car {
     display: inline-block;
-    background-image: url("img/delivery car.svg");
-    background-size: 120%;
+    background-image: url("img/delivery car.png");
+    background-size: 100%;
     background-position: center;
     background-repeat: no-repeat;
     position: absolute;
@@ -106,7 +111,7 @@ html, body {
 
 .deliver {
     position: absolute;
-    background-image: url("img/destination-icon.svg");
+    background-image: url("img/destination-icon.png");
     width: 80px;
     height: 80px;
     z-index: 999999;

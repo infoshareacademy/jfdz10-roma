@@ -10,7 +10,7 @@ body.prepend(pizzaContainer);
 
 const box = document.createElement("div");
 box.classList.add("box");
-box.textContent = "🌳";
+box.textContent = " ";
 pizzaContainer.prepend(box);
 
 const toDisplay = 20; // level of hardness (how many random element without element fo find)
