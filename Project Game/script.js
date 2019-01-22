@@ -10,7 +10,6 @@ function toggleModal() {
   document.querySelector(`#${this.dataset.show}`).classList.remove('u--blur-fadeout');
 }
 
-document.querySelector('#startGame').addEventListener('click', toggleModal);
 document.querySelector('#startGame').addEventListener('click', clear);
 function clear(){
     const menu = document.querySelector('#menu');
