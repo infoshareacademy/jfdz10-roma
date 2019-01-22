@@ -21,70 +21,65 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 
 /* **************** SLIDE 1 **************** */
 .header__slide1 {
+	background-attachment: fixed;
 	background-image: url(../img/hero__img1.jpeg);
 	background-position: center;
 	background-size: cover;
-	background-attachment: fixed;
-	width:100%;
-	height: 100%;
 	display: flex;
+	height: 100%;
+	width:100%;
 }
 
 .header__slide1__text {
-	font-family: 'Mali';
-	font-size: 4rem;
-	font-weight: 800;
-	text-shadow: 5px 6px 10px rgb(0, 0, 0);
-	margin: auto;
-	padding: 1% 0 0 0 ;
+	background-attachment: fixed;
 	background-image: url(../img/hero__img1a.jpeg);
 	background-position: center;
 	background-size: 108%;
-	background-attachment: fixed;
-	width: 65%;
-	border-top: 1.5px solid #fff;
 	border-bottom: 1.5px solid #fff;
+	border-top: 1.5px solid #fff;
+	font-family: 'Mali';
+	font-size: 4rem;
+	font-weight: 800;
+	margin: auto;
+	padding: 1% 0 0 0 ;
+	text-shadow: 5px 6px 10px rgb(0, 0, 0);
+	width: 65%;
 }
 
 .header__slide1__text h1 {
-	text-align: center;
-	font-size: 3rem;
-	font-weight: 400;	
-	color: #ffe0ae;
-	padding: 2rem 0;
-}
-
-.header__slide1__text h1 {
+	color: #fff; 
 	font-size: 5rem;
 	letter-spacing: 2vw;
-	color: #fff;
 	padding: 2rem;
-	text-transform: uppercase;
 	text-align: center;
+	text-transform: uppercase;
 }
 
 
 /* **************** SLIDE 2 **************** */
 
 .header__slide2 {
+	background-attachment: fixed;
 	background-image: url(../img/hero__img2.jpg);
 	background-position: center;
 	background-size: cover;
-	background-attachment: fixed;
-	width:100%;
-	height: 100%;
 	display: flex;
+	height: 100%;
+	width:100%;
 }
 
 .header__slide2__text {
+	background-attachment: fixed;
+	background-image: url(../img/hero__img2a.jpg);
+	background-position: center;
+	background-size: cover;
+	color: #fff;
+	border-bottom: 1.5px solid #fff;
+	border-top: 1.5px solid #fff;
 	font-family: 'Mali';
-	text-shadow: 5px 5px 5px rgb(0, 0, 0);
-	color: #ffe0ae;
+	text-shadow: 3px 3px 5px rgb(0, 0, 0);
 	margin: auto;
 	text-align: center;
-	background-color: rgba(0, 0, 0, 0.514);
-	border: 2px solid #cc3333;
-	border-radius: 25px;
 	width: 50%;
 	padding: 5% 5%;
 }
@@ -92,7 +87,7 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 .header__slide2__text h1{
 	font-size: 3rem;
 	font-weight: 400;	
-	color: #ffe0ae;
+	color: #fff;
 	text-transform: uppercase;
 }
 
@@ -119,21 +114,25 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 }
 
 .header__slide3__text {
+
+	background-attachment: fixed;
+	background-image: url(../img/hero__img3a.jpg);
+	background-position: center;
+	background-size: cover;
+	color: #fff;
+	border-bottom: 1.5px solid #fff;
+	border-top: 1.5px solid #fff;
 	font-family: 'Mali';
-	text-shadow: 5px 5px 5px rgb(0, 0, 0);
-	color: #ffe0ae;
+	text-shadow: 3px 3px 5px rgb(0, 0, 0);
 	margin: auto;
 	text-align: center;
-	background-color: rgba(0, 0, 0, 0.514);
-	border: 2px solid #cc3333;
-	border-radius: 25px;
 	padding: 2% 5%;
 }
 
 .header__slide3__text h1{
 	font-size: 3rem;
 	font-weight: 400;	
-	color: #ffe0ae;
+	color: #fff;
 	padding: 2rem 1rem 1rem 1rem;
 	text-transform: uppercase;
 }
@@ -146,16 +145,42 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 .header__slide3__text h3 {
 	font-size: 1rem;
 	background: #cc3333;
+	color: #fff;
 	text-shadow: none;
 	padding: 1rem 2rem;
 	border-radius: 10px;
 	width: 40%;
 	margin: 2rem auto auto auto;
+	animation: flash 2s infinite linear;
 }
 
 .header__slide3__text h3:hover {
 	background: #ffe0ae;
 	color: #cc3333;
+}
+
+@keyframes flash {
+	0% {
+		opacity: 1;
+	}
+	88% {
+		opacity: 1;
+	}
+	90% {
+		opacity: 0.6;
+	}
+	92% {
+		opacity: 1;
+	}
+	95% {
+		opacity: 0.6;
+	}
+	97% {
+		opacity: 1;
+	}
+	99% {
+		opacity: 0.6;
+	}
 }
 
 
