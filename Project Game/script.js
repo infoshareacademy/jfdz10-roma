@@ -1,10 +1,29 @@
+/*********************************************
+                FIRST PAGE
+*********************************************/
+
+document.querySelector('#aboutBox').addEventListener('click', toggleModal);
+document.querySelector('#aboutLink').addEventListener('click', toggleModal);
+
+function toggleModal() {
+  document.querySelector(`#${this.dataset.hide}`).classList.add('u--blur-fadeout');
+  document.querySelector(`#${this.dataset.show}`).classList.remove('u--blur-fadeout');
+}
+
+document.querySelector('#startGame').addEventListener('click', clear);
+function clear(){
+    const menu = document.querySelector('#menu');
+    menu.style.display = 'none';
+}
+
+document.getElementById('startGame').addEventListener('click', pizza);
 
 
 /*********************************************
                 PIZZA MAKER
 *********************************************/
 
-(function(){
+function pizza(){
 
 
     const pizzaContainer = document.createElement("div");
@@ -562,8 +581,7 @@
                  START GAME 
     ***************************************/
     
-    pizzaGame();
-
-})();
+pizzaGame();
+};
 
 
