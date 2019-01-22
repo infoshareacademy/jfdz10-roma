@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/hero.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/nav.css" />
@@ -13,6 +14,7 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/about-us.css"/>
     <link rel="stylesheet" type="text/css" media="screen" href="fontello-about-us/css/fontello.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/all-functions.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/cookies.css"/>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Mali:400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&amp;subset=latin-ext" rel="stylesheet">
@@ -30,21 +32,57 @@
         <span></span>
         <span></span>
         <ul class="menu-desktop menu-device">
-          <li class="menu-device__element"><a class="menu-desktop__link menu-device__link" href="#main-functions">funkcje</a></li>
-          <li class="menu-device__element"><a class="menu-desktop__link menu-device__link" href="#offer">oferta</a></li>
-          <li class="menu-device__element"><a class="menu-desktop__link menu-device__link" href="#form">newsletter</a></li>
-          <li class="menu-device__element"><a class="menu-desktop__link menu-device__link" href="#about-us">o nas</a></li>
+          <li class="menu__element menu__element-main"><a class="menu-desktop__link menu-device__link" href="#main-functions">funkcje</a></li>
+          <li class="menu__element menu__element-offer"><a class="menu-desktop__link menu-device__link" href="#offer">oferta</a></li>
+          <li class="menu__element menu__element-form"><a class="menu-desktop__link menu-device__link" href="#form">newsletter</a></li>
+          <li class="menu__element menu__element-about"><a class="menu-desktop__link menu-device__link" href="#about-us">o nas</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-    <section class="hero">
-      <div class="hero__header">
-        <h1><br>Zamów swoją<br>ulubioną pizzę!</h1>
-        <a href="#form"><h2>Zapisz się na premierę aplikacji!</h2></a>
-      </div>
-    </section>
+  <section id="hero" class="hero">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class = "header__slide1">
+            <div class = "header__slide1__text">
+              <h1>Pizzerium</h1>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class = "header__slide2">
+            <div class = "header__slide2__text">
+              <h1>Głodny?</h1>
+              <h2>Dzięki Pizzerium zamówisz swoją ulubioną <span>pizzę</span>!</h2>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class = "header__slide3">
+            <div class = "header__slide3__text">
+              <h1>Nie przegap!</h1>
+              <h2>Zapisz się na premierę aplikacji!</h2>
+              <a href="#form"><div><h3>Kliknij tutaj!</h3></div></a>
+            </div>
+          </div>
+        </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </section>
 
   <div id="main-functions" class="main-functions">  
     <section class="main-functions-container">
@@ -52,22 +90,22 @@
       <div class="main-functions__box">
 
       <figure class="main-function__img-container">
-        <img class="main-function__img" src="img/vita-marija-murenaite-484774-unsplash.jpg">
+        <img class="main-function__img" src="img/main-functions1.jpg">
         <figcaption class="main-function__caption">Skomponujesz swoją pizzę</figcaption>
       </figure>
 
       <figure class="main-function__img-container">
-        <img class="main-function__img" src="img/roberto-valdivia-1058125-unsplash.jpg">
+        <img class="main-function__img" src="img/main-functions2.jpg">
         <figcaption class="main-function__caption">Znajdziesz pizzerię</figcaption>
       </figure>
     
       <figure class="main-function__img-container">
-        <img class="main-function__img" src="img/dayne-topkin-81631-unsplash.jpg">
+        <img class="main-function__img" src="img/main-functions3.jpg">
         <figcaption class="main-function__caption">Wybierzesz najlepszą ofertę</figcaption>
       </figure>
 
       <figure class="main-function__img-container">
-        <img class="main-function__img" src="img/fatima-akram-1140510-unsplash.jpg">
+        <img class="main-function__img" src="img/main-functions4.jpg">
         <figcaption class="main-function__caption">Zjesz pizzę <br> 😍 </figcaption>
       </figure>
     </section>
@@ -148,24 +186,26 @@
   </div>
   
   <h3 id="form" class="newsletter-heading">Newsletter</h3>
-  
+
     <section class="form">
-      <h1 class="form__title">Zapisz się na premierę aplikacji:</h1>
-      <form class="form__table">
+      <h1 class="form__title">Zapisz się na premierę aplikacji:</h1><br>
+
+      <form class="form__table" action="#" method="post" id="contactform" onsubmit="return validation();">
         <div>
-          <input class="form__input" type="text" id="name" name="user_name" placeholder="Twoje imię">
+          <input class="form__input" type="text" id="name" name="name" placeholder="Twoje imię"> 
         </div>
+        <div id="iname" class="error"></div>
         <div>
-          <input class="form__input" type="email" id="mail" name="user_mail" placeholder="Twój e-mail" required>
+          <input class="form__input" type="email" id="mail" name="mail" placeholder="Twój e-mail">
         </div>
+        <div id="imail" class="error"></div>
+        <input class="form__input-send" type="submit" id="button" value="Wyślij">
       </form>
-        <input class="form__input-send" type="submit" value="Wyślij">
+
+        <br>
       <p class="form__info">* Zostanie wysłany jeden mail z informacją o premierze produktu.<br>
         Twoje dane są u nas bezpieczne - możesz spać spokojnie 😊</p>
     </section>
-
-
-
 
 
 			<div id="about-us" class="container__about__us">
@@ -233,11 +273,27 @@
           </div>				
           
 	
-			</div>
-
-
+      </div>
+      
 
   </div>
 
+<a href="#hero" class="back-to-top-button">&uarr;</a>
+
+<div id="cookies-message-container">    
+    <div id="cookies-message">Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej. Pliki cookies wygasają po 30 dniach.
+        <br/><img class="logo-cookies__logo" src="img/logo.svg" alt="pizzerium logo"> <br/>
+        <a href="javascript:WHCloseCookiesWindow();" id="accept-cookies-checkbox">Rozumiem, dzięki!
+        </a> </div></div>
+
+<script src="js/back-to-top-button.js"></script>      
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<script src="js/cookies.js"></script>
+<script src="js/highlight-menu.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="js/form.js"></script>
+<script src="js/hero_carousel.js"></script>
 </body>
 </html>
