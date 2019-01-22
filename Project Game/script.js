@@ -11,7 +11,7 @@ const pizzaGame = function(){
     
     const box = document.createElement("div");
     box.classList.add("box");
-    box.textContent = "🌳";
+    box.textContent = " ";
     pizzaContainer.prepend(box);
     
     const toDisplay = 20; // level of hardness (how many random element without element fo find)
@@ -379,6 +379,17 @@ const deliverGame = function(){
             posX : Number(getComputedStyle(home).getPropertyValue("left").slice(0, -2)),
         });
     });
+
+    homes.forEach((home, i) => {
+        console.log(i);
+        if (i % 3 === 0) {
+            home.style.backgroundImage = 'url("img/bulding-top-2.png")'
+        }
+        if (i % 2 === 0) {
+            home.style.backgroundImage = 'url("img/bulding-top-3.png")'
+        }
+
+    })
     
     // Choose house to deliver
     function deliverTo() {
