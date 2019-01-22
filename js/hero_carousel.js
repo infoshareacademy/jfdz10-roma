@@ -1,3 +1,3 @@
 $('.carousel').carousel({
-    interval: 40000000
+    interval: 4000
   })

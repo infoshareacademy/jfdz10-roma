@@ -15,8 +15,7 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 ************************************/
 
 .carousel-item {
-	height: 91vh;
-	margin-top: 70px;
+	height: 100vh;
 }
 
 /* **************** SLIDE 1 **************** */
@@ -47,12 +46,25 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 }
 
 .header__slide1__text h1 {
+	animation: growUp 40s infinite linear;
 	color: #fff; 
 	font-size: 5rem;
 	letter-spacing: 2vw;
 	padding: 2rem;
 	text-align: center;
 	text-transform: uppercase;
+}
+
+@keyframes growUp {
+	0% {
+		letter-spacing: 2vw;
+	}
+	49% {
+		letter-spacing: 3vw
+	}
+	99% {
+		letter-spacing: 2vw;
+	}
 }
 
 
@@ -73,21 +85,21 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 	background-image: url(../img/hero__img2a.jpg);
 	background-position: center;
 	background-size: cover;
-	color: #fff;
 	border-bottom: 1.5px solid #fff;
 	border-top: 1.5px solid #fff;
+	color: #fff;
 	font-family: 'Mali';
-	text-shadow: 3px 3px 5px rgb(0, 0, 0);
 	margin: auto;
-	text-align: center;
-	width: 50%;
 	padding: 5% 5%;
+	text-align: center;
+	text-shadow: 3px 3px 5px rgb(0, 0, 0);
+	width: 50%;
 }
 
 .header__slide2__text h1{
+	color: #fff;
 	font-size: 3rem;
 	font-weight: 400;	
-	color: #fff;
 	text-transform: uppercase;
 }
 
@@ -104,13 +116,13 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 /* **************** SLIDE 3 **************** */
 
 .header__slide3 {
+	background-attachment: fixed;
 	background-image: url(../img/hero__img3.jpg);
 	background-position: center;
 	background-size: cover;
-	background-attachment: fixed;
-	width:100%;
-	height: 100%;
 	display: flex;
+	height: 100%;
+	width:100%;
 }
 
 .header__slide3__text {
@@ -119,20 +131,20 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 	background-image: url(../img/hero__img3a.jpg);
 	background-position: center;
 	background-size: cover;
-	color: #fff;
 	border-bottom: 1.5px solid #fff;
 	border-top: 1.5px solid #fff;
+	color: #fff;
 	font-family: 'Mali';
-	text-shadow: 3px 3px 5px rgb(0, 0, 0);
 	margin: auto;
-	text-align: center;
 	padding: 2% 5%;
+	text-align: center;
+	text-shadow: 3px 3px 5px rgb(0, 0, 0);
 }
 
 .header__slide3__text h1{
+	color: #fff;
 	font-size: 3rem;
 	font-weight: 400;	
-	color: #fff;
 	padding: 2rem 1rem 1rem 1rem;
 	text-transform: uppercase;
 }
@@ -143,15 +155,15 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 }
 
 .header__slide3__text h3 {
-	font-size: 1rem;
-	background: #cc3333;
-	color: #fff;
-	text-shadow: none;
-	padding: 1rem 2rem;
-	border-radius: 10px;
-	width: 40%;
-	margin: 2rem auto auto auto;
 	animation: flash 2s infinite linear;
+	background: #cc3333;
+	border-radius: 10px;
+	color: #fff;
+	font-size: 1rem;
+	margin: 2rem auto auto auto;
+	padding: 1rem 2rem;
+	text-shadow: none;
+	width: 40%;
 }
 
 .header__slide3__text h3:hover {
@@ -188,23 +200,22 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 
 /* 					SLIDE 1 					*/
 
-@media (max-width: 730px) and (orientation: portrait){
+@media (max-width: 1024px) {
+	.header__slide1__text {
+		background-size: cover;
+		width: 100%;
+	}
 	.header__slide1__text h1 {
-		font-size: 2rem;
-	}
-	.header__slide1__text h2 {
-		padding: 1rem 2rem;
-		font-size: 3rem;
-	}
+		font-size: 8vw;
+	} 
 }
 
-@media (max-width: 350px) and (orientation: portrait){
+@media (max-width: 400px) and (orientation: portrait){
+	.header__slide1__text {
+		padding: 7%;
+	}
 	.header__slide1__text h1 {
 		font-size: 2rem;
-	}
-	.header__slide1__text h2 {
-		padding: 1rem 2rem;
-		font-size: 3rem;
 	}
 }
 
@@ -230,6 +241,8 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 @media (max-width: 730px) and (orientation: portrait){
 	.header__slide3__text {
 		border-radius: 0px;
+		margin-left: 5%;
+		margin-right: 5%;
 	}
 
 	.header__slide3__text h1 {
@@ -239,8 +252,8 @@ wyświetlić jednocześnie. Wstawić w to miejsce pokaz slajdów, który:
 		font-size: 1.5rem;
 	}
 	.header__slide3__text h3 {
-		width: 60%;
 		margin: 2rem auto 1rem auto;
+		width: 60%;
 	}
 }
 
