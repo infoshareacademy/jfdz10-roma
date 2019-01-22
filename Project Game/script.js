@@ -6,6 +6,56 @@
 
 (function(){
 
+
+    const pizzaContainer = document.createElement("div");
+    //pizzaContainer.classList.add("container");
+    body.prepend(pizzaContainer);
+    
+    const box = document.createElement("div");
+    box.classList.add("box");
+    box.textContent = " ";
+    pizzaContainer.prepend(box);
+    
+    const toDisplay = 20; // level of hardness (how many random element without element fo find)
+    let displayAnimals = [];
+    let elementsToFind = []; // array of items to find
+    let allAnimals;
+    const animals = [
+        {
+            icon: "🦁",
+            id: "lion",
+        }, 
+        {
+            icon: "🐮",
+            id: "cow",
+        }, 
+        {
+            icon: "🐷",
+            id: "piggy",
+        },
+        {
+            icon: "🐸",
+            id: "frog",
+        },
+        {
+            icon: "🐧",
+            id: "pinguin",
+        },
+        {
+            icon: "🐦",
+            id: "bird",
+        },
+    ];
+    
+    function createAnimals() {
+        // create elements in total as toDisplay number is
+        for (let i = 1; displayAnimals.length < toDisplay -1 ; i++) {
+            // generate 3 random elements to find
+            for (let y = 0; elementsToFind.length < 3; i++) {
+                const index = Math.floor(Math.random() * animals.length);
+                elementsToFind.push(animals[index].id);
+                displayAnimals.push(animals[index]);
+=======
     // Setup timer and total seconds for playing
     const mins = 2;
     let totalSeconds = mins * 60;
@@ -43,6 +93,7 @@
                 return `0${valString}`;
             } else {
                 return valString;
+
             };
         };
     };
@@ -459,6 +510,35 @@
                 posX: Number(getComputedStyle(home).getPropertyValue('left').slice(0, -2))
             });
         });
+
+      
+    });
+
+    homes.forEach((home, i) => {
+        console.log(i);
+        if (i % 3 === 0) {
+            home.style.backgroundImage = 'url("img/bulding-top-2.png")'
+        }
+        if (i % 2 === 0) {
+            home.style.backgroundImage = 'url("img/bulding-top-3.png")'
+        }
+
+    })
+    
+    // Choose house to deliver
+    function deliverTo() {
+        const index = Math.floor(Math.random() * homes.length);
+        const deliverTop = Number(getComputedStyle(homes[index]).getPropertyValue("top").slice(0, -2));
+        const deliverLeft = Number(getComputedStyle(homes[index]).getPropertyValue("left").slice(0, -2));
+        const deliverDiv = document.createElement("div");
+        deliverDiv.classList.add("deliver");
+        deliverDiv.style.setProperty("left", `${deliverLeft}px`);
+        deliverDiv.style.setProperty("top", `${deliverTop}px`);
+        deliverContainer.append(deliverDiv);
+        homes[index].classList.remove("deliver");
+        console.log(deliverDiv)
+        return homesCords[index];
+
     
         // Choose house to deliver
         function deliverTo() {
@@ -475,6 +555,7 @@
         }
         // Then I refer to that cords when car is driving (above in code)
         const deliverCords = deliverTo();
+
     };
     
     /**************************************
