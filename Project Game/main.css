@@ -48,6 +48,7 @@
     align-self: center;
 }
 /**************** about game - instrukcja gry **************/
+
 .about-container {
     background: grey;
     height: 97vh;
@@ -94,7 +95,7 @@
 
 /************** game ***************/
 
-html, body {
+.game {
     width: 100%;
     height: 100%;
     margin: 0;
@@ -105,6 +106,8 @@ html, body {
     align-items: center;
     overflow: hidden;
     background-image: url("img/background-image.png");
+    position: absolute;
+    display: none;
 }
 
 .time {

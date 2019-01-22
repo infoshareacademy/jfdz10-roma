@@ -10,11 +10,21 @@ function toggleModal() {
   document.querySelector(`#${this.dataset.show}`).classList.remove('u--blur-fadeout');
 }
 
+document.querySelector('#startGame').addEventListener('click', toggleModal);
+document.querySelector('#startGame').addEventListener('click', clear);
+function clear(){
+    const menu = document.querySelector('#menu');
+    menu.style.display = 'none';
+}
+
+document.getElementById('startGame').addEventListener('click', pizza);
+
+
 /*********************************************
                 PIZZA MAKER
 *********************************************/
 
-(function(){
+function pizza(){
 
     // Setup timer and total seconds for playing
     const mins = 2;
@@ -491,8 +501,7 @@ function toggleModal() {
                  START GAME 
     ***************************************/
     
-    pizzaGame();
-
-})();
+pizzaGame();
+};
 
 
