@@ -7,7 +7,7 @@
 (function(){
 
     // Setup timer and total seconds for playing
-    const mins = .1;
+    const mins = 2;
     let totalSeconds = mins * 60;
 
     function createTimer() {
@@ -18,24 +18,22 @@
         timer.innerHTML = ':';
         body.prepend(timer);
         const minutes = document.createElement('span');
-        minutes.textContent = '0' + mins;
+        minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
         timer.prepend(minutes);
         const seconds = document.createElement('span');
-        seconds.textContent = '00'; 
+        seconds.textContent = formatTimer(totalSeconds % 60);
         timer.append(seconds);
 
         const counter = setInterval(function() {
             --totalSeconds;
             seconds.textContent = formatTimer(totalSeconds % 60);
-            minutes.textContent = totalSeconds !== 0 ? formatTimer(parseInt(totalSeconds / 60)) : '00';
+            minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
             if (totalSeconds === 0) {
-                setTimeout(() => {
-                    const divs = document.querySelectorAll("div");
-                    divs.forEach((el) => {
-                        el.remove();
-                    });
-                    clearInterval(counter);
-                }, 1000);
+                const divs = document.querySelectorAll("div:not(.time)")
+                divs.forEach((el) => {
+                    el.remove();
+                });
+                clearInterval(counter);
             };
         }, 1000);
 
@@ -48,9 +46,9 @@
             };
         };
     };
-    
     createTimer();
 
+    // PIZZA GAME is in one big function
     const pizzaGame = function() {
         const winner = document.querySelector(".winner");
         winner ? winner.remove() : winner;
@@ -150,7 +148,7 @@
                     setTimeout(function() {
                         pizzaContainer.remove();
                         deliverGame();
-                    }, 1000);
+                    }, 800);
                 } else {
                     console.log(`%c That's correct element!`, `background: lightgreen;`);
                 }
@@ -201,6 +199,7 @@
              DELIVER GAME
     ***********************************/
     
+    // DELIVER GAME is in one big function
     const deliverGame = function() {
         const body = document.querySelector('body');
         const deliverContainer = document.createElement('div');
@@ -233,7 +232,6 @@
     
         // Starting position and rotate of car
         let deg = 90;
-        
         getCarPosition('y');
         getCarPosition('x');
     
@@ -248,14 +246,13 @@
             window.removeEventListener('keydown', addKeys);
             setTimeout(() => {
                 drivingEffect.classList.add('winner');
-                drivingEffect.textContent = 'Winner!';
+                drivingEffect.textContent = 'Bravo!';
                 document.documentElement.style.setProperty(`--carPositionX`, 0 + suffix);
                 document.documentElement.style.setProperty(`--carPositionY`, 0 + suffix);
                 deliverContainer.remove();
-
                 setTimeout(() => {
                     pizzaGame();
-                }, 1000);
+                }, 500);
             }, 500);
         }
     
@@ -444,6 +441,13 @@
     
         // Add to every home element class "home"
         const homes = document.querySelectorAll('.home');
+        homes.forEach((home, index) => {
+            if (index % 2 === 0) {
+                home.style.backgroundImage = "url('img/bulding-top-2.png')";
+            } else if (index % 3 === 0) {
+                home.style.backgroundImage = "url('img/bulding-top-3.png')";
+            }
+        });
         // Create empty array for every home's cords (left, top) values
         let homesCords = [];
     
@@ -467,7 +471,6 @@
             deliverDiv.style.setProperty('top', `${deliverTop}px`);
             deliverContainer.append(deliverDiv);
             homes[index].classList.remove('deliver');
-            console.log(deliverDiv);
             return homesCords[index];
         }
         // Then I refer to that cords when car is driving (above in code)
