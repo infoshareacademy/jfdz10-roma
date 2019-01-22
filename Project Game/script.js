@@ -7,7 +7,7 @@
 (function(){
 
     // Setup timer and total seconds for playing
-    const mins = 1;
+    const mins = .5;
     let totalSeconds = mins * 60;
 
     function createTimer() {
@@ -25,13 +25,15 @@
         timer.append(seconds);
 
         const counter = setInterval(function() {
-            console.log(formatTimer(parseInt(totalSeconds / 60)))
             --totalSeconds;
             seconds.textContent = formatTimer(totalSeconds % 60);
             minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
             if (totalSeconds === 0) {
+                const divs = document.querySelectorAll("div:not(.time)")
+                divs.forEach((el) => {
+                    el.remove();
+                });
                 clearInterval(counter);
-                console.log("end time");
             };
         }, 1000);
 
@@ -244,14 +246,13 @@
             window.removeEventListener('keydown', addKeys);
             setTimeout(() => {
                 drivingEffect.classList.add('winner');
-                drivingEffect.textContent = 'Winner!';
+                drivingEffect.textContent = 'Bravo!';
                 document.documentElement.style.setProperty(`--carPositionX`, 0 + suffix);
                 document.documentElement.style.setProperty(`--carPositionY`, 0 + suffix);
                 deliverContainer.remove();
-
                 setTimeout(() => {
                     pizzaGame();
-                }, 1000);
+                }, 800);
             }, 500);
         }
     
