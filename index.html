@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/hero.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/nav.css" />
@@ -14,7 +15,6 @@
     <link rel="stylesheet" type="text/css" media="screen" href="fontello-about-us/css/fontello.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/all-functions.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/cookies.css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Mali:400,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&amp;subset=latin-ext" rel="stylesheet">
@@ -53,27 +53,29 @@
       </ol>
       <div class="carousel-inner">
         <div class="carousel-item active">
-            <div class = "header__slide1">
-              <h1>Witaj w</h1>
-              <h2>Pizzerium</h2>
+          <div class = "header__slide1">
+            <div class = "header__slide1__text">
+              <h1>Pizzerium</h1>
             </div>
-          <img class="d-block w-100" src="/img/hero__img1.jpeg" alt="First slide">
+          </div>
         </div>
         <div class="carousel-item">
-            <div class = "header__slide3">
-                <h1>Głodny?</h1>
-                <h2>A co powiesz na <span>pizzę</span>?</h2>
-              </div>
-          <img class="d-block w-100" src="/img/hero__img3.jpg" alt="Third slide">
+          <div class = "header__slide2">
+            <div class = "header__slide2__text">
+              <h1>Głodny?</h1>
+              <h2>Dzięki Pizzerium zamówisz swoją ulubioną <span>pizzę</span>!</h2>
+            </div>
+          </div>
         </div>
         <div class="carousel-item">
-            <div class = "header__slide2">
-                <h1>Nie przegap!</h1>
-                <h2>Zapisz się na premierę aplikacji!</h2>
-              </div>
-          <img class="d-block w-100" src="/img/hero__img2.jpg" alt="Second slide">
+          <div class = "header__slide3">
+            <div class = "header__slide3__text">
+              <h1>Nie przegap!</h1>
+              <h2>Zapisz się na premierę aplikacji!</h2>
+              <a href="#form"><div><h3>Kliknij tutaj!</h3></div></a>
+            </div>
+          </div>
         </div>
-      </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -91,22 +93,22 @@
       <div class="main-functions__box">
 
       <figure class="main-function__img-container">
-        <img class="main-function__img" src="img/vita-marija-murenaite-484774-unsplash.jpg">
+        <img class="main-function__img" src="img/main-functions1.jpg">
         <figcaption class="main-function__caption">Skomponujesz swoją pizzę</figcaption>
       </figure>
 
       <figure class="main-function__img-container">
-        <img class="main-function__img" src="img/roberto-valdivia-1058125-unsplash.jpg">
+        <img class="main-function__img" src="img/main-functions2.jpg">
         <figcaption class="main-function__caption">Znajdziesz pizzerię</figcaption>
       </figure>
     
       <figure class="main-function__img-container">
-        <img class="main-function__img" src="img/dayne-topkin-81631-unsplash.jpg">
+        <img class="main-function__img" src="img/main-functions3.jpg">
         <figcaption class="main-function__caption">Wybierzesz najlepszą ofertę</figcaption>
       </figure>
 
       <figure class="main-function__img-container">
-        <img class="main-function__img" src="img/fatima-akram-1140510-unsplash.jpg">
+        <img class="main-function__img" src="img/main-functions4.jpg">
         <figcaption class="main-function__caption">Zjesz pizzę <br> 😍 </figcaption>
       </figure>
     </section>
@@ -279,14 +281,7 @@
 
   </div>
 
-  <script src="js/form.js"></script>
-
-  <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
-
 <a href="#hero" class="back-to-top-button">&uarr;</a>
-
-<script src="js/back-to-top-button.js"></script>
-
 
 <div id="cookies-message-container">    
     <div id="cookies-message">Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej. Pliki cookies wygasają po 30 dniach.
@@ -294,13 +289,14 @@
         <a href="javascript:WHCloseCookiesWindow();" id="accept-cookies-checkbox">Rozumiem, dzięki!
         </a> </div></div>
 
-      
+<script src="js/back-to-top-button.js"></script>      
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 <script src="js/cookies.js"></script>
 <script src="js/highlight-menu.js"></script>
+<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+<script src="js/form.js"></script>
+<script src="js/hero_carousel.js"></script>
 </body>
 </html>

@@ -31,6 +31,7 @@ a {
     color: black;
 }
 
+
 /*************************************
         BACK TO TOP BUTTON
 *************************************/
@@ -56,6 +57,7 @@ a {
   
 .back-to-top-button:hover {
     background: #fae6a3;
+    text-decoration: none;
 }
 
 .back-to-top-button-show {
