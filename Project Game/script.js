@@ -16,7 +16,33 @@ function clear(){
     menu.style.display = 'none';
 }
 
-document.getElementById('startGame').addEventListener('click', pizza);
+document.getElementById('startGame').addEventListener('click', countPizza);
+
+
+/*********************************************
+                3 2 1 PIZZA
+*********************************************/
+
+function countPizza() {
+    const body = document.querySelector('body');
+    const countContainer = document.createElement('div');
+        body.prepend(countContainer);
+    const countDiv = document.createElement('div');
+        countDiv.classList.add('count-container-pizza');
+        countContainer.prepend(countDiv);
+    let counter = 4;
+    let timer = document.createElement('p');
+        timer.classList.add('timer');
+        timer = document.getElementsByClassName('timer');
+    let interval = setInterval(() => {
+        counter--;
+        timer.textContent = counter;
+        if(counter <= 0){
+            clearInterval(interval);
+            return timer.textContent = 'START!';
+        };
+    }, 1000);
+};
 
 
 /*********************************************
