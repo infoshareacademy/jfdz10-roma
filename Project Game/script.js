@@ -27,23 +27,25 @@ function countPizza() {
     const body = document.querySelector('body');
     const countContainer = document.createElement('div');
         body.prepend(countContainer);
-    const countDiv = document.createElement('div');
-        countDiv.classList.add('count-container-pizza');
-        countContainer.prepend(countDiv);
-    let counter = 4;
+        countContainer.classList.add('count-container-pizza');
     let timer = document.createElement('p');
-        timer.classList.add('timer');
-        timer = document.getElementsByClassName('timer');
-    let interval = setInterval(() => {
-        counter--;
+        countContainer.prepend(timer);
+    let counter = 3;
         timer.textContent = counter;
-        if(counter <= 0){
-            clearInterval(interval);
-            return timer.textContent = 'START!';
-        };
-    }, 1000);
-};
+        
+        let interval = setInterval(() => {
+            counter--;
+            if(counter <= 0){
+                clearInterval(interval);
+                return timer.textContent = 'START!';
+            };
+        }, 1000);
 
+    window.setTimeout(function(){
+        countContainer.remove();
+        pizza();
+    }, 4000);
+};
 
 /*********************************************
                 PIZZA MAKER
