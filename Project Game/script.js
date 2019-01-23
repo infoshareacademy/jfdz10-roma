@@ -30,11 +30,11 @@ function countPizza() {
         countContainer.classList.add('count-container-pizza');
     let timer = document.createElement('p');
         countContainer.prepend(timer);
-    let counter = 3;
-        timer.textContent = counter;
+    let counter = 4;
         
         let interval = setInterval(() => {
             counter--;
+            timer.textContent = counter;
             if(counter <= 0){
                 clearInterval(interval);
                 return timer.textContent = 'START!';
@@ -44,7 +44,7 @@ function countPizza() {
     window.setTimeout(function(){
         countContainer.remove();
         pizza();
-    }, 4000);
+    }, 5000);
 };
 
 /*********************************************
