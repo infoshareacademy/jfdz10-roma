@@ -92,7 +92,7 @@
 /**************** 3 2 1 Pizza **************/
 
 .count-container-pizza {
-    background-image: url(/img/pizzagame.png);
+    background-image: url(img/pizzagame.png);
     background-position: center;
     background-size: cover;
     color: rgb(66, 66, 66);
@@ -109,7 +109,7 @@
 /**************** 3 2 1 Car **************/
 
 .count-container-car {
-    background-image: url(/img/cargame.png);
+    background-image: url(img/cargame.png);
     background-position: center;
     background-size: cover;
     color: rgb(66, 66, 66);
