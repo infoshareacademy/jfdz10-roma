@@ -8,7 +8,7 @@ function setup() {
         timer.textContent = counter;
         if(counter <= 0){
             clearInterval(interval);
-            return timer.textContent = 'GO!';
+            return timer.textContent = 'START!';
         }
     }, 1000);
     
