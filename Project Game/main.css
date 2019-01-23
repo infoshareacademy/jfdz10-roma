@@ -89,6 +89,40 @@
     transition: filter 1s, opacity 1s;
 }
 
+/**************** 3 2 1 Pizza **************/
+
+.count-container-pizza {
+    background-image: url(img/pizzagame.png);
+    background-position: center;
+    background-size: cover;
+    color: rgb(66, 66, 66);
+    display: flex;
+    flex-direction: column;
+    font-family: 'VT323', monospace;
+    font-size: 7rem;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+}
+
+/**************** 3 2 1 Car **************/
+
+.count-container-car {
+    background-image: url(img/cargame.png);
+    background-position: center;
+    background-size: cover;
+    color: rgb(66, 66, 66);
+    display: flex;
+    flex-direction: column;
+    font-family: 'VT323', monospace;
+    font-size: 7rem;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+}
+
 /************** game ***************/
 
 body {

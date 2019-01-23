@@ -16,8 +16,36 @@ function clear(){
     menu.style.display = 'none';
 }
 
-document.getElementById('startGame').addEventListener('click', pizza);
+document.getElementById('startGame').addEventListener('click', countPizza);
 
+
+/*********************************************
+                3 2 1 PIZZA
+*********************************************/
+
+function countPizza() {
+    const body = document.querySelector('body');
+    const countContainer = document.createElement('div');
+        body.prepend(countContainer);
+        countContainer.classList.add('count-container-pizza');
+    let timer = document.createElement('p');
+        countContainer.prepend(timer);
+    let counter = 4;
+        
+        let interval = setInterval(() => {
+            counter--;
+            timer.textContent = counter;
+            if(counter <= 0){
+                clearInterval(interval);
+                return timer.textContent = 'START!';
+            };
+        }, 1000);
+
+    window.setTimeout(function(){
+        countContainer.remove();
+        pizza();
+    }, 5000);
+};
 
 /*********************************************
                 PIZZA MAKER
