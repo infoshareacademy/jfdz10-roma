@@ -440,7 +440,7 @@ function pizza(){
             }
         }
     
-        window.addEventListener('keydown', addKeys);
+        window.addEventListener('keyup', addKeys);
     
         /*********************************************
                         CREATE HOUSES
