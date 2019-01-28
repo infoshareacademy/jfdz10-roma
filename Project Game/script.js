@@ -178,8 +178,8 @@ function pizza(){
                     animalElement.classList.add('ingredient');
                     animalElement.style.backgroundImage = ingredient.icon;
                     animalElement.dataset.id = ingredient.id;
-                    animalElement.style.top = `calc(${getRandomInt(10,90)}%)`;
-                    animalElement.style.left = `calc(${getRandomInt(5, 35)}%)`;
+                    animalElement.style.top = topLeftRandom();
+                    animalElement.style.left = topLeftRandom();
                     pizzaContainer.prepend(animalElement);
                     addFindingEvent();
                 }, index * 100);
