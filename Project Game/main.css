@@ -148,18 +148,19 @@ body {
 }
 
 .box {
-    font-size: 12rem;
     position: relative;
     background-image: url("img/pizza.png");
     width: 360px;
     height: 360px;
-    
+   
 }
 
-.animal {
+.ingredient {
     position: absolute;
     font-size: 4rem;
     padding: 0.4rem;
+    width: 90px;
+    height: 90px;
     top: -4rem;
     line-height: 1;
     left: calc(0%);
@@ -167,6 +168,7 @@ body {
     transform: translateY(0);
     transform: translateX(0);
     z-index: 9999;
+
 }
 
 .animation {
