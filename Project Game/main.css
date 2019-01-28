@@ -148,15 +148,14 @@ body {
 }
 
 .box {
-    font-size: 12rem;
     position: relative;
     background-image: url("img/pizza.png");
     width: 360px;
     height: 360px;
-    
+   
 }
 
-.animal {
+.ingredient {
     position: absolute;
     font-size: 4rem;
     padding: 0.4rem;

@@ -112,7 +112,7 @@ function pizza(){
         let displayAnimals = [];
         let elementsToFind = []; // array of items to find
         let allAnimals;
-        const animals = [
+        const ingredients = [
             {
                 icon: backgroundImage = "url('img/cheese.png')",
                 id: 'cheese',
@@ -156,30 +156,30 @@ function pizza(){
             for (let i = 1; displayAnimals.length < toDisplay - 1; i++) {
                 // generate 3 random elements to find
                 for (let y = 0; elementsToFind.length < 3; i++) {
-                    const index = Math.floor(Math.random() * animals.length);
-                    elementsToFind.push(animals[index].id);
-                    displayAnimals.push(animals[index]);
+                    const index = Math.floor(Math.random() * ingredients.length);
+                    elementsToFind.push(ingredients[index].id);
+                    displayAnimals.push(ingredients[index]);
                 }
-                const index = Math.floor(Math.random() * animals.length);
-                displayAnimals.push(animals[index]);
+                const index = Math.floor(Math.random() * ingredients.length);
+                displayAnimals.push(ingredients[index]);
             };
-            animals.push({
+            ingredients.push({
                 icon: backgroundImage = "url('img/killer-mushroom.png')",
                 id: 'killer',
             });
-            displayAnimals.push(animals[animals.length - 1]);
-            animals.pop();
-            // sort displayAnimals randomly
+            displayAnimals.push(ingredients[ingredients.length - 1]);
+            ingredients.pop();
+            // sort displayIngredient randomly
             displayAnimals.sort(() => 0.5 - Math.random());
-            // start creating elements
-            displayAnimals.forEach(function(animal, index) {
+            // start creating ingredients
+            displayAnimals.forEach(function(ingredient, index) {
                 setTimeout(function() {
                     const animalElement = document.createElement('div');
-                    animalElement.classList.add('animal');
-                    animalElement.style.backgroundImage = animal.icon;
-                    animalElement.dataset.id = animal.id;
-                    animalElement.style.top = topLeftRandom();
-                    animalElement.style.left = topLeftRandom();
+                    animalElement.classList.add('ingredient');
+                    animalElement.style.backgroundImage = ingredient.icon;
+                    animalElement.dataset.id = ingredient.id;
+                    animalElement.style.top = `calc(${getRandomInt(10,90)}%)`;
+                    animalElement.style.left = `calc(${getRandomInt(5, 35)}%)`;
                     pizzaContainer.prepend(animalElement);
                     addFindingEvent();
                 }, index * 100);
@@ -242,7 +242,7 @@ function pizza(){
     
         function addFindingEvent() {
             // If all elements are loaded on page, then add to every element 'click' event with function of finding correct element
-            allAnimals = document.querySelectorAll('.animal');
+            allAnimals = document.querySelectorAll('.ingredient');
             allAnimals.forEach(function(element) {
                 element.addEventListener('click', findElement);
             });
