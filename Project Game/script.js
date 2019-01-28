@@ -311,6 +311,11 @@ function pizza(){
                 document.documentElement.style.setProperty(`--carPositionX`, 0 + suffix);
                 document.documentElement.style.setProperty(`--carPositionY`, 0 + suffix);
                 deliverContainer.remove();
+                window.removeEventListener('keyup', addKeys);
+                carPositionX = 0;
+                carPositionY = 0;
+                console.log(carPositionX);
+                console.log(carPositionY);
                 setTimeout(() => {
                     pizzaGame();
                 }, 500);
