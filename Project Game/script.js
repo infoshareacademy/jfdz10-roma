@@ -114,29 +114,41 @@ function pizza(){
         let allAnimals;
         const animals = [
             {
-                icon: '🦁',
-                id: 'lion'
+                icon: backgroundImage = "url('img/cheese.png')",
+                id: 'cheese',
             },
             {
-                icon: '🐮',
-                id: 'cow'
+                icon: backgroundImage = "url('img/mushroom.png')",
+                id: 'mushroom',
             },
             {
-                icon: '🐷',
-                id: 'piggy'
+                icon: backgroundImage = "url('img/tomato.png')",
+                id: 'tomato',
             },
             {
-                icon: '🐸',
-                id: 'frog'
+                icon: backgroundImage = "url('img/chilli.png')",
+                id: 'chilli',
             },
             {
-                icon: '🐧',
-                id: 'pinguin'
+                icon: backgroundImage = "url('img/ham.png')",
+                id: 'ham',
             },
             {
-                icon: '🐦',
-                id: 'bird'
-            }
+                icon: backgroundImage = "url('img/onion.png')",
+                id: 'onion',
+            },
+            {
+                icon: backgroundImage = "url('img/peppers.png')",
+                id: 'peppers',
+            },
+            {
+                icon: backgroundImage = "url('img/rucola.png')",
+                id: 'rucola',
+            },
+            {
+                icon: backgroundImage = "url('img/corn.png')",
+                id: 'corn',
+            },
         ];
     
         function createAnimals() {
@@ -152,8 +164,8 @@ function pizza(){
                 displayAnimals.push(animals[index]);
             };
             animals.push({
-                icon: '🕷',
-                id: 'killer'
+                icon: backgroundImage = "url('img/killer-mushroom.png')",
+                id: 'killer',
             });
             displayAnimals.push(animals[animals.length - 1]);
             animals.pop();
@@ -164,7 +176,7 @@ function pizza(){
                 setTimeout(function() {
                     const animalElement = document.createElement('div');
                     animalElement.classList.add('animal');
-                    animalElement.textContent = animal.icon;
+                    animalElement.style.backgroundImage = animal.icon;
                     animalElement.dataset.id = animal.id;
                     animalElement.style.top = topLeftRandom();
                     animalElement.style.left = topLeftRandom();
@@ -184,7 +196,9 @@ function pizza(){
                 // remove element from array
                 const found = elementsToFind.findIndex((el) => el === that.dataset.id);
                 elementsToFind.splice(found, 1);
-                that.style.cssText = `left: calc(${getRandomInt(40, 52)}%); top: calc(${getRandomInt(39,50)}%); animation: linear;`;
+                that.style.left =  `calc(${getRandomInt(40, 52)}%)`;
+                that.style.top = `calc(${getRandomInt(39,50)}%)`;
+                that.style.animation = `linear`;
                 that.removeEventListener('click', findElement);
                 console.log('to find: ', elementsToFind);
     
