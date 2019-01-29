@@ -3,9 +3,9 @@
     position: fixed;
     top: 0;
     left: 0;
-    height: 90px;
+    height: 70px;
     width: 100%;
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     background-color: #CC3333;
     border-bottom: 1px solid #9d2c37;
     z-index: 9000;
@@ -13,8 +13,8 @@
 }
 
 .main-nav--scrolled {
-    height: 70px;
-    font-size: 1.4rem;
+    height: 50px;
+    font-size: 1.2rem;
 }
 
 .main-nav__container {
@@ -28,7 +28,7 @@
 }
 
 .logo-container {
-    width: 35%;
+    width: 27%;
     height: 100%;
     display: flex;
     flex-flow: row;
@@ -37,7 +37,7 @@
 }
 
 .logo-container--scrolled {
-    width: 27%;
+    width: 230px;
 }
 
 .logo-container__logo {
@@ -81,8 +81,20 @@
         font-size: 1.4rem;
     }
 
+    .main-nav--scrolled {
+        font-size: 1.2rem;
+    }
+
     .logo-container {
         width: 270px;
+    }
+
+    .logo-container--scrolled {
+        width: 230px;
+    }
+
+    .nav-toggle--scrolled {
+        top: 20px;
     }
 
     .menu-desktop__link {
@@ -108,11 +120,15 @@
         width: 270px;
     }
 
+    .logo-container--scrolled {
+        width: 230px;
+    }
+
     .nav-toggle {
         display: flex;
         flex-direction: column;
         position: relative;
-        top: 35px;
+        top: 25px;
         right: 25px;
         z-index: 1;
         -webkit-user-select: none;
@@ -121,7 +137,7 @@
     }
 
     .nav-toggle--scrolled {
-        top: 25px;
+        top: 15px;
     }
 
     .nav-toggle__input {
