@@ -147,6 +147,15 @@ body {
     align-self: center;
 }
 
+.scores {
+    position: relative;
+    top: 20px;
+    font-size: 5rem;
+    letter-spacing: 4px;
+    font-weight: bold;
+    align-self: center;
+}
+
 .box {
     position: relative;
     background-image: url("img/pizza.png");
