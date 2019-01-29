@@ -1,7 +1,5 @@
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
 }
 /************** game starting page ***************/
 
@@ -91,7 +89,22 @@
     transition: filter 1s, opacity 1s;
 }
 
-@media (max-width: 500px){
+@media (max-width: 416px){
+.menu-img {
+    display: none;
+}
+.menu__title {
+    font-size: 5rem;
+}
+.about__text {
+    font-size: 1rem;
+}
+.about__img {
+    display: none;
+}
+} 
+
+@media (min-width:567px) and (max-width: 850px) and (orientation: landscape){
 .about__text {
     font-size: 1rem;
 }
@@ -105,12 +118,13 @@
     height: 2.6rem;
     line-height: 2rem;
 }
-}
-@media (max-width: 320px){
 .menu-img {
-display: none;
-}
-}
+    display: none;
+}}
+
+  
+
+
 /**************** 3 2 1 Pizza **************/
 
 .count-container-pizza {
