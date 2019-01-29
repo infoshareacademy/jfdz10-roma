@@ -18,6 +18,9 @@ function clear(){
 
 document.getElementById('startGame').addEventListener('click', countPizza);
 
+document.querySelector('#scoresBox').addEventListener('click', toggleModal);
+document.querySelector('#scoresLink').addEventListener('click', toggleModal);
+
 
 /*********************************************
                 3 2 1 PIZZA
