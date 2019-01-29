@@ -51,7 +51,7 @@
 }
 /**************** about game - instrukcja gry **************/
 
-.about{
+.about, .scores{
     width: 50vw;
     height: 70vh;
     color: rgb(26, 25, 25);
@@ -70,9 +70,9 @@
     font-size: 1.5rem;
     padding: 0 2rem;
 }
-.about__img {
+.about__img img {
     width: 6rem;
-    height: 5rem;
+    height:5rem ;
 }
 .u--visible {
     margin: 0 auto;
@@ -88,6 +88,42 @@
     opacity: 0;
     transition: filter 1s, opacity 1s;
 }
+
+@media (max-width: 416px){
+.menu-img {
+    display: none;
+}
+.menu__title {
+    font-size: 5rem;
+}
+.about__text {
+    font-size: 1rem;
+}
+.about__img {
+    display: none;
+}
+} 
+
+@media (min-width:567px) and (max-width: 850px) and (orientation: landscape){
+.about__text {
+    font-size: 1rem;
+}
+.about__img {
+    display: none;
+}
+.menu__title {
+    font-size: 8rem;
+}
+.menu__button {
+    height: 2.6rem;
+    line-height: 2rem;
+}
+.menu-img {
+    display: none;
+}}
+
+  
+
 
 /**************** 3 2 1 Pizza **************/
 
