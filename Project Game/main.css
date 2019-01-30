@@ -90,40 +90,37 @@
 }
 
 @media (max-width: 416px){
-.menu-img {
-    display: none;
-}
-.menu__title {
-    font-size: 5rem;
-}
-.about__text {
-    font-size: 1rem;
-}
-.about__img {
-    display: none;
-}
-} 
-
-@media (min-width:567px) and (max-width: 850px) and (orientation: landscape){
-.about__text {
-    font-size: 1rem;
-}
-.about__img {
-    display: none;
-}
-.menu__title {
-    font-size: 8rem;
-}
-.menu__button {
-    height: 2.6rem;
-    line-height: 2rem;
-}
-.menu-img {
-    display: none;
-}}
-
-  
-
+    .menu-img {
+        display: none;
+    }
+    .menu__title {
+        font-size: 5rem;
+    }
+    .about__text {
+        font-size: 1rem;
+    }
+    .about__img {
+        display: none;
+    }
+    } 
+    
+    @media (min-width:567px) and (max-width: 850px) and (orientation: landscape){
+    .about__text {
+        font-size: 1rem;
+    }
+    .about__img {
+        display: none;
+    }
+    .menu__title {
+        font-size: 8rem;
+    }
+    .menu__button {
+        height: 2.6rem;
+        line-height: 2rem;
+    }
+    .menu-img {
+        display: none;
+    }}
 
 /**************** 3 2 1 Pizza **************/
 
