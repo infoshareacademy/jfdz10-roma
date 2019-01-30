@@ -16,39 +16,8 @@ function clear(){
     menu.style.display = 'none';
 }
 
-document.getElementById('startGame').addEventListener('click', countPizza);
+document.getElementById('startGame').addEventListener('click', pizza);
 
-document.querySelector('#scoresBox').addEventListener('click', toggleModal);
-document.querySelector('#scoresLink').addEventListener('click', toggleModal);
-
-
-/*********************************************
-                3 2 1 PIZZA
-*********************************************/
-
-function countPizza() {
-    const body = document.querySelector('body');
-    const countContainer = document.createElement('div');
-        body.prepend(countContainer);
-        countContainer.classList.add('count-container-pizza');
-    let timer = document.createElement('p');
-        countContainer.prepend(timer);
-    let counter = 4;
-        
-        let interval = setInterval(() => {
-            counter--;
-            timer.textContent = counter;
-            if(counter <= 0){
-                clearInterval(interval);
-                return timer.textContent = 'START!';
-            };
-        }, 1000);
-
-    window.setTimeout(function(){
-        countContainer.remove();
-        pizza();
-    }, 5000);
-};
 
 /*********************************************
                 PIZZA MAKER
@@ -108,50 +77,38 @@ function pizza(){
         body.prepend(pizzaContainer);
         const box = document.createElement('div');
         box.classList.add('box');
-        box.textContent = ' ';
+        box.textContent = '🌳';
         pizzaContainer.prepend(box);
     
         const toDisplay = 20; // level of hardness (how many random element without element fo find)
         let displayAnimals = [];
         let elementsToFind = []; // array of items to find
         let allAnimals;
-        const ingredients = [
+        const animals = [
             {
-                icon: backgroundImage = "url('img/cheese.png')",
-                id: 'cheese',
+                icon: '🦁',
+                id: 'lion'
             },
             {
-                icon: backgroundImage = "url('img/mushroom.png')",
-                id: 'mushroom',
+                icon: '🐮',
+                id: 'cow'
             },
             {
-                icon: backgroundImage = "url('img/tomato.png')",
-                id: 'tomato',
+                icon: '🐷',
+                id: 'piggy'
             },
             {
-                icon: backgroundImage = "url('img/chilli.png')",
-                id: 'chilli',
+                icon: '🐸',
+                id: 'frog'
             },
             {
-                icon: backgroundImage = "url('img/ham.png')",
-                id: 'ham',
+                icon: '🐧',
+                id: 'pinguin'
             },
             {
-                icon: backgroundImage = "url('img/onion.png')",
-                id: 'onion',
-            },
-            {
-                icon: backgroundImage = "url('img/peppers.png')",
-                id: 'peppers',
-            },
-            {
-                icon: backgroundImage = "url('img/rucola.png')",
-                id: 'rucola',
-            },
-            {
-                icon: backgroundImage = "url('img/corn.png')",
-                id: 'corn',
-            },
+                icon: '🐦',
+                id: 'bird'
+            }
         ];
     
         function createAnimals() {
@@ -159,28 +116,28 @@ function pizza(){
             for (let i = 1; displayAnimals.length < toDisplay - 1; i++) {
                 // generate 3 random elements to find
                 for (let y = 0; elementsToFind.length < 3; i++) {
-                    const index = Math.floor(Math.random() * ingredients.length);
-                    elementsToFind.push(ingredients[index].id);
-                    displayAnimals.push(ingredients[index]);
+                    const index = Math.floor(Math.random() * animals.length);
+                    elementsToFind.push(animals[index].id);
+                    displayAnimals.push(animals[index]);
                 }
-                const index = Math.floor(Math.random() * ingredients.length);
-                displayAnimals.push(ingredients[index]);
+                const index = Math.floor(Math.random() * animals.length);
+                displayAnimals.push(animals[index]);
             };
-            ingredients.push({
-                icon: backgroundImage = "url('img/killer-mushroom.png')",
-                id: 'killer',
+            animals.push({
+                icon: '🕷',
+                id: 'killer'
             });
-            displayAnimals.push(ingredients[ingredients.length - 1]);
-            ingredients.pop();
-            // sort displayIngredient randomly
+            displayAnimals.push(animals[animals.length - 1]);
+            animals.pop();
+            // sort displayAnimals randomly
             displayAnimals.sort(() => 0.5 - Math.random());
-            // start creating ingredients
-            displayAnimals.forEach(function(ingredient, index) {
+            // start creating elements
+            displayAnimals.forEach(function(animal, index) {
                 setTimeout(function() {
                     const animalElement = document.createElement('div');
-                    animalElement.classList.add('ingredient');
-                    animalElement.style.backgroundImage = ingredient.icon;
-                    animalElement.dataset.id = ingredient.id;
+                    animalElement.classList.add('animal');
+                    animalElement.textContent = animal.icon;
+                    animalElement.dataset.id = animal.id;
                     animalElement.style.top = topLeftRandom();
                     animalElement.style.left = topLeftRandom();
                     pizzaContainer.prepend(animalElement);
@@ -199,9 +156,7 @@ function pizza(){
                 // remove element from array
                 const found = elementsToFind.findIndex((el) => el === that.dataset.id);
                 elementsToFind.splice(found, 1);
-                that.style.left =  `calc(${getRandomInt(40, 52)}%)`;
-                that.style.top = `calc(${getRandomInt(39,50)}%)`;
-                that.style.animation = `linear`;
+                that.style.cssText = `left: calc(${getRandomInt(40, 52)}%); top: calc(${getRandomInt(39,50)}%); animation: linear;`;
                 that.removeEventListener('click', findElement);
                 console.log('to find: ', elementsToFind);
     
@@ -245,7 +200,7 @@ function pizza(){
     
         function addFindingEvent() {
             // If all elements are loaded on page, then add to every element 'click' event with function of finding correct element
-            allAnimals = document.querySelectorAll('.ingredient');
+            allAnimals = document.querySelectorAll('.animal');
             allAnimals.forEach(function(element) {
                 element.addEventListener('click', findElement);
             });
@@ -314,20 +269,9 @@ function pizza(){
                 document.documentElement.style.setProperty(`--carPositionX`, 0 + suffix);
                 document.documentElement.style.setProperty(`--carPositionY`, 0 + suffix);
                 deliverContainer.remove();
-<<<<<<< HEAD
-                window.removeEventListener('keyup', addKeys);
-                carPositionX = 0;
-                carPositionY = 0;
-                console.log(carPositionX);
-                console.log(carPositionY);
                 setTimeout(() => {
                     pizzaGame();
                 }, 500);
-=======
-                setTimeout(() => {
-                    pizzaGame();
-                }, 800);
->>>>>>> e38ba64d54c5c9b1ac1c82a42e4de2f2e412d637
             }, 500);
         }
     
@@ -468,7 +412,7 @@ function pizza(){
             }
         }
     
-        window.addEventListener('keyup', addKeys);
+        window.addEventListener('keydown', addKeys);
     
         /*********************************************
                         CREATE HOUSES
@@ -556,14 +500,5 @@ function pizza(){
                  START GAME 
     ***************************************/
     
-<<<<<<< HEAD
 pizzaGame();
 };
-=======
-    //pizzaGame();
-    deliverGame();
-
-})();
-
-
->>>>>>> e38ba64d54c5c9b1ac1c82a42e4de2f2e412d637
