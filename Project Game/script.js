@@ -314,6 +314,7 @@ function pizza(){
                 document.documentElement.style.setProperty(`--carPositionX`, 0 + suffix);
                 document.documentElement.style.setProperty(`--carPositionY`, 0 + suffix);
                 deliverContainer.remove();
+<<<<<<< HEAD
                 window.removeEventListener('keyup', addKeys);
                 carPositionX = 0;
                 carPositionY = 0;
@@ -322,6 +323,11 @@ function pizza(){
                 setTimeout(() => {
                     pizzaGame();
                 }, 500);
+=======
+                setTimeout(() => {
+                    pizzaGame();
+                }, 800);
+>>>>>>> e38ba64d54c5c9b1ac1c82a42e4de2f2e412d637
             }, 500);
         }
     
@@ -550,5 +556,14 @@ function pizza(){
                  START GAME 
     ***************************************/
     
+<<<<<<< HEAD
 pizzaGame();
 };
+=======
+    //pizzaGame();
+    deliverGame();
+
+})();
+
+
+>>>>>>> e38ba64d54c5c9b1ac1c82a42e4de2f2e412d637
