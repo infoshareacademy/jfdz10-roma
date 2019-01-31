@@ -71,7 +71,7 @@
 }
 .active-link {
     text-shadow: 2px 2px 6px #FFF;
-    transform: scale(1.2,1.2);
+    font-size: 1.4rem;
     color: #241c14 !important;
 }
 
