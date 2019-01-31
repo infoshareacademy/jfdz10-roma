@@ -17,7 +17,7 @@
             <h1 class="menu__title">Pizza Game</h1>
             <ul>
                 <li class="menu__button" id="startGame" data-show="pizzaGame" data-hide="menuBox">Start</li>
-                <li class="menu__button">Ranking</li>
+                <li class="menu__button" id="scoresLink" data-show="scoresBox" data-hide="menuBox">Ranking</li>
                 <li class="menu__button" id="aboutLink" data-show="aboutBox" data-hide="menuBox">Instrukcja</li>
             </ul>
             <div class="menu-img">
@@ -28,10 +28,17 @@
         <div class="about u--visible u--blur-fadeout" id="aboutBox" data-show="menuBox" data-hide="aboutBox">
             <h1 class="about__title">Zasady Gry</h1>
             <div class="about__ button--teal button--about">
-                <p class="about__text">Złóż pizzę ze wskazanych składników i dowieź jeszcze ciepłą pod wybrany adres. Im szybciej to zrobisz, tym więcej punktów zarobisz. <br><br> W pierwszym etapie gry klikaj na właściwe składniki myszką, w drugim użyj klawiatury.</p>
-                <img class="about__img" src="img/arrows.png">  
-            </div>
+                <p class="about__text">Złóż pizzę ze wskazanych składników i dowieź jeszcze ciepłą pod wybrany adres. Im szybciej to zrobisz, tym więcej punktów zdobędziesz. <br><br> W pierwszym etapie gry klikaj na właściwe składniki myszką, w drugim użyj klawiatury.</p></div>
+            <div class="about__img"><img src="img/arrows.png"></div>
         </div>
+
+        <div class="scores u--visible u--blur-fadeout" id="scoresBox" data-show="menuBox" data-hide="scoresBox">
+            <h1 class="title">Twój wynik</h1>
+            <div class="button button--teal button--scores">
+              <ol id="scoresList"></ol>
+              <p>(zamknij)</p>
+            </div>
+          </div>
         
     </div> 
     <script src="script.js"></script>
