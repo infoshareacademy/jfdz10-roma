@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&amp;subset=latin-ext" rel="stylesheet">
     <link rel="icon" 
       type="image/png" 
-      href="./img/favicon.png">      
+      href="./img/favicon.png">   
   </head>
 <body>
 
@@ -35,10 +35,16 @@
         <span></span>
         <span></span>
         <ul class="menu-desktop menu-device">
-          <li class="menu__element menu__element-main"><a class="menu-desktop__link menu-device__link" href="#main-functions">funkcje</a></li>
-          <li class="menu__element menu__element-offer"><a class="menu-desktop__link menu-device__link" href="#offer">oferta</a></li>
+          <li class="menu__element menu__element-main"><a class="menu-desktop__link menu-device__link" href="#main-functions"><span lang="pl">funkcje</span><span lang="en">features</span>
+          </a></li>
+          <li class="menu__element menu__element-offer"><a class="menu-desktop__link menu-device__link" href="#offer"><span lang="pl">oferta</span><span lang="en">offer</span></a></li>
           <li class="menu__element menu__element-form"><a class="menu-desktop__link menu-device__link" href="#form">newsletter</a></li>
-          <li class="menu__element menu__element-about"><a class="menu-desktop__link menu-device__link" href="#about-us">o nas</a></li>
+          <li class="menu__element menu__element-about"><a class="menu-desktop__link menu-device__link" href="#about-us"><span lang="pl">o nas</span><span lang="en">about us</span></a></li>
+          <li class="menu__element menu__element-translation"><a id="switch-lang" class="menu-desktop__link menu-device__link">
+            <span lang="pl">English</span>
+            <span lang="en">Polski</span>
+        </a>
+        </li>
         </ul>
       </div>
     </div>
@@ -62,17 +68,17 @@
         <div class="carousel-item">
           <div class = "header__slide2">
             <div class = "header__slide2__text">
-              <h1>Głodny?</h1>
-              <h2>Dzięki Pizzerium zamówisz swoją ulubioną <span>pizzę</span>!</h2>
+              <h1><span lang="pl">Głodny?</span><span lang="en">Hungry?</span></h1>
+              <h2><span lang="pl">Dzięki Pizzerium zamówisz swoją ulubioną </span><span lang="en">With our app you will order your favourite </span><span lang="pl">pizzę</span><span lang="en">pizza</span>!</h2>
             </div>
           </div>
         </div>
         <div class="carousel-item">
           <div class = "header__slide3">
             <div class = "header__slide3__text">
-              <h1>Nie przegap!</h1>
-              <h2>Zapisz się na premierę aplikacji!</h2>
-              <a href="#form"><div><h3>Kliknij tutaj!</h3></div></a>
+              <h1><span lang="pl">Nie przegap!</span><span lang="en">Don't miss out!</span></h1>
+              <h2><span lang="pl">Zapisz się na premierę aplikacji!</span><span lang="en">Subscribe now and be the first one<br>to get our app</span></h2>
+              <a href="#form"><div><h3><span lang="pl">Kliknij tutaj!</span><span lang="en">Click here!</span></h3></div></a>
             </div>
           </div>
         </div>
@@ -89,27 +95,27 @@
 
   <div id="main-functions" class="main-functions">  
     <section class="main-functions-container">
-      <h2 class="main-functions__heading">Z naszą aplikacją:</h2>	
+      <h2 class="main-functions__heading"><span lang="pl">Z naszą aplikacją:</span><span lang="en">With our app you can:</span></h2>	
       <div class="main-functions__box">
 
       <figure class="main-function__img-container">
         <img class="main-function__img" src="img/main-functions1.jpg">
-        <figcaption class="main-function__caption">Skomponujesz swoją pizzę</figcaption>
+        <figcaption class="main-function__caption"><span lang="pl">Skomponujesz swoją pizzę</span><span lang="en">Create your own pizza</span></figcaption>
       </figure>
 
       <figure class="main-function__img-container">
         <img class="main-function__img" src="img/main-functions2.jpg">
-        <figcaption class="main-function__caption">Znajdziesz pizzerię</figcaption>
+        <figcaption class="main-function__caption"><span lang="pl">Znajdziesz pizzerię</span><span lang="en">Find a pizzeria</span></figcaption>
       </figure>
     
       <figure class="main-function__img-container">
         <img class="main-function__img" src="img/main-functions3.jpg">
-        <figcaption class="main-function__caption">Wybierzesz najlepszą ofertę</figcaption>
+        <figcaption class="main-function__caption"><span lang="pl">Wybierzesz najlepszą ofertę</span><span lang="en">Choose the best offer</span></figcaption>
       </figure>
 
       <figure class="main-function__img-container">
         <img class="main-function__img" src="img/main-functions4.jpg">
-        <figcaption class="main-function__caption">Zjesz pizzę <br> 😍 </figcaption>
+        <figcaption class="main-function__caption"><span lang="pl">Zjesz pizzę</span><span lang="en">Eat pizza</span> <br> 😍 </figcaption>
       </figure>
     </section>
   </div>
@@ -117,15 +123,15 @@
 
   <div id="offer" class="all-functions">
     <section class="all-functions__container">
-      <h2 class="all-functions__title">Co fajnego oferujemy?</h2>
+      <h2 class="all-functions__title"><span lang="pl">Co fajnego oferujemy?</span><span lang="en">Why our app is so cool?</span></h2>
   
       <div class="all-functions__features">
         <div class="feature">
           <div class="feature__title">
             <i class="feature__title--icon fas fa-hand-holding"></i>
-            <h3 class="feature__headline">Wybierz składniki</h3>
+            <h3 class="feature__headline"><span lang="pl">Wybierz składniki</span><span lang="en">Choose ingredients</span></h3>
           </div>
-          <div class="feature__description">Skomponuj pizzę ze swoich ulubionych składników.</div>
+          <div class="feature__description"><span lang="pl">Skomponuj pizzę ze swoich ulubionych składników.</span><span lang="en">Create your own pizza with your favourite ones.</span></div>
         </div>
   
         <div class="feature">
@@ -133,55 +139,55 @@
             <i class="feature__title--icon fas fa-apple-alt"></i>
             <h3 class="feature__headline">Vege pizza</h3>
           </div>
-          <div class="feature__description">Wybór pizzy ze specjalnych składników dla wegan.</div>
+          <div class="feature__description"><span lang="pl">Wybór pizzy ze specjalnych składników dla wegan.</span><span lang="en">We are vegan friendly.</span></div>
         </div>
   
         <div class="feature">
           <div class="feature__title">
             <i class="feature__title--icon fas fa-dollar-sign"></i>
-            <h3 class="feature__headline">Najlepsza cena</h3>
+            <h3 class="feature__headline"><span lang="pl">Najlepsza cena</span><span lang="en">The best price</span></h3>
           </div>
-          <div class="feature__description">Znajdź wybarzoną pizzę w najlepszej cenie w okolicy.</div>
+          <div class="feature__description"><span lang="pl">Znajdź wybarzoną pizzę w najlepszej cenie w okolicy.</span><span lang="en">Find your dream pizza at the best price.</span></div>
         </div>
   
         <div class="feature">
           <div class="feature__title">
             <i class="feature__title--icon fas fa-map-marked-alt"></i>
-            <h3 class="feature__headline">Znajdź pizzerię</h3>
+            <h3 class="feature__headline"><span lang="pl">Znajdź pizzerię</span><span lang="en">Find pizzeria</span></h3>
           </div>
-          <div class="feature__description">Wybierz pizzerię ze swojej okolicy.</div>
+          <div class="feature__description"><span lang="pl">Wybierz pizzerię ze swojej okolicy.</span><span lang="en">Choose a local pizza place.</span></div>
         </div>
       
         <div class="feature">
           <div class="feature__title">
             <i class="feature__title--icon fas fa-check"></i>
-            <h3 class="feature__headline">Sprawdzone lokale</h3>
+            <h3 class="feature__headline"><span lang="pl">Sprawdzone lokale</span><span lang="en">Only tried and tested</span></h3>
           </div>
-          <div class="feature__description">Promujemy tylko bezpieczne i sprawdzone lokale.</div>
+          <div class="feature__description"><span lang="pl">Promujemy tylko bezpieczne i sprawdzone lokale.</span><span lang="en">We only work with the best.</span></div>
         </div>
   
         <div class="feature">
           <div class="feature__title">
             <i class="feature__title--icon fas fa-car"></i>
-            <h3 class="feature__headline">Zamów danie</h3>
+            <h3 class="feature__headline"><span lang="pl">Zamów danie</span><span lang="en">Place your order</span></h3>
           </div>
-          <div class="feature__description">Możesz zamówić pizzę z dowozem do swojego domu.</div>
+          <div class="feature__description"><span lang="pl">Możesz zamówić pizzę z dowozem do swojego domu.</span><span lang="en">You can order your pizza directly to your house.</span></div>
         </div>
   
         <div class="feature">
           <div class="feature__title">
             <i class="feature__title--icon fas fa-concierge-bell"></i>
-            <h3 class="feature__headline">Zjedź na miejscu</h3>
+            <h3 class="feature__headline"><span lang="pl">Zjedź na miejscu</span><span lang="en">Eat in</span></h3>
           </div>
-          <div class="feature__description">Zjedz swoją pizzę w lokalu ulubionej pizzeri.</div>
+          <div class="feature__description"><span lang="pl">Zjedz swoją pizzę w lokalu ulubionej pizzeri.</span><span lang="en">You can eat your pizza in your favourite pizza place.</span></div>
         </div>
   
         <div class="feature">
           <div class="feature__title">
             <i class="feature__title--icon far fa-smile-beam"></i>
-            <h3 class="feature__headline">Bądź szczęsliwy</h3>
+            <h3 class="feature__headline"><span lang="pl">Bądź szczęsliwy</span><span lang="en">Be happy!</span></h3>
           </div>
-          <div class="feature__description" >Możesz się cieszyć z powodu smacznej pizzy.</div>
+          <div class="feature__description"><span lang="pl">Możesz się cieszyć z powodu smacznej pizzy.</span><span lang="en">Learn to love your pizza again.</span></div>
             <!-- id="form" : scroll to form section from hero link [~ Mateusz] -->
         </div>
       </div>
@@ -191,28 +197,28 @@
   <h3 id="form" class="newsletter-heading">Newsletter</h3>
 
     <section class="form">
-      <h1 class="form__title">Zapisz się na premierę aplikacji:</h1><br>
+      <h1 class="form__title"><span lang="pl">Zapisz się na premierę aplikacji:</span><span lang="en">Subscribe:</span></h1><br>
 
       <form class="form__table" action="#" method="post" id="contactform" onsubmit="return validation();">
         <div>
-          <input class="form__input" type="text" id="name" name="name" placeholder="Twoje imię"> 
+          <input class="form__input" type="text" id="name" name="name" lang="pl" placeholder="Twoje imię"><input class="form__input" type="text" id="name" name="name" lang="en" placeholder="Your name"> 
         </div>
         <div id="iname" class="error"></div>
         <div>
-          <input class="form__input" type="email" id="mail" name="mail" placeholder="Twój e-mail">
+          <input class="form__input" type="email" id="mail" name="mail" lang="pl" placeholder="Twój e-mail"><input class="form__input" type="email" id="mail" name="mail" lang="en" placeholder="Your e-mail">
         </div>
         <div id="imail" class="error"></div>
-        <input class="form__input-send" type="submit" id="button" value="Wyślij">
+        <input class="form__input-send" type="submit" id="button" lang="pl" value="Wyślij"><input class="form__input-send" type="submit" id="button" lang="en" value="Send">
+
       </form>
 
         <br>
-      <p class="form__info">* Zostanie wysłany jeden mail z informacją o premierze produktu.<br>
-        Twoje dane są u nas bezpieczne - możesz spać spokojnie 😊</p>
+      <p class="form__info"><span lang="pl">* Zostanie wysłany jeden mail z informacją o premierze produktu.<br>Twoje dane są u nas bezpieczne - możesz spać spokojnie 😊</span><span lang="en">* We will send you one email informing you about the release of our app.<br>Your personal data is safe with us - no worries 😊</span></p>
     </section>
 
 
 			<div id="about-us" class="container__about__us">
-        <i class="title__about-us">O nas:</i>
+        <i class="title__about-us"><span lang="pl">O nas:</span><span lang="en">About us:</span></i>
 
         <div class="persons__box">
           <div class="overlay__about-us"> 
@@ -224,7 +230,7 @@
               <i class="icon-facebook-squared"></i>
               <i class="icon-linkedin-circled"></i>
 
-              <div class="describe__person">Hej, jestem Remek, z zawodu kreatywny grafik komputerowy i fan pizzy :). Moja ulubiona pizza składa się z sera, kukurydzy, papryk i oczywiście kurczaka!</div></span></a>
+              <div class="describe__person"><span lang="pl">Hej, jestem Remek, z zawodu kreatywny grafik komputerowy i fan pizzy :). Moja ulubiona pizza składa się z sera, kukurydzy, papryk i oczywiście kurczaka!</span><span lang="en">Hi, my name is Remek and I'm a creative graphic designer and a big pizza fan :) My favourite pizza topping is cheese, corn, peppers and obviously some chicken.</span></div></span></a>
           </div>
       
 
@@ -237,7 +243,7 @@
               <i class="icon-facebook-squared"></i>
               <i class="icon-linkedin-circled"></i>
 
-              <div class="describe__person">Jestem Oskar, najbardziej lubię spędzać wieczory z narzeczoną, grać na perkusji i kodować. Uwielbiam pizzę z karczochami.</div></span></a>
+              <div class="describe__person"><span lang="pl">Jestem Oskar, najbardziej lubię spędzać wieczory z narzeczoną, grać na perkusji i kodować. Uwielbiam pizzę z karczochami</span><span lang="en">I'm Oskar and I enjoy spending time with my fiancée, playing drums and coding. I adore pizza with artichokes.</span></div></span></a>
           </div>
       
     
@@ -250,7 +256,7 @@
                 <i class="icon-facebook-squared"></i>
                 <i class="icon-linkedin-circled"></i>
   
-                <div class="describe__person">Jestem Mateusz. W wolnych chwilach podróżuję i uczę się języków obcych. Moja ulubiona pizza to gyros z krewetkami, pieczarkami i cebulą.</div>
+                <div class="describe__person"><span lang="pl">Jestem Mateusz. W wolnych chwilach podróżuję i uczę się języków obcych. Moja ulubiona pizza to gyros z krewetkami, pieczarkami i cebulą.</span><span lang="en">My name is Matuesz. In my free time I like to travel and study foreign languages. I like gyro pizza with prawns, mushrooms and onion.</span></div>
               </span></a>
           </div>
             
@@ -266,7 +272,7 @@
                   <i class="icon-facebook-squared"></i>
                   <i class="icon-linkedin-circled"></i>
     
-                  <div class="describe__person">Asia. Dyplomowany nauczyciel Montessori i początkujący Front-End Developer. Nigdy nie odmawia dobrej Margherity.</div>
+                  <div class="describe__person"><span lang="pl"> Nazywam się Asia. Jestem dyplomowanym nauczycielem Montessori i początkującym Front-End Developerem. Nigdy nie odmawiam dobrej Margherity.</span><span lang="en">I'm Asia. A qualified Montessori teacher and Front-End beginner. I never say no to good Margherita.</span></div>
               </span></a>
               </div>
 
@@ -284,12 +290,12 @@
 <a href="#hero" class="back-to-top-button">&uarr;</a>
 
 <div id="cookies-message-container">    
-    <div id="cookies-message">Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej. Pliki cookies wygasają po 30 dniach.
+    <div id="cookies-message"><span lang="pl">Ta strona używa ciasteczek (cookies), dzięki którym nasz serwis może działać lepiej. Pliki cookies wygasają po 30 dniach.</span><span lang="en">This website uses cookies, which make our service work better. These cookies expire in 30 days.</span>
         <br/><img class="logo-cookies__logo" src="img/logo.svg" alt="pizzerium logo"> <br/>
-        <a href="javascript:WHCloseCookiesWindow();" id="accept-cookies-checkbox">Rozumiem, dzięki!
+        <a href="javascript:WHCloseCookiesWindow();" id="accept-cookies-checkbox"><span lang="pl">Rozumiem, dzięki!</span><span lang="en">Ok, no problem!</span>
         </a> </div></div>
 
-<script src="js/back-to-top-button.js"></script>      
+<script src="js/back-to-top-button.js"></script>  
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
 <script src="js/cookies.js"></script>
 <script src="js/highlight-menu.js"></script>
@@ -299,5 +305,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="js/form.js"></script>
 <script src="js/hero_carousel.js"></script>
+<script src="js/translation.js"></script> 
+
+
 </body>
 </html>
