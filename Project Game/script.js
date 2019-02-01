@@ -78,7 +78,7 @@ function pizza(){
             --totalSeconds;
             seconds.textContent = formatTimer(totalSeconds % 60);
             minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
-            if (totalSeconds === 0) {
+            if (totalSeconds <= 0) {
                 const divs = document.querySelectorAll("div:not(.time)")
                 divs.forEach((el) => {
                     el.remove();
@@ -86,14 +86,13 @@ function pizza(){
                 clearInterval(counter);
             };
         }, 1000);
-
-        function formatTimer(val) {
-            let valString = `${val}`;
-            if (valString.length < 2) {
-                return `0${valString}`;
-            } else {
-                return valString;
-            };
+    };
+    function formatTimer(val) {
+        let valString = `${val}`;
+        if (valString.length < 2) {
+            return `0${valString}`;
+        } else {
+            return valString;
         };
     };
     createTimer();
@@ -114,8 +113,6 @@ function pizza(){
         body.prepend(scores);
     };
     createScores();
-
-    
 
     // PIZZA GAME is in one big function
     const pizzaGame = function() {
@@ -240,14 +237,35 @@ function pizza(){
                     
                 }
             } else if (that.dataset.id === 'killer') {
+                clickKillerIngredient();
                 allAnimals.forEach(removeFindingEvent);
                 console.log('%c YOU LOSE!!!', ' background: black; color: red; font-size: 4rem;');
             } else {
                 console.log(`%c WRONG!!!`, `background: red`);
                 // shake wrong element when clicked;
+                clickWrongElement();
                 that.classList.add('animation');
                 that.addEventListener('animationend', () => that.classList.remove('animation'));
             }
+        }
+
+        function clickKillerIngredient() {
+            totalSeconds = 0;
+            const seconds = document.querySelector('.time span:nth-child(2)');
+            seconds.textContent = '00';
+        }
+
+        function clickWrongElement() {
+            // const timer = document.querySelector('.time')
+            const minutes = document.querySelector('.time span:nth-child(1)');
+            const seconds = document.querySelector('.time span:nth-child(2)');
+            seconds.classList.add('wrong-click');
+            setTimeout(() => {
+                seconds.classList.remove('wrong-click');
+            }, 100);
+            totalSeconds--;
+            seconds.textContent = formatTimer(totalSeconds % 60);
+            minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
         }
     
         function getRandomInt(min, max) {
