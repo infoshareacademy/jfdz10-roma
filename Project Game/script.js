@@ -133,8 +133,6 @@ function pizza(){
         ingredientsBox.classList.add('ingredients_box');
         body.prepend(ingredientsBox);
 
-        
-    
         const toDisplay = 20; // level of hardness (how many random element without element fo find)
         let displayAnimals = [];
         let elementsToFind = []; // array of items to find
@@ -256,39 +254,10 @@ function pizza(){
             element.removeEventListener('click', findElement);
         }
     
-
-
-
-
-
-
-
-
-
-
-
         createAnimals();
         console.log(elementsToFind);
         ingredientsBox.textContent = `${elementsToFind[0]}, ${elementsToFind[1]}, ${elementsToFind[2]}`;
     };
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     /***********************************
              DELIVER GAME
