@@ -131,7 +131,7 @@ function pizza(){
 
         let ingredientsBox = document.createElement('div');
         ingredientsBox.classList.add('ingredients_box');
-        body.prepend(ingredientsBox);
+        pizzaContainer.prepend(ingredientsBox);
 
         const toDisplay = 20; // level of hardness (how many random element without element fo find)
         let displayAnimals = [];
