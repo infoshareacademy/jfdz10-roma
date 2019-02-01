@@ -139,9 +139,9 @@ function pizza(){
         pizzaContainer.prepend(box);
     
         const toDisplay = 20; // level of hardness (how many random element without element fo find)
-        let displayAnimals = [];
+        let displayIngredients = [];
         let elementsToFind = []; // array of items to find
-        let allAnimals;
+        let allIngredients;
         const ingredients = [
             {
                 icon: backgroundImage = "url('img/cheese.png')",
@@ -181,36 +181,36 @@ function pizza(){
             },
         ];
     
-        function createAnimals() {
+        function createIngredients() {
             // create elements in total as toDisplay number is
-            for (let i = 1; displayAnimals.length < toDisplay - 1; i++) {
+            for (let i = 1; displayIngredients.length < toDisplay - 1; i++) {
                 // generate 3 random elements to find
                 for (let y = 0; elementsToFind.length < 3; i++) {
                     const index = Math.floor(Math.random() * ingredients.length);
                     elementsToFind.push(ingredients[index].id);
-                    displayAnimals.push(ingredients[index]);
+                    displayIngredients.push(ingredients[index]);
                 }
                 const index = Math.floor(Math.random() * ingredients.length);
-                displayAnimals.push(ingredients[index]);
+                displayIngredients.push(ingredients[index]);
             };
             ingredients.push({
                 icon: backgroundImage = "url('img/killer-mushroom.png')",
                 id: 'killer',
             });
-            displayAnimals.push(ingredients[ingredients.length - 1]);
+            displayIngredients.push(ingredients[ingredients.length - 1]);
             ingredients.pop();
             // sort displayIngredient randomly
-            displayAnimals.sort(() => 0.5 - Math.random());
+            displayIngredients.sort(() => 0.5 - Math.random());
             // start creating ingredients
-            displayAnimals.forEach(function(ingredient, index) {
+            displayIngredients.forEach(function(ingredient, index) {
                 setTimeout(function() {
-                    const animalElement = document.createElement('div');
-                    animalElement.classList.add('ingredient');
-                    animalElement.style.backgroundImage = ingredient.icon;
-                    animalElement.dataset.id = ingredient.id;
-                    animalElement.style.top = topLeftRandom();
-                    animalElement.style.left = topLeftRandom();
-                    pizzaContainer.prepend(animalElement);
+                    const ingredientElement = document.createElement('div');
+                    ingredientElement.classList.add('ingredient');
+                    ingredientElement.style.backgroundImage = ingredient.icon;
+                    ingredientElement.dataset.id = ingredient.id;
+                    ingredientElement.style.top = topLeftRandom();
+                    ingredientElement.style.left = topLeftRandom();
+                    pizzaContainer.prepend(ingredientElement);
                     addFindingEvent();
                 }, index * 100);
             });
@@ -236,7 +236,7 @@ function pizza(){
                 if (elementsToFind.length === 0) {
                     updateScores();
                     console.log(`%c WINNER`, `font-size: 4rem; color: darkgreen`);
-                    allAnimals.forEach(removeFindingEvent);
+                    allIngredients.forEach(removeFindingEvent);
                     setTimeout(function() {
                         pizzaContainer.remove();
                         deliverGame();
@@ -246,7 +246,7 @@ function pizza(){
                     // console.log(`%c That's correct element!`, `background: lightgreen;`); 
                 }
             } else if (that.dataset.id === 'killer') {
-                allAnimals.forEach(removeFindingEvent);
+                allIngredients.forEach(removeFindingEvent);
                 console.log('%c YOU LOSE!!!', ' background: black; color: red; font-size: 4rem;');
             } else {
                 console.log(`%c WRONG!!!`, `background: red`);
@@ -281,8 +281,8 @@ function pizza(){
     
         function addFindingEvent() {
             // If all elements are loaded on page, then add to every element 'click' event with function of finding correct element
-            allAnimals = document.querySelectorAll('.ingredient');
-            allAnimals.forEach(function(element) {
+            allIngredients = document.querySelectorAll('.ingredient');
+            allIngredients.forEach(function(element) {
                 element.addEventListener('click', findElement);
             });
         }
@@ -291,7 +291,7 @@ function pizza(){
             element.removeEventListener('click', findElement);
         }
     
-        createAnimals();
+        createIngredients();
         console.log(elementsToFind);
     };
     
