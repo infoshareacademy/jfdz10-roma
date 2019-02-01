@@ -51,7 +51,7 @@
 }
 /**************** about game - instrukcja gry **************/
 
-.about, .scores{
+.about, .score{
     width: 50vw;
     height: 70vh;
     color: rgb(26, 25, 25);
