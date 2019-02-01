@@ -66,6 +66,7 @@
     top: 15%;
     left: 25%;
 }
+
 .about__text {
     font-size: 1.5rem;
     padding: 0 2rem;
@@ -163,13 +164,15 @@ body {
     align-self: center;
 }
 
-.scores {
-    position: relative;
-    top: 20px;
+.score-div {
+    position: absolute;
+    top: 100px;
     font-size: 5rem;
     letter-spacing: 4px;
     font-weight: bold;
     align-self: center;
+
+
 }
 
 .box {
