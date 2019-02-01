@@ -98,6 +98,25 @@ function pizza(){
     };
     createTimer();
 
+    // create points
+    function createScores() {
+        
+        const body = document.querySelector('body');
+        const scores = document.createElement('div');
+        scores.classList.add('scores');
+        const scoresText = document.createElement('span');
+        scoresText.innerText = 'Points: ';
+        scores.prepend(scoresText);
+        scores.innerText = 'Points: ';
+        const $scoresCounter = document.createElement('span');
+        $scoresCounter.innerText = 0;
+        scores.prepend($scoresCounter);
+        body.prepend(scores);
+    };
+    createScores();
+
+    
+
     // PIZZA GAME is in one big function
     const pizzaGame = function() {
         const winner = document.querySelector(".winner");
@@ -214,7 +233,11 @@ function pizza(){
                         deliverGame();
                     }, 800);
                 } else {
-                    console.log(`%c That's correct element!`, `background: lightgreen;`);
+                    const scores = document.querySelector(".scores");
+                    scoresCounter++;
+                    scores.innerText = scoresCounter;
+                   // console.log(`%c That's correct element!`, `background: lightgreen;`);
+                    
                 }
             } else if (that.dataset.id === 'killer') {
                 allAnimals.forEach(removeFindingEvent);
@@ -307,6 +330,9 @@ function pizza(){
         }
     
         function winner() {
+            scoresCounter++;
+            $scores.innerText = scoresCounter;
+
             window.removeEventListener('keydown', addKeys);
             setTimeout(() => {
                 drivingEffect.classList.add('winner');
