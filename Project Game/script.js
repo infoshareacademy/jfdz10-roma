@@ -131,7 +131,7 @@ function pizza(){
 
         let ingredientsBox = document.createElement('div');
         ingredientsBox.classList.add('ingredients_box');
-        pizzaContainer.prepend(ingredientsBox);
+        body.prepend(ingredientsBox);
 
         const toDisplay = 20; // level of hardness (how many random element without element fo find)
         let displayAnimals = [];
@@ -276,6 +276,8 @@ function pizza(){
         deliverContainer.prepend(car);
         let carPositionY;
         let carPositionX;
+        let ingredientsBox = document.querySelector('.ingredients_box');
+        ingredientsBox.style.display = 'none';
     
         // Div for wrong way effect (red flashback) and for winner effect (full green screen with capture "winner")
         const drivingEffect = document.createElement('div');
