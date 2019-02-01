@@ -140,23 +140,6 @@
     width: 100vw;
 }
 
-/**************** 3 2 1 Car **************/
-
-.count-container-car {
-    background-image: url(img/cargame.png);
-    background-position: center;
-    background-size: cover;
-    color: rgb(66, 66, 66);
-    display: flex;
-    flex-direction: column;
-    font-family: 'VT323', monospace;
-    font-size: 7rem;
-    height: 100vh;
-    justify-content: center;
-    text-align: center;
-    width: 100vw;
-}
-
 /************** game ***************/
 
 body {
@@ -213,10 +196,31 @@ body {
     transform: translateY(0);
     transform: translateX(0);
     z-index: 9999;
-
 }
 
-.animation {
+.wrong-action {
+    color: red;
+}
+  
+.ingredients_box {
+    background: url(img/notebook.png);
+    background-size: cover;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.699);
+    border-radius: 0 0 5px 5px;
+    margin-right: 2%;
+    padding-left: 1%;
+    width: 12%;
+    height: 22vh;
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    font-size: 2.2rem;
+}
+
+.wrong-click-animation {
     animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
 }
 
@@ -304,7 +308,7 @@ body {
 
   }
 
-.wrong-way {
+/* .wrong-way {
     position: absolute;
     top: 0;
     left: 0;
@@ -313,7 +317,7 @@ body {
     z-index: 99999;
     background-color: red;
     transition: all 0.1s;
-}
+} */
 
 .winner {
     position: absolute;

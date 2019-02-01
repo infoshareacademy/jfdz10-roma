@@ -78,7 +78,7 @@ function pizza(){
             --totalSeconds;
             seconds.textContent = formatTimer(totalSeconds % 60);
             minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
-            if (totalSeconds === 0) {
+            if (totalSeconds <= 0) {
                 const divs = document.querySelectorAll("div:not(.time)")
                 divs.forEach((el) => {
                     el.remove();
@@ -86,14 +86,13 @@ function pizza(){
                 clearInterval(counter);
             };
         }, 1000);
-
-        function formatTimer(val) {
-            let valString = `${val}`;
-            if (valString.length < 2) {
-                return `0${valString}`;
-            } else {
-                return valString;
-            };
+    };
+    function formatTimer(val) {
+        let valString = `${val}`;
+        if (valString.length < 2) {
+            return `0${valString}`;
+        } else {
+            return valString;
         };
     };
     createTimer();
@@ -122,8 +121,17 @@ function pizza(){
     };
     createScores();
 
-
-    
+    function subtractTime() {
+        const minutes = document.querySelector('.time span:nth-child(1)');
+        const seconds = document.querySelector('.time span:nth-child(2)');
+        seconds.classList.add('wrong-action');
+        setTimeout(() => {
+            seconds.classList.remove('wrong-action');
+        }, 100);
+        totalSeconds--;
+        seconds.textContent = formatTimer(totalSeconds % 60);
+        minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
+    }
 
     // PIZZA GAME is in one big function
     const pizzaGame = function() {
@@ -137,48 +145,25 @@ function pizza(){
         box.classList.add('box');
         box.textContent = ' ';
         pizzaContainer.prepend(box);
-    
+
+        let ingredientsBox = document.createElement('div');
+        ingredientsBox.classList.add('ingredients_box');
+        body.prepend(ingredientsBox);
+
         const toDisplay = 20; // level of hardness (how many random element without element fo find)
         let displayIngredients = [];
         let elementsToFind = []; // array of items to find
         let allIngredients;
         const ingredients = [
-            {
-                icon: backgroundImage = "url('img/cheese.png')",
-                id: 'cheese',
-            },
-            {
-                icon: backgroundImage = "url('img/mushroom.png')",
-                id: 'mushroom',
-            },
-            {
-                icon: backgroundImage = "url('img/tomato.png')",
-                id: 'tomato',
-            },
-            {
-                icon: backgroundImage = "url('img/chilli.png')",
-                id: 'chilli',
-            },
-            {
-                icon: backgroundImage = "url('img/ham.png')",
-                id: 'ham',
-            },
-            {
-                icon: backgroundImage = "url('img/onion.png')",
-                id: 'onion',
-            },
-            {
-                icon: backgroundImage = "url('img/peppers.png')",
-                id: 'peppers',
-            },
-            {
-                icon: backgroundImage = "url('img/rucola.png')",
-                id: 'rucola',
-            },
-            {
-                icon: backgroundImage = "url('img/corn.png')",
-                id: 'corn',
-            },
+            { icon: backgroundImage = "url('img/cheese.png')", id: 'cheese' },
+            { icon: backgroundImage = "url('img/mushroom.png')", id: 'mushroom' },
+            { icon: backgroundImage = "url('img/tomato.png')", id: 'tomato' },
+            { icon: backgroundImage = "url('img/chilli.png')", id: 'chilli' },
+            { icon: backgroundImage = "url('img/ham.png')", id: 'ham' },
+            { icon: backgroundImage = "url('img/onion.png')", id: 'onion' },
+            { icon: backgroundImage = "url('img/peppers.png')", id: 'peppers' },
+            { icon: backgroundImage = "url('img/rucola.png')", id: 'rucola' },
+            { icon: backgroundImage = "url('img/corn.png')", id: 'corn' },
         ];
     
         function createIngredients() {
@@ -247,11 +232,12 @@ function pizza(){
                 }
             } else if (that.dataset.id === 'killer') {
                 allIngredients.forEach(removeFindingEvent);
+                clickKillerIngredient();
+                allAnimals.forEach(removeFindingEvent);
                 console.log('%c YOU LOSE!!!', ' background: black; color: red; font-size: 4rem;');
             } else {
-                console.log(`%c WRONG!!!`, `background: red`);
-                // shake wrong element when clicked;
-                that.classList.add('animation');
+                subtractTime();
+                that.classList.add('wrong-click-animation');
                 that.addEventListener('animationend', () => that.classList.remove('animation'));
             } 
         }
@@ -261,6 +247,12 @@ function pizza(){
             totalScores++;
             console.log(totalScores);
             scoresCounter.innerText = totalScores;
+        }
+      
+        function clickKillerIngredient() {
+            totalSeconds = 0;
+            const seconds = document.querySelector('.time span:nth-child(2)');
+            seconds.textContent = '00';
         }
 
         function getRandomInt(min, max) {
@@ -293,8 +285,9 @@ function pizza(){
     
         createIngredients();
         console.log(elementsToFind);
+        ingredientsBox.textContent = `${elementsToFind[0]}, ${elementsToFind[1]}, ${elementsToFind[2]}`;
     };
-    
+
     /***********************************
              DELIVER GAME
     ***********************************/
@@ -312,6 +305,8 @@ function pizza(){
         deliverContainer.prepend(car);
         let carPositionY;
         let carPositionX;
+        let ingredientsBox = document.querySelector('.ingredients_box');
+        ingredientsBox.style.display = 'none';
     
         // Div for wrong way effect (red flashback) and for winner effect (full green screen with capture "winner")
         const drivingEffect = document.createElement('div');
@@ -334,13 +329,6 @@ function pizza(){
         let deg = 90;
         getCarPosition('y');
         getCarPosition('x');
-    
-        function wrongWay() {
-            drivingEffect.classList.add('wrong-way');
-            setTimeout(() => {
-                drivingEffect.classList.remove('wrong-way');
-            }, 100);
-        }
     
         function winner() {
             const scoresCounter = document.querySelector('.score-counter') 
@@ -378,7 +366,7 @@ function pizza(){
             });
             if (cordsX) {
                 carPositionX;
-                wrongWay();
+                subtractTime();
             } else {
                 car.style.transition = `top 0.5s, left 0.5s, transform 0.1s`;
                 deg = 90;
@@ -404,7 +392,7 @@ function pizza(){
             });
             if (cordsX) {
                 carPositionX;
-                wrongWay();
+                subtractTime();
             } else {
                 if (deg === 0) {
                     car.style.transition = `top 0.5s, left 0.5s, transform 0.1s`;
@@ -440,7 +428,7 @@ function pizza(){
             });
             if (cordsY) {
                 carPositionY;
-                wrongWay();
+                subtractTime();
             } else {
                 car.style.transition = `top 0.5s, left 0.5s, transform 0.1s`;
                 deg = 180;
@@ -466,7 +454,7 @@ function pizza(){
             });
             if (cordsY) {
                 carPositionY;
-                wrongWay();
+                subtractTime();
             } else {
                 if (deg === 270) {
                     car.style.transition = `top 0.5s, left 0.5s, transform 0.1s`;
