@@ -139,48 +139,25 @@ function pizza(){
         box.classList.add('box');
         box.textContent = ' ';
         pizzaContainer.prepend(box);
-    
+
+        let ingredientsBox = document.createElement('div');
+        ingredientsBox.classList.add('ingredients_box');
+        body.prepend(ingredientsBox);
+
         const toDisplay = 20; // level of hardness (how many random element without element fo find)
         let displayAnimals = [];
         let elementsToFind = []; // array of items to find
         let allAnimals;
         const ingredients = [
-            {
-                icon: backgroundImage = "url('img/cheese.png')",
-                id: 'cheese',
-            },
-            {
-                icon: backgroundImage = "url('img/mushroom.png')",
-                id: 'mushroom',
-            },
-            {
-                icon: backgroundImage = "url('img/tomato.png')",
-                id: 'tomato',
-            },
-            {
-                icon: backgroundImage = "url('img/chilli.png')",
-                id: 'chilli',
-            },
-            {
-                icon: backgroundImage = "url('img/ham.png')",
-                id: 'ham',
-            },
-            {
-                icon: backgroundImage = "url('img/onion.png')",
-                id: 'onion',
-            },
-            {
-                icon: backgroundImage = "url('img/peppers.png')",
-                id: 'peppers',
-            },
-            {
-                icon: backgroundImage = "url('img/rucola.png')",
-                id: 'rucola',
-            },
-            {
-                icon: backgroundImage = "url('img/corn.png')",
-                id: 'corn',
-            },
+            { icon: backgroundImage = "url('img/cheese.png')", id: 'cheese' },
+            { icon: backgroundImage = "url('img/mushroom.png')", id: 'mushroom' },
+            { icon: backgroundImage = "url('img/tomato.png')", id: 'tomato' },
+            { icon: backgroundImage = "url('img/chilli.png')", id: 'chilli' },
+            { icon: backgroundImage = "url('img/ham.png')", id: 'ham' },
+            { icon: backgroundImage = "url('img/onion.png')", id: 'onion' },
+            { icon: backgroundImage = "url('img/peppers.png')", id: 'peppers' },
+            { icon: backgroundImage = "url('img/rucola.png')", id: 'rucola' },
+            { icon: backgroundImage = "url('img/corn.png')", id: 'corn' },
         ];
     
         function createAnimals() {
@@ -296,8 +273,9 @@ function pizza(){
     
         createAnimals();
         console.log(elementsToFind);
+        ingredientsBox.textContent = `${elementsToFind[0]}, ${elementsToFind[1]}, ${elementsToFind[2]}`;
     };
-    
+
     /***********************************
              DELIVER GAME
     ***********************************/
@@ -315,6 +293,8 @@ function pizza(){
         deliverContainer.prepend(car);
         let carPositionY;
         let carPositionX;
+        let ingredientsBox = document.querySelector('.ingredients_box');
+        ingredientsBox.style.display = 'none';
     
         // Div for wrong way effect (red flashback) and for winner effect (full green screen with capture "winner")
         const drivingEffect = document.createElement('div');
