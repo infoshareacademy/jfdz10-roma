@@ -139,23 +139,6 @@
     width: 100vw;
 }
 
-/**************** 3 2 1 Car **************/
-
-.count-container-car {
-    background-image: url(img/cargame.png);
-    background-position: center;
-    background-size: cover;
-    color: rgb(66, 66, 66);
-    display: flex;
-    flex-direction: column;
-    font-family: 'VT323', monospace;
-    font-size: 7rem;
-    height: 100vh;
-    justify-content: center;
-    text-align: center;
-    width: 100vw;
-}
-
 /************** game ***************/
 
 body {
@@ -210,7 +193,15 @@ body {
     transform: translateY(0);
     transform: translateX(0);
     z-index: 9999;
+}
 
+.ingredients_box {
+    background: rgba(255, 255, 255, 0.404);
+    border: 2px solid rgba(255, 255, 255, 0.658);
+    width: 33%;
+    height: 15vh;
+    position: absolute;
+    margin-top: 40vh;
 }
 
 .animation {
