@@ -212,11 +212,11 @@ body {
     z-index: 9999;
 }
 
-.wrong-click {
+.wrong-click, .wrong-way {
     color: red;
 }
 
-.animation {
+.wrong-click-animation {
     animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
 }
 
@@ -304,7 +304,7 @@ body {
 
   }
 
-.wrong-way {
+/* .wrong-way {
     position: absolute;
     top: 0;
     left: 0;
@@ -313,7 +313,7 @@ body {
     z-index: 99999;
     background-color: red;
     transition: all 0.1s;
-}
+} */
 
 .winner {
     position: absolute;

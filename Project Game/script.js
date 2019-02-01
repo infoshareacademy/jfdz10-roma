@@ -114,6 +114,19 @@ function pizza(){
     };
     createScores();
 
+    function subtractTime() {
+        const minutes = document.querySelector('.time span:nth-child(1)');
+        const seconds = document.querySelector('.time span:nth-child(2)');
+        seconds.classList.add('wrong-click');
+        setTimeout(() => {
+            seconds.classList.remove('wrong-click');
+        }, 100);
+        totalSeconds--;
+        seconds.textContent = formatTimer(totalSeconds % 60);
+        minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
+    }
+
+
     // PIZZA GAME is in one big function
     const pizzaGame = function() {
         const winner = document.querySelector(".winner");
@@ -241,10 +254,8 @@ function pizza(){
                 allAnimals.forEach(removeFindingEvent);
                 console.log('%c YOU LOSE!!!', ' background: black; color: red; font-size: 4rem;');
             } else {
-                console.log(`%c WRONG!!!`, `background: red`);
-                // shake wrong element when clicked;
-                clickWrongElement();
-                that.classList.add('animation');
+                subtractTime();
+                that.classList.add('wrong-click-animation');
                 that.addEventListener('animationend', () => that.classList.remove('animation'));
             }
         }
@@ -255,19 +266,6 @@ function pizza(){
             seconds.textContent = '00';
         }
 
-        function clickWrongElement() {
-            // const timer = document.querySelector('.time')
-            const minutes = document.querySelector('.time span:nth-child(1)');
-            const seconds = document.querySelector('.time span:nth-child(2)');
-            seconds.classList.add('wrong-click');
-            setTimeout(() => {
-                seconds.classList.remove('wrong-click');
-            }, 100);
-            totalSeconds--;
-            seconds.textContent = formatTimer(totalSeconds % 60);
-            minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
-        }
-    
         function getRandomInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
@@ -340,13 +338,6 @@ function pizza(){
         getCarPosition('y');
         getCarPosition('x');
     
-        function wrongWay() {
-            drivingEffect.classList.add('wrong-way');
-            setTimeout(() => {
-                drivingEffect.classList.remove('wrong-way');
-            }, 100);
-        }
-    
         function winner() {
             scoresCounter++;
             $scores.innerText = scoresCounter;
@@ -380,7 +371,7 @@ function pizza(){
             });
             if (cordsX) {
                 carPositionX;
-                wrongWay();
+                subtractTime();
             } else {
                 car.style.transition = `top 0.5s, left 0.5s, transform 0.1s`;
                 deg = 90;
@@ -406,7 +397,7 @@ function pizza(){
             });
             if (cordsX) {
                 carPositionX;
-                wrongWay();
+                subtractTime();
             } else {
                 if (deg === 0) {
                     car.style.transition = `top 0.5s, left 0.5s, transform 0.1s`;
@@ -442,7 +433,7 @@ function pizza(){
             });
             if (cordsY) {
                 carPositionY;
-                wrongWay();
+                subtractTime();
             } else {
                 car.style.transition = `top 0.5s, left 0.5s, transform 0.1s`;
                 deg = 180;
@@ -468,7 +459,7 @@ function pizza(){
             });
             if (cordsY) {
                 carPositionY;
-                wrongWay();
+                subtractTime();
             } else {
                 if (deg === 270) {
                     car.style.transition = `top 0.5s, left 0.5s, transform 0.1s`;
