@@ -198,14 +198,16 @@ body {
 .ingredients_box {
     background: rgba(255, 255, 255, 0.404);
     border: 2px solid rgba(255, 255, 255, 0.658);
+    border-radius: 25px 25px 0 0;
     width: 33%;
     height: 15vh;
     position: absolute;
-    margin-top: 40vh;
+    margin-top: 45vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
+    font-family: 'VT323', monospace;
 }
 
 .animation {

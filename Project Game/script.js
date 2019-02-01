@@ -256,11 +256,40 @@ function pizza(){
             element.removeEventListener('click', findElement);
         }
     
+
+
+
+
+
+
+
+
+
+
+
         createAnimals();
         console.log(elementsToFind);
-        ingredientsBox.textContent = elementsToFind;
+        ingredientsBox.textContent = `${elementsToFind[0]}, ${elementsToFind[1]}, ${elementsToFind[2]}`;
     };
     
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /***********************************
              DELIVER GAME
     ***********************************/
