@@ -99,21 +99,29 @@ function pizza(){
     createTimer();
 
     // create points
+
+    let totalScores = 0;
+
     function createScores() {
         
         const body = document.querySelector('body');
-        const scores = document.createElement('div');
-        scores.classList.add('scores');
-        const scoresText = document.createElement('span');
-        scoresText.innerText = 'Points: ';
-        scores.prepend(scoresText);
-        scores.innerText = 'Points: ';
-        const $scoresCounter = document.createElement('span');
-        $scoresCounter.innerText = 0;
-        scores.prepend($scoresCounter);
-        body.prepend(scores);
+        const scoresContainer = document.createElement('div');
+        scoresContainer.classList.add('score-div');
+
+        const scoresContainerText = document.createElement('span');
+        scoresContainerText.innerText = 'Points: ';
+        scoresContainer.prepend(scoresContainerText);
+        scoresContainer.innerHTML = scoresContainerText.innerText;
+        
+        const scoresCounter = document.createElement('span');
+        scoresCounter.classList.add('score-counter');        
+        scoresCounter.innerText = 0;
+        scoresContainer.prepend(scoresCounter);
+        body.prepend(scoresContainer);
+        scoresContainer.appendChild(scoresCounter);
     };
     createScores();
+
 
     
 
@@ -233,11 +241,10 @@ function pizza(){
                         deliverGame();
                     }, 800);
                 } else {
-                    const scores = document.querySelector(".scores");
-                    scoresCounter++;
-                    scores.innerText = scoresCounter;
-                   // console.log(`%c That's correct element!`, `background: lightgreen;`);
-                    
+                    const scoresCounter = document.querySelector('.score-counter') 
+                    totalScores++;
+                    scoresCounter.innerText = totalScores;
+                    // console.log(`%c That's correct element!`, `background: lightgreen;`); 
                 }
             } else if (that.dataset.id === 'killer') {
                 allAnimals.forEach(removeFindingEvent);
@@ -247,7 +254,7 @@ function pizza(){
                 // shake wrong element when clicked;
                 that.classList.add('animation');
                 that.addEventListener('animationend', () => that.classList.remove('animation'));
-            }
+            } 
         }
     
         function getRandomInt(min, max) {
@@ -330,8 +337,11 @@ function pizza(){
         }
     
         function winner() {
-            scoresCounter++;
-            $scores.innerText = scoresCounter;
+            const scoresCounter = document.querySelector('.score-counter') 
+            totalScores++;
+            scoresCounter.innerText = totalScores;
+
+
 
             window.removeEventListener('keydown', addKeys);
             setTimeout(() => {
