@@ -212,7 +212,7 @@ body {
     z-index: 9999;
 }
 
-.wrong-click, .wrong-way {
+.wrong-action {
     color: red;
 }
 

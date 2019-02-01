@@ -117,9 +117,9 @@ function pizza(){
     function subtractTime() {
         const minutes = document.querySelector('.time span:nth-child(1)');
         const seconds = document.querySelector('.time span:nth-child(2)');
-        seconds.classList.add('wrong-click');
+        seconds.classList.add('wrong-action');
         setTimeout(() => {
-            seconds.classList.remove('wrong-click');
+            seconds.classList.remove('wrong-action');
         }, 100);
         totalSeconds--;
         seconds.textContent = formatTimer(totalSeconds % 60);
