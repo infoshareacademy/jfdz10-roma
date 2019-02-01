@@ -115,7 +115,6 @@ function pizza(){
     };
     createScores();
 
-    
 
     // PIZZA GAME is in one big function
     const pizzaGame = function() {
@@ -130,52 +129,26 @@ function pizza(){
         box.textContent = ' ';
         pizzaContainer.prepend(box);
 
-        const ingredientsBox = document.createElement('div');
+        let ingredientsBox = document.createElement('div');
         ingredientsBox.classList.add('ingredients_box');
-        ingredientsBox.textContent = ' ';
         body.prepend(ingredientsBox);
+
+        
     
         const toDisplay = 20; // level of hardness (how many random element without element fo find)
         let displayAnimals = [];
         let elementsToFind = []; // array of items to find
         let allAnimals;
         const ingredients = [
-            {
-                icon: backgroundImage = "url('img/cheese.png')",
-                id: 'cheese',
-            },
-            {
-                icon: backgroundImage = "url('img/mushroom.png')",
-                id: 'mushroom',
-            },
-            {
-                icon: backgroundImage = "url('img/tomato.png')",
-                id: 'tomato',
-            },
-            {
-                icon: backgroundImage = "url('img/chilli.png')",
-                id: 'chilli',
-            },
-            {
-                icon: backgroundImage = "url('img/ham.png')",
-                id: 'ham',
-            },
-            {
-                icon: backgroundImage = "url('img/onion.png')",
-                id: 'onion',
-            },
-            {
-                icon: backgroundImage = "url('img/peppers.png')",
-                id: 'peppers',
-            },
-            {
-                icon: backgroundImage = "url('img/rucola.png')",
-                id: 'rucola',
-            },
-            {
-                icon: backgroundImage = "url('img/corn.png')",
-                id: 'corn',
-            },
+            { icon: backgroundImage = "url('img/cheese.png')", id: 'cheese' },
+            { icon: backgroundImage = "url('img/mushroom.png')", id: 'mushroom' },
+            { icon: backgroundImage = "url('img/tomato.png')", id: 'tomato' },
+            { icon: backgroundImage = "url('img/chilli.png')", id: 'chilli' },
+            { icon: backgroundImage = "url('img/ham.png')", id: 'ham' },
+            { icon: backgroundImage = "url('img/onion.png')", id: 'onion' },
+            { icon: backgroundImage = "url('img/peppers.png')", id: 'peppers' },
+            { icon: backgroundImage = "url('img/rucola.png')", id: 'rucola' },
+            { icon: backgroundImage = "url('img/corn.png')", id: 'corn' },
         ];
     
         function createAnimals() {
