@@ -116,7 +116,7 @@ function pizza(){
         const scoresCounter = document.createElement('span');
         scoresCounter.classList.add('score-counter');        
         scoresCounter.innerText = 0;
-        scoresContainer.prepend(scoresCounter);
+        scoresContainer.append(scoresCounter);
         body.prepend(scoresContainer);
         scoresContainer.appendChild(scoresCounter);
     };
@@ -234,6 +234,7 @@ function pizza(){
     
                 // ******************** WINNER ********************
                 if (elementsToFind.length === 0) {
+                    updateScores();
                     console.log(`%c WINNER`, `font-size: 4rem; color: darkgreen`);
                     allAnimals.forEach(removeFindingEvent);
                     setTimeout(function() {
@@ -241,9 +242,7 @@ function pizza(){
                         deliverGame();
                     }, 800);
                 } else {
-                    const scoresCounter = document.querySelector('.score-counter') 
-                    totalScores++;
-                    scoresCounter.innerText = totalScores;
+                    updateScores();
                     // console.log(`%c That's correct element!`, `background: lightgreen;`); 
                 }
             } else if (that.dataset.id === 'killer') {
@@ -257,6 +256,13 @@ function pizza(){
             } 
         }
     
+        function updateScores() {
+            const scoresCounter = document.querySelector('.score-counter') 
+            totalScores++;
+            console.log(totalScores);
+            scoresCounter.innerText = totalScores;
+        }
+
         function getRandomInt(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
