@@ -258,6 +258,7 @@ function pizza(){
     
         createAnimals();
         console.log(elementsToFind);
+        ingredientsBox.textContent = elementsToFind;
     };
     
     /***********************************
