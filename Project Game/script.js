@@ -10,16 +10,24 @@ function toggleModal() {
   document.querySelector(`#${this.dataset.show}`).classList.remove('u--blur-fadeout');
 }
 
-document.querySelector('#startGame').addEventListener('click', clear);
+document.querySelector('#checkName').addEventListener('click', clear);
 function clear(){
     const menu = document.querySelector('#menu');
     menu.style.display = 'none';
 }
 
-document.getElementById('startGame').addEventListener('click', countPizza);
+document.getElementById('checkName').addEventListener('click', addName);
+function addName() {
+    var name = document.getElementById('playerName').value;
+    localStorage.setItem('name', name);
+}
+
+document.getElementById('checkName').addEventListener('click', countPizza);
+document.querySelector('#startGame').addEventListener('click',toggleModal);
 
 document.querySelector('#scoresBox').addEventListener('click', toggleModal);
 document.querySelector('#scoresLink').addEventListener('click', toggleModal);
+
 
 
 /*********************************************
@@ -53,8 +61,37 @@ function countPizza() {
 /*********************************************
                 PIZZA MAKER
 *********************************************/
-
 function pizza(){
+
+    function gameOver() {
+        console.log("game over");
+        const body = document.querySelector('body');
+        const scores = document.createElement('div');
+        scores.classList.add('scores');
+        
+        const scoresText = document.createElement('div');
+        var name = localStorage.getItem('name');
+        scoresText.innerText = name + ' twój wynik to: '+ totalScores;
+
+        const addButton = document.createElement('div');
+        addButton.classList.add('save__button');
+        addButton.innerText = 'Zapisz';
+        scores.prepend(addButton)
+        scores.prepend(scoresText);
+        
+        body.prepend(scores);
+
+        document.querySelector('.save__button').addEventListener('click',saveResult);
+        function saveResult(){
+          /*  let result = totalScores;
+            let resultTable = document.querySelector('#scoresList');
+            resultTable = '';
+            resultTable.innerHTML = result;
+            console.log(resultTable);*/       
+        }
+    }
+        
+
 
     // Setup timer and total seconds for playing
     const mins = 2;
@@ -84,9 +121,12 @@ function pizza(){
                     el.remove();
                 });
                 clearInterval(counter);
+                gameOver();
             };
         }, 1000);
     };
+
+
     function formatTimer(val) {
         let valString = `${val}`;
         if (valString.length < 2) {

@@ -12,11 +12,12 @@
     href="https://img.icons8.com/color/48/000000/pizza.png">  
 </head>
 <body>
+    
     <div class="menu-container u--visible" id="menu">
         <div class="menu" id="menuBox">
             <h1 class="menu__title">Pizza Game</h1>
             <ul>
-                <li class="menu__button" id="startGame" data-show="pizzaGame" data-hide="menuBox">Start</li>
+                <li class="menu__button" id="startGame" data-show="stagePlayerName" data-hide="menuBox">Start</li>
                 <li class="menu__button" id="scoresLink" data-show="scoresBox" data-hide="menuBox">Ranking</li>
                 <li class="menu__button" id="aboutLink" data-show="aboutBox" data-hide="menuBox">Instrukcja</li>
             </ul>
@@ -24,6 +25,14 @@
             <img src="img/building-front-2-pizzerium.svg">
             </div>
         </div>
+        
+        <div class="slide-player-name u--visible u--blur-fadeout" id="stagePlayerName" data-show="menuBox" data-hide="stagePlayerName">
+                <div class="player-name-box">
+                    <label for="playerName">Nazwa gracza:</label>
+                    <input type="text" id="playerName" class="player-name" maxlength="10" />
+                    <button class="name__button" id="checkName">Rozpocznij grę</button>
+                </div>
+            </div>
         
         <div class="about u--visible u--blur-fadeout" id="aboutBox" data-show="menuBox" data-hide="aboutBox">
             <h1 class="about__title">Zasady Gry</h1>
@@ -39,8 +48,12 @@
               <p>(zamknij)</p>
             </div>
           </div>
-        
     </div> 
+    
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
