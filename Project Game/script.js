@@ -13,7 +13,9 @@ function toggleModal() {
 document.querySelector('#checkName').addEventListener('click', clear);
 function clear(){
     const menu = document.querySelector('#menu');
-    menu.style.display = 'none';
+    menu.style.visibility = 'hidden';
+    const playerNameBox = document.querySelector('.player-name-box');
+    playerNameBox.style.display = 'none';
 }
 
 document.getElementById('checkName').addEventListener('click', addName);
@@ -28,7 +30,16 @@ document.querySelector('#startGame').addEventListener('click',toggleModal);
 document.querySelector('#scoresBox').addEventListener('click', toggleModal);
 document.querySelector('#scoresLink').addEventListener('click', toggleModal);
 
-
+const playerScore = document.querySelector('#scoresList');
+let list = JSON.parse(localStorage.getItem("bestList"));
+if (!list) {
+    playerScore.innerHTML = '';
+} else {
+    let result = '<table style="width:60%" align:"center"> ';
+list.forEach((item, index) =>
+result += "<tr><td>" + (index + 1) + '.</td><td>' + item.nick + '</td><td>' + item.point + 'p.') + '</td></tr>';
+playerScore.innerHTML = result + "</table>";
+}
 
 /*********************************************
                 3 2 1 PIZZA
@@ -64,37 +75,83 @@ function countPizza() {
 function pizza(){
 
     function gameOver() {
-        console.log("game over");
+        var clearScore = document.querySelector('.score-div');
+        clearScore.style.display = 'none';
+        var clearTime = document.querySelector('.time');
+        clearTime.style.display = 'none';
+        var clearPizza = document.querySelector('.deliver-map');
+        clearPizza !== null ? clearPizza.style.display = 'none' : clearPizza;
+        var clearIngredientsBox = document.querySelector('.ingredients_box');
+        clearIngredientsBox.remove();
+        window.onkeyup = null;
+
         const body = document.querySelector('body');
         const scores = document.createElement('div');
         scores.classList.add('scores');
+
+        function saveResult(){
+            document.querySelector('.scores').style.display = 'none';
+           
+            const showScores = document.querySelector('#scoresBox'); 
+            showScores.style.display = 'block';
+            showScores.style.opacity = '1';
+            showScores.style.filter = 'none';
+
+            const playerScore = document.querySelector('#scoresList');
+            let list = JSON.parse(localStorage.getItem("bestList"));
+            if (!list) {
+                playerScore.innerHTML = '';
+            } else {
+                let result = '<table style="width:60%" align:"center"> ';
+            list.forEach((item, index) =>
+            result += "<tr><td>" + (index + 1) + '.</td><td>' + item.nick + '</td><td>' + item.point + 'p.') + '</td></tr>';
+            playerScore.innerHTML = result + "</table>";
+            }
+        }
         
         const scoresText = document.createElement('div');
         var name = localStorage.getItem('name');
         scoresText.innerText = name + ' twój wynik to: '+ totalScores;
 
+        let list = JSON.parse(localStorage.getItem("bestList"));
+
+        if (!list) {
+        localStorage.setItem("bestList", JSON.stringify([{
+            nick: name,
+            point: totalScores
+        }]));
+        } else {
+        if (list.length > 8) {
+            if (list[8].point < totalScores) {
+                list.pop();
+                list = addNewResultAndSortList(list, name, totalScores);
+            }
+        } else if (list.length < 9) {
+            list = addNewResultAndSortList(list, name, totalScores);
+        }
+        localStorage.setItem("bestList", JSON.stringify(list));
+    }
+        function addNewResultAndSortList(list, name, totalScores) {
+        list.push({
+            nick: name,
+            point: totalScores
+        });
+        return list.sort((a, b) => b.point - a.point);
+    }
         const addButton = document.createElement('div');
         addButton.classList.add('save__button');
+
         addButton.innerText = 'Zapisz';
-        scores.prepend(addButton)
+        scores.prepend(addButton);
         scores.prepend(scoresText);
         
         body.prepend(scores);
 
         document.querySelector('.save__button').addEventListener('click',saveResult);
-        function saveResult(){
-          /*  let result = totalScores;
-            let resultTable = document.querySelector('#scoresList');
-            resultTable = '';
-            resultTable.innerHTML = result;
-            console.log(resultTable);*/       
-        }
     }
-        
-
 
     // Setup timer and total seconds for playing
-    const mins = .5;
+    const mins = 2;
     let totalSeconds = mins * 60;
 
     function createTimer() {
@@ -117,7 +174,6 @@ function pizza(){
             minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
             if (totalSeconds <= 0) {
                 seconds.textContent = '00'
-                removeEverything();
                 clearInterval(counter);
                 gameOver();
             };
@@ -136,11 +192,9 @@ function pizza(){
     createTimer();
 
     // create points
-
     let totalScores = 0;
 
     function createScores() {
-        
         const body = document.querySelector('body');
         const scoresContainer = document.createElement('div');
         scoresContainer.classList.add('score-div');
@@ -171,14 +225,6 @@ function pizza(){
         minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
     }
 
-    function removeEverything() {
-        const divs = document.querySelectorAll("div:not(.time)")
-        divs.forEach((el) => {
-            el.remove();
-        });
-        window.onkeyup = null;
-    }
-
     // PIZZA GAME is in one big function
     const pizzaGame = function() {
         const winner = document.querySelector(".winner");
@@ -186,6 +232,7 @@ function pizza(){
 
         const body = document.querySelector('body');
         const pizzaContainer = document.createElement('div');
+        pizzaContainer.classList.add('pizza'); ////////////////////////
         body.prepend(pizzaContainer);
         const box = document.createElement('div');
         box.classList.add('box');
@@ -213,7 +260,6 @@ function pizza(){
         ];
     
         function createIngredients() {
-            console.log(totalSeconds)
             // create elements in total as toDisplay number is
             for (let i = 1; displayIngredients.length < toDisplay - 1; i++) {
                 // generate 3 random elements to find
@@ -235,20 +281,17 @@ function pizza(){
             displayIngredients.sort(() => 0.5 - Math.random());
             // start creating ingredients
             displayIngredients.forEach(function(ingredient, index) {
-                const time = setTimeout(function() {
-                    if(totalSeconds <= 0) {
-                        clearTimeout(time);
-                        removeEverything();
-                    } else {
-                        const ingredientElement = document.createElement('div');
-                        ingredientElement.classList.add('ingredient');
-                        ingredientElement.style.backgroundImage = ingredient.icon;
-                        ingredientElement.dataset.id = ingredient.id;
-                        ingredientElement.style.top = topLeftRandom();
-                        ingredientElement.style.left = topLeftRandom();
-                        pizzaContainer.prepend(ingredientElement);
-                        addFindingEvent();
-                    }
+                setTimeout(function() {
+                    totalSeconds <= 0 && pizzaContainer !== null ? pizzaContainer.remove() : totalSeconds;
+                    totalSeconds <= 0 && ingredientsBox !== null ? ingredientsBox.remove() : totalSeconds;
+                    const ingredientElement = document.createElement('div');
+                    ingredientElement.classList.add('ingredient');
+                    ingredientElement.style.backgroundImage = ingredient.icon;
+                    ingredientElement.dataset.id = ingredient.id;
+                    ingredientElement.style.top = topLeftRandom();
+                    ingredientElement.style.left = topLeftRandom();
+                    pizzaContainer.prepend(ingredientElement);
+                    addFindingEvent();
                 }, index * 100);
             });
         }
@@ -266,12 +309,11 @@ function pizza(){
                 that.style.left =  `calc(${getRandomInt(40, 52)}%)`;
                 that.style.top = `calc(${getRandomInt(39,50)}%)`;
                 that.style.animation = `linear`;
-                console.log('to find: ', elementsToFind);
+                that.removeEventListener('click', findElement);
     
                 // ******************** WINNER ********************
                 if (elementsToFind.length === 0) {
                     updateScores();
-                    console.log(`%c WINNER`, `font-size: 4rem; color: darkgreen`);
                     allIngredients.forEach(removeFindingEvent);
                     setTimeout(function() {
                         pizzaContainer.remove();
@@ -285,7 +327,6 @@ function pizza(){
                 allIngredients.forEach(removeFindingEvent);
                 clickKillerIngredient();
                 allAnimals.forEach(removeFindingEvent);
-                console.log('%c YOU LOSE!!!', ' background: black; color: red; font-size: 4rem;');
             } else {
                 subtractTime();
                 that.classList.add('wrong-click-animation');
@@ -296,7 +337,6 @@ function pizza(){
         function updateScores() {
             const scoresCounter = document.querySelector('.score-counter') 
             totalScores++;
-            console.log(totalScores);
             scoresCounter.innerText = totalScores;
         }
       
@@ -331,10 +371,10 @@ function pizza(){
         }
         //function for removing event on every displayed element
         function removeFindingEvent(element) {
+            element.removeEventListener('click', findElement);
         }
     
         createIngredients();
-        console.log(elementsToFind);
         ingredientsBox.textContent = `${elementsToFind[0]}, ${elementsToFind[1]}, ${elementsToFind[2]}`;
     };
 
@@ -384,16 +424,16 @@ function pizza(){
             const scoresCounter = document.querySelector('.score-counter') 
             totalScores++;
             scoresCounter.innerText = totalScores;
-
+            window.removeEventListener('keydown', addKeys);
             setTimeout(() => {
                 drivingEffect.classList.add('winner');
                 drivingEffect.textContent = 'Bravo!';
                 document.documentElement.style.setProperty(`--carPositionX`, 0 + suffix);
                 document.documentElement.style.setProperty(`--carPositionY`, 0 + suffix);
                 deliverContainer.remove();
+                window.onkeyup = null;
                 carPositionX = 0;
                 carPositionY = 0;
-                window.onkeyup = null;
                 setTimeout(() => {
                     pizzaGame();
                 }, 500);
@@ -537,7 +577,6 @@ function pizza(){
             }
         }
     
-        // window.addEventListener('keyup', addKeys);
         window.onkeyup = addKeys;
     
         /*********************************************
