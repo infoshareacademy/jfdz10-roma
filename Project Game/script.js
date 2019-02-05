@@ -13,7 +13,9 @@ function toggleModal() {
 document.querySelector('#checkName').addEventListener('click', clear);
 function clear(){
     const menu = document.querySelector('#menu');
-    menu.style.display = 'none';
+    menu.style.visibility = 'hidden';
+    const playerNameBox = document.querySelector('.player-name-box');
+    playerNameBox.style.display = 'none';
 }
 
 document.getElementById('checkName').addEventListener('click', addName);
@@ -27,6 +29,18 @@ document.querySelector('#startGame').addEventListener('click',toggleModal);
 
 document.querySelector('#scoresBox').addEventListener('click', toggleModal);
 document.querySelector('#scoresLink').addEventListener('click', toggleModal);
+
+const playerScore = document.querySelector('#scoresList');
+let list = JSON.parse(localStorage.getItem("bestList"));
+if (!list) {
+    playerScore.innerHTML = '';
+} else {
+    let result = '<table style="width:60%" align:"center"> ';
+list.forEach((item, index) =>
+result += "<tr><td>" + (index + 1) + '.</td><td>' + item.nick + '</td><td>' + item.point + 'p.') + '</td></tr>';
+playerScore.innerHTML = result + "</table>";
+}
+
 
 
 
@@ -65,33 +79,79 @@ function pizza(){
 
     function gameOver() {
         console.log("game over");
+        var clearScore = document.querySelector('.score-div');
+        clearScore.style.display = 'none';
+        var clearTime = document.querySelector('.time');
+        clearTime.style.display = 'none';
+        var clearPizza = document.querySelector('.pizza');
+        clearPizza.style.display = 'none';
+        var clearIngredientsBox = document.querySelector('.ingredients_box');
+        clearIngredientsBox.style.display = 'none';
+       
         const body = document.querySelector('body');
         const scores = document.createElement('div');
         scores.classList.add('scores');
+
+        function saveResult(){
+            document.querySelector('.scores').style.display = 'none';
+           
+            const showScores = document.querySelector('#scoresBox'); 
+            showScores.style.display = 'block';
+            showScores.style.opacity = '1';
+            showScores.style.filter = 'none';
+
+            const playerScore = document.querySelector('#scoresList');
+            let list = JSON.parse(localStorage.getItem("bestList"));
+            if (!list) {
+                playerScore.innerHTML = '';
+            } else {
+                let result = '<table style="width:60%" align:"center"> ';
+            list.forEach((item, index) =>
+            result += "<tr><td>" + (index + 1) + '.</td><td>' + item.nick + '</td><td>' + item.point + 'p.') + '</td></tr>';
+            playerScore.innerHTML = result + "</table>";
+            }
+        }
         
         const scoresText = document.createElement('div');
         var name = localStorage.getItem('name');
         scoresText.innerText = name + ' twój wynik to: '+ totalScores;
 
+        let list = JSON.parse(localStorage.getItem("bestList"));
+
+        if (!list) {
+        localStorage.setItem("bestList", JSON.stringify([{
+            nick: name,
+            point: totalScores
+        }]));
+        } else {
+        if (list.length > 8) {
+            if (list[8].point < totalScores) {
+                list.pop();
+                list = addNewResultAndSortList(list, name, totalScores);
+            }
+        } else if (list.length < 9) {
+            list = addNewResultAndSortList(list, name, totalScores);
+        }
+        localStorage.setItem("bestList", JSON.stringify(list));
+    }
+        function addNewResultAndSortList(list, name, totalScores) {
+        list.push({
+            nick: name,
+            point: totalScores
+        });
+        return list.sort((a, b) => b.point - a.point);
+    }
         const addButton = document.createElement('div');
         addButton.classList.add('save__button');
+
         addButton.innerText = 'Zapisz';
-        scores.prepend(addButton)
+        scores.prepend(addButton);
         scores.prepend(scoresText);
         
         body.prepend(scores);
 
         document.querySelector('.save__button').addEventListener('click',saveResult);
-        function saveResult(){
-          /*  let result = totalScores;
-            let resultTable = document.querySelector('#scoresList');
-            resultTable = '';
-            resultTable.innerHTML = result;
-            console.log(resultTable);*/       
-        }
     }
-        
-
 
     // Setup timer and total seconds for playing
     const mins = 2;
@@ -117,11 +177,12 @@ function pizza(){
             minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
             if (totalSeconds <= 0) {
                 const divs = document.querySelectorAll("div:not(.time)")
-                divs.forEach((el) => {
-                    el.remove();
-                });
-                clearInterval(counter);
                 gameOver();
+
+               /*divs.forEach((el) => {
+                    el.remove();
+                });*/
+                clearInterval(counter);
             };
         }, 1000);
     };
@@ -180,6 +241,7 @@ function pizza(){
 
         const body = document.querySelector('body');
         const pizzaContainer = document.createElement('div');
+        pizzaContainer.classList.add('pizza'); ////////////////////////
         body.prepend(pizzaContainer);
         const box = document.createElement('div');
         box.classList.add('box');

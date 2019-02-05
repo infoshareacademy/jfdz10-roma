@@ -56,6 +56,7 @@
     align-self: center;
 }
 /**************** player name **************/
+
 .player-name-box {
     width: 50vw;
     height: 50vh;
@@ -114,6 +115,10 @@ input {
     box-shadow: 0 0 40px; 
     top: 15%;
     left: 25%;
+    z-index: 10000;
+}
+.score {
+    flex-flow: row;
 }
 
 .about__text {
@@ -139,16 +144,18 @@ input {
     transition: filter 1s, opacity 1s;
 }
 /**************** scores **************/
+
 .scores {
-    width: 50vw;
+    width: 54vw;
     height: 40vh;
-    position: relative;
+    z-index: 10000;
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
-    top: 10px;
-    right: 30px;
+    top: 20%;
+    right: 305;
     font-size: 3rem;
     letter-spacing: 2px;
     background-color: rgb(241,205,124);
@@ -181,6 +188,11 @@ input {
     outline-offset: 25px;
 }
 
+.scoresElement {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+}
 
 @media (max-width: 416px){
     .menu-img {
