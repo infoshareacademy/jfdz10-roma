@@ -94,7 +94,7 @@ function pizza(){
 
 
     // Setup timer and total seconds for playing
-    const mins = 2;
+    const mins = .5;
     let totalSeconds = mins * 60;
 
     function createTimer() {
@@ -116,10 +116,8 @@ function pizza(){
             seconds.textContent = formatTimer(totalSeconds % 60);
             minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
             if (totalSeconds <= 0) {
-                const divs = document.querySelectorAll("div:not(.time)")
-                divs.forEach((el) => {
-                    el.remove();
-                });
+                seconds.textContent = '00'
+                removeEverything();
                 clearInterval(counter);
                 gameOver();
             };
@@ -173,6 +171,14 @@ function pizza(){
         minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
     }
 
+    function removeEverything() {
+        const divs = document.querySelectorAll("div:not(.time)")
+        divs.forEach((el) => {
+            el.remove();
+        });
+        window.onkeyup = null;
+    }
+
     // PIZZA GAME is in one big function
     const pizzaGame = function() {
         const winner = document.querySelector(".winner");
@@ -207,6 +213,7 @@ function pizza(){
         ];
     
         function createIngredients() {
+            console.log(totalSeconds)
             // create elements in total as toDisplay number is
             for (let i = 1; displayIngredients.length < toDisplay - 1; i++) {
                 // generate 3 random elements to find
@@ -228,15 +235,20 @@ function pizza(){
             displayIngredients.sort(() => 0.5 - Math.random());
             // start creating ingredients
             displayIngredients.forEach(function(ingredient, index) {
-                setTimeout(function() {
-                    const ingredientElement = document.createElement('div');
-                    ingredientElement.classList.add('ingredient');
-                    ingredientElement.style.backgroundImage = ingredient.icon;
-                    ingredientElement.dataset.id = ingredient.id;
-                    ingredientElement.style.top = topLeftRandom();
-                    ingredientElement.style.left = topLeftRandom();
-                    pizzaContainer.prepend(ingredientElement);
-                    addFindingEvent();
+                const time = setTimeout(function() {
+                    if(totalSeconds <= 0) {
+                        clearTimeout(time);
+                        removeEverything();
+                    } else {
+                        const ingredientElement = document.createElement('div');
+                        ingredientElement.classList.add('ingredient');
+                        ingredientElement.style.backgroundImage = ingredient.icon;
+                        ingredientElement.dataset.id = ingredient.id;
+                        ingredientElement.style.top = topLeftRandom();
+                        ingredientElement.style.left = topLeftRandom();
+                        pizzaContainer.prepend(ingredientElement);
+                        addFindingEvent();
+                    }
                 }, index * 100);
             });
         }
@@ -254,7 +266,6 @@ function pizza(){
                 that.style.left =  `calc(${getRandomInt(40, 52)}%)`;
                 that.style.top = `calc(${getRandomInt(39,50)}%)`;
                 that.style.animation = `linear`;
-                that.removeEventListener('click', findElement);
                 console.log('to find: ', elementsToFind);
     
                 // ******************** WINNER ********************
@@ -320,7 +331,6 @@ function pizza(){
         }
         //function for removing event on every displayed element
         function removeFindingEvent(element) {
-            element.removeEventListener('click', findElement);
         }
     
         createIngredients();
@@ -375,20 +385,15 @@ function pizza(){
             totalScores++;
             scoresCounter.innerText = totalScores;
 
-
-
-            window.removeEventListener('keydown', addKeys);
             setTimeout(() => {
                 drivingEffect.classList.add('winner');
                 drivingEffect.textContent = 'Bravo!';
                 document.documentElement.style.setProperty(`--carPositionX`, 0 + suffix);
                 document.documentElement.style.setProperty(`--carPositionY`, 0 + suffix);
                 deliverContainer.remove();
-                window.removeEventListener('keyup', addKeys);
                 carPositionX = 0;
                 carPositionY = 0;
-                console.log(carPositionX);
-                console.log(carPositionY);
+                window.onkeyup = null;
                 setTimeout(() => {
                     pizzaGame();
                 }, 500);
@@ -532,7 +537,8 @@ function pizza(){
             }
         }
     
-        window.addEventListener('keyup', addKeys);
+        // window.addEventListener('keyup', addKeys);
+        window.onkeyup = addKeys;
     
         /*********************************************
                         CREATE HOUSES
