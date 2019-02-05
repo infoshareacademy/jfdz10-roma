@@ -148,7 +148,7 @@ function pizza(){
         scoresContainer.classList.add('score-div');
 
         const scoresContainerText = document.createElement('span');
-        scoresContainerText.innerText = 'Points: ';
+        scoresContainerText.innerText = 'Punkty: ';
         scoresContainer.prepend(scoresContainerText);
         scoresContainer.innerHTML = scoresContainerText.innerText;
         
@@ -195,15 +195,15 @@ function pizza(){
         let elementsToFind = []; // array of items to find
         let allIngredients;
         const ingredients = [
-            { icon: backgroundImage = "url('img/cheese.png')", id: 'cheese' },
-            { icon: backgroundImage = "url('img/mushroom.png')", id: 'mushroom' },
-            { icon: backgroundImage = "url('img/tomato.png')", id: 'tomato' },
+            { icon: backgroundImage = "url('img/cheese.png')", id: 'ser' },
+            { icon: backgroundImage = "url('img/mushroom.png')", id: 'pieczarki' },
+            { icon: backgroundImage = "url('img/tomato.png')", id: 'pomidor' },
             { icon: backgroundImage = "url('img/chilli.png')", id: 'chilli' },
-            { icon: backgroundImage = "url('img/ham.png')", id: 'ham' },
-            { icon: backgroundImage = "url('img/onion.png')", id: 'onion' },
-            { icon: backgroundImage = "url('img/peppers.png')", id: 'peppers' },
-            { icon: backgroundImage = "url('img/rucola.png')", id: 'rucola' },
-            { icon: backgroundImage = "url('img/corn.png')", id: 'corn' },
+            { icon: backgroundImage = "url('img/ham.png')", id: 'szynka' },
+            { icon: backgroundImage = "url('img/onion.png')", id: 'cebula' },
+            { icon: backgroundImage = "url('img/peppers.png')", id: 'papryka' },
+            { icon: backgroundImage = "url('img/rucola.png')", id: 'rukola' },
+            { icon: backgroundImage = "url('img/corn.png')", id: 'kukurydza' },
         ];
     
         function createIngredients() {
