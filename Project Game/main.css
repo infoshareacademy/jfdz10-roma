@@ -429,16 +429,22 @@ body {
 
   }
 
-/* .wrong-way {
+.loser {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     z-index: 99999;
-    background-color: red;
-    transition: all 0.1s;
-} */
+    background-color: black;
+    font-family: 'VT323', monospace;
+    color: white;
+    font-size: 6rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .winner {
     position: absolute;
@@ -448,8 +454,9 @@ body {
     height: 100vh;
     z-index: 99999;
     background-color: green;
+    font-family: 'VT323', monospace;
     color: white;
-    font-size: 16rem;
+    font-size: 10rem;
     display: flex;
     justify-content: center;
     align-items: center;

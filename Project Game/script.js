@@ -41,9 +41,6 @@ result += "<tr><td>" + (index + 1) + '.</td><td>' + item.nick + '</td><td>' + it
 playerScore.innerHTML = result + "</table>";
 }
 
-
-
-
 /*********************************************
                 3 2 1 PIZZA
 *********************************************/
@@ -78,16 +75,18 @@ function countPizza() {
 function pizza(){
 
     function gameOver() {
-        console.log("game over");
         var clearScore = document.querySelector('.score-div');
         clearScore.style.display = 'none';
         var clearTime = document.querySelector('.time');
         clearTime.style.display = 'none';
-        var clearPizza = document.querySelector('.pizza');
-        clearPizza.style.display = 'none';
+        var clearPizza = document.querySelector('.deliver-map');
+        clearPizza !== null ? clearPizza.style.display = 'none' : clearPizza;
         var clearIngredientsBox = document.querySelector('.ingredients_box');
-        clearIngredientsBox.style.display = 'none';
-       
+        clearIngredientsBox.remove();
+        const $pizzaBox = document.querySelector(".pizza");
+        $pizzaBox !== null ? $pizzaBox.remove() : $pizzaBox;
+        window.onkeyup = null;
+
         const body = document.querySelector('body');
         const scores = document.createElement('div');
         scores.classList.add('scores');
@@ -176,13 +175,9 @@ function pizza(){
             seconds.textContent = formatTimer(totalSeconds % 60);
             minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
             if (totalSeconds <= 0) {
-                const divs = document.querySelectorAll("div:not(.time)")
-                gameOver();
-
-               /*divs.forEach((el) => {
-                    el.remove();
-                });*/
+                seconds.textContent = '00'
                 clearInterval(counter);
+                gameOver();
             };
         }, 1000);
     };
@@ -199,11 +194,9 @@ function pizza(){
     createTimer();
 
     // create points
-
     let totalScores = 0;
 
     function createScores() {
-        
         const body = document.querySelector('body');
         const scoresContainer = document.createElement('div');
         scoresContainer.classList.add('score-div');
@@ -291,6 +284,8 @@ function pizza(){
             // start creating ingredients
             displayIngredients.forEach(function(ingredient, index) {
                 setTimeout(function() {
+                    totalSeconds <= 0 && pizzaContainer !== null ? pizzaContainer.remove() : totalSeconds;
+                    totalSeconds <= 0 && ingredientsBox !== null ? ingredientsBox.remove() : totalSeconds;
                     const ingredientElement = document.createElement('div');
                     ingredientElement.classList.add('ingredient');
                     ingredientElement.style.backgroundImage = ingredient.icon;
@@ -317,12 +312,10 @@ function pizza(){
                 that.style.top = `calc(${getRandomInt(39,50)}%)`;
                 that.style.animation = `linear`;
                 that.removeEventListener('click', findElement);
-                console.log('to find: ', elementsToFind);
     
                 // ******************** WINNER ********************
                 if (elementsToFind.length === 0) {
                     updateScores();
-                    console.log(`%c WINNER`, `font-size: 4rem; color: darkgreen`);
                     allIngredients.forEach(removeFindingEvent);
                     setTimeout(function() {
                         pizzaContainer.remove();
@@ -330,13 +323,10 @@ function pizza(){
                     }, 800);
                 } else {
                     updateScores();
-                    // console.log(`%c That's correct element!`, `background: lightgreen;`); 
                 }
             } else if (that.dataset.id === 'killer') {
                 allIngredients.forEach(removeFindingEvent);
                 clickKillerIngredient();
-                allAnimals.forEach(removeFindingEvent);
-                console.log('%c YOU LOSE!!!', ' background: black; color: red; font-size: 4rem;');
             } else {
                 subtractTime();
                 that.classList.add('wrong-click-animation');
@@ -347,14 +337,20 @@ function pizza(){
         function updateScores() {
             const scoresCounter = document.querySelector('.score-counter') 
             totalScores++;
-            console.log(totalScores);
             scoresCounter.innerText = totalScores;
         }
       
         function clickKillerIngredient() {
             totalSeconds = 0;
-            const seconds = document.querySelector('.time span:nth-child(2)');
-            seconds.textContent = '00';
+            const $loser = document.createElement("div");
+            body.prepend($loser);
+            $loser.classList.add("loser");
+            $loser.innerHTML = 'Muchomor sromotnikowy! <br> Twój klient nie żyje!'
+            setTimeout(() => {
+                const ingredientElement = document.querySelectorAll('.ingredient');
+                ingredientElement.forEach(el => el.remove());
+                $loser.remove();
+            }, 4000)
         }
 
         function getRandomInt(min, max) {
@@ -386,7 +382,6 @@ function pizza(){
         }
     
         createIngredients();
-        console.log(elementsToFind);
         ingredientsBox.textContent = `${elementsToFind[0]}, ${elementsToFind[1]}, ${elementsToFind[2]}`;
     };
 
@@ -436,9 +431,6 @@ function pizza(){
             const scoresCounter = document.querySelector('.score-counter') 
             totalScores++;
             scoresCounter.innerText = totalScores;
-
-
-
             window.removeEventListener('keydown', addKeys);
             setTimeout(() => {
                 drivingEffect.classList.add('winner');
@@ -446,11 +438,9 @@ function pizza(){
                 document.documentElement.style.setProperty(`--carPositionX`, 0 + suffix);
                 document.documentElement.style.setProperty(`--carPositionY`, 0 + suffix);
                 deliverContainer.remove();
-                window.removeEventListener('keyup', addKeys);
+                window.onkeyup = null;
                 carPositionX = 0;
                 carPositionY = 0;
-                console.log(carPositionX);
-                console.log(carPositionY);
                 setTimeout(() => {
                     pizzaGame();
                 }, 500);
@@ -594,7 +584,7 @@ function pizza(){
             }
         }
     
-        window.addEventListener('keyup', addKeys);
+        window.onkeyup = addKeys;
     
         /*********************************************
                         CREATE HOUSES
