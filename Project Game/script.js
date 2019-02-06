@@ -83,6 +83,8 @@ function pizza(){
         clearPizza !== null ? clearPizza.style.display = 'none' : clearPizza;
         var clearIngredientsBox = document.querySelector('.ingredients_box');
         clearIngredientsBox.remove();
+        const $pizzaBox = document.querySelector(".pizza");
+        $pizzaBox !== null ? $pizzaBox.remove() : $pizzaBox;
         window.onkeyup = null;
 
         const body = document.querySelector('body');
@@ -321,12 +323,10 @@ function pizza(){
                     }, 800);
                 } else {
                     updateScores();
-                    // console.log(`%c That's correct element!`, `background: lightgreen;`); 
                 }
             } else if (that.dataset.id === 'killer') {
                 allIngredients.forEach(removeFindingEvent);
                 clickKillerIngredient();
-                allAnimals.forEach(removeFindingEvent);
             } else {
                 subtractTime();
                 that.classList.add('wrong-click-animation');
@@ -342,8 +342,15 @@ function pizza(){
       
         function clickKillerIngredient() {
             totalSeconds = 0;
-            const seconds = document.querySelector('.time span:nth-child(2)');
-            seconds.textContent = '00';
+            const $loser = document.createElement("div");
+            body.prepend($loser);
+            $loser.classList.add("loser");
+            $loser.innerHTML = 'Muchomor sromotnikowy! <br> Twój klient nie żyje!'
+            setTimeout(() => {
+                const ingredientElement = document.querySelectorAll('.ingredient');
+                ingredientElement.forEach(el => el.remove());
+                $loser.remove();
+            }, 4000)
         }
 
         function getRandomInt(min, max) {
