@@ -1,0 +1,463 @@
+* {
+    box-sizing: border-box;
+}
+/************** game starting page ***************/
+
+.menu-container {
+    color:whitesmoke;
+    font-family: 'VT323', monospace;
+    background: grey;
+    height: 100%;
+    width: 100%;
+}
+.menu {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.menu__title {
+    font-size: 10rem;
+    text-align: center;
+    margin: 2rem 3rem 0.5rem;
+    text-shadow: 0 0 10px;
+    font-weight: 300;
+}
+.menu__button {
+    list-style: none;
+    height: 3.5rem;
+    width: 15rem;
+    padding: 0.2rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    border: 1px solid white;
+    cursor: pointer;
+    background: rgba(255, 0, 0, 0.445);
+    margin: 1rem;
+    text-shadow: 0 0 0.2px;
+    box-shadow: 0 0 20px; 
+    transition: outline 2s, box-shadow 2s, text-shadow 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+.menu__button:hover {
+    box-shadow: 0px 5px 80px rgba(255, 0, 0, 0.445);
+    text-shadow: 0 0 20px;
+    outline-offset: 25px;
+}
+
+.name__button:hover {
+    box-shadow: 0px 5px 80px rgba(255, 0, 0, 0.445);
+    text-shadow: 0 0 20px;
+    outline-offset: 25px;
+}
+.menu-img {
+    align-self: center;
+}
+/**************** player name **************/
+
+.player-name-box {
+    width: 50vw;
+    height: 50vh;
+    color: rgb(26, 25, 25);
+    background-color: rgb(241,205,124);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    border: 2px solid white;
+    box-shadow: 0 0 40px; 
+    margin: 25% 49%;
+}
+
+.name__button {
+    color: whitesmoke;
+    font-family: 'VT323', monospace;
+    height: 3.5rem;
+    width: 15rem;
+    padding: 0.2rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    border: 1px solid white;
+    cursor: pointer;
+    background: rgba(173, 14, 14, 0.781);
+    margin: 1rem;
+    text-shadow: 0 0 0.2px;
+    box-shadow: 0 0 20px; 
+    transition: outline 2s, box-shadow 2s, text-shadow 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+label {
+    font-size: 4rem;
+}
+
+input {
+    font-size: 2rem;
+    width: 70%;
+}
+
+/**************** about game - instrukcja gry **************/
+
+.about, .score  {
+    width: 50vw;
+    height: 70vh;
+    color: rgb(26, 25, 25);
+    background-color: rgb(241,205,124);
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    text-align: center;
+    border: 2px solid white;
+    box-shadow: 0 0 40px; 
+    top: 15%;
+    left: 25%;
+    z-index: 10000;
+}
+.score {
+    flex-flow: row;
+}
+
+.about__text {
+    font-size: 1.5rem;
+    padding: 0 2rem;
+}
+.about__img img {
+    width: 6rem;
+    height:5rem ;
+}
+.u--visible {
+    margin: 0 auto;
+    position: absolute;
+    visibility: visible;
+    opacity: 1;
+    filter: blur(0);
+    transition: filter 1s, opacity 1s;
+}
+.u--blur-fadeout {
+    display: none;
+    filter: blur(30px);
+    opacity: 0;
+    transition: filter 1s, opacity 1s;
+}
+/**************** scores **************/
+
+.scores {
+    width: 54vw;
+    height: 40vh;
+    z-index: 10000;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    top: 20%;
+    right: 305;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    background-color: rgb(241,205,124);
+    font-weight: bold;
+    align-self: center;
+    font-family: 'VT323', monospace;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.699);
+}
+.save__button {
+    color: whitesmoke;
+    font-family: 'VT323', monospace;
+    height: 3.5rem;
+    width: 15rem;
+    padding: 0.2rem;
+    font-size: 2rem;
+    line-height: 3rem;
+    text-align: center;
+    border: 1px solid white;
+    cursor: pointer;
+    margin: 0 29%;
+    background: rgba(173, 14, 14, 0.781);
+    text-shadow: 0 0 0.2px;
+    box-shadow: 0 0 20px; 
+    transition: outline 2s, box-shadow 2s, text-shadow 2s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.save__button:hover {
+    box-shadow: 0px 5px 80px rgba(255, 0, 0, 0.445);
+    text-shadow: 0 0 20px;
+    outline-offset: 25px;
+}
+
+.scoresElement {
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 416px){
+    .menu-img {
+        display: none;
+    }
+    .menu__title {
+        font-size: 5rem;
+    }
+    .about__text {
+        font-size: 1rem;
+    }
+    .about__img {
+        display: none;
+    }
+    } 
+    
+    @media (min-width:567px) and (max-width: 850px) and (orientation: landscape){
+    .about__text {
+        font-size: 1rem;
+    }
+    .about__img {
+        display: none;
+    }
+    .menu__title {
+        font-size: 8rem;
+    }
+    .menu__button {
+        height: 2.6rem;
+        line-height: 2rem;
+    }
+    .menu-img {
+        display: none;
+    }}
+
+/**************** 3 2 1 Pizza **************/
+
+.count-container-pizza {
+    background-image: url(img/pizzagame.png);
+    background-position: center;
+    background-size: cover;
+    color: rgb(66, 66, 66);
+    display: flex;
+    flex-direction: column;
+    font-family: 'VT323', monospace;
+    font-size: 7rem;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+    width: 100vw;
+}
+
+/************** game ***************/
+
+body {
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-image: url("img/background-image.png");
+}
+
+.time {
+    position: absolute;
+    top: 10px;
+    font-size: 5rem;
+    letter-spacing: 4px;
+    font-weight: bold;
+    align-self: center;
+    font-family: 'VT323', monospace;
+    background-color: rgb(241,205,124);
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.699);
+    width: 230px;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+}
+
+.score-div {
+    width: 230px;
+    height: 50px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    top: 10px;
+    right: 30px;
+    font-size: 3rem;
+    letter-spacing: 2px;
+    background-color: rgb(241,205,124);
+    font-weight: bold;
+    align-self: center;
+    font-family: 'VT323', monospace;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.699);
+
+
+}
+
+.box {
+    position: relative;
+    background-image: url("img/pizza.png");
+    width: 360px;
+    height: 360px;
+   
+}
+
+.ingredient {
+    position: absolute;
+    font-size: 4rem;
+    padding: 0.4rem;
+    width: 90px;
+    height: 90px;
+    top: -4rem;
+    line-height: 1;
+    left: calc(0%);
+    transition: all .5s;
+    transform: translateY(0);
+    transform: translateX(0);
+    z-index: 9999;
+}
+
+.wrong-action {
+    color: red;
+}
+  
+.ingredients_box {
+    background: url(img/notebook.png);
+    background-size: cover;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.699);
+    border-radius: 0 0 5px 5px;
+    margin-right: 2%;
+    padding-left: 1%;
+    width: 12%;
+    height: 22vh;
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-family: 'VT323', monospace;
+    font-size: 2.2rem;
+}
+
+.wrong-click-animation {
+    animation: shake 0.3s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% {
+      transform: translateX(-1px);
+    }
+    
+    20%, 80% {
+      transform: translateX(2px);
+    }
+  
+    30%, 50%, 70% {
+      transform: translateX(-4px);
+    }
+  
+    40%, 60% {
+      transform: translateX(4px);
+    }
+}
+
+/*********************************
+    STYLES FOR DELIVER GAME
+**********************************/
+
+:root {
+    --carPositionX: 0px;
+    --carPositionY: 0px;
+}
+
+.deliver-map {
+    width: 1120px;
+    height: 720px;
+    background: lightgray;
+    position: relative;
+    display: grid;
+    grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+}
+
+.home {
+    background-image: url("img/bulding-top-4.png");
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: black;
+}
+
+.car {
+    display: inline-block;
+    background-image: url("img/delivery car.png");
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: var(--carPositionY);
+    left: var(--carPositionX);
+    width: 80px;
+    height: 80px;
+    transition: top 0.5s, left 0.5s, transform 0.1s;
+    transform: rotate(90deg);
+}
+
+.deliver {
+    position: absolute;
+    background-image: url("img/destination-icon.png");
+    width: 80px;
+    height: 80px;
+    z-index: 999999;
+    animation: jump 1s linear infinite;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(-20px);
+    }
+  
+    50% {
+        transform: translateY(-60px);
+    }
+
+    100% {
+        transform: translateY(-20px);
+    }
+
+  }
+
+.loser {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    background-color: black;
+    font-family: 'VT323', monospace;
+    color: white;
+    font-size: 6rem;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.winner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    background-color: green;
+    font-family: 'VT323', monospace;
+    color: white;
+    font-size: 10rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
