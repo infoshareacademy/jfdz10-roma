@@ -2,43 +2,45 @@
                 FIRST PAGE
 *********************************************/
 
-document.querySelector('#aboutBox').addEventListener('click', toggleModal);
-document.querySelector('#aboutLink').addEventListener('click', toggleModal);
-
-function toggleModal() {
-  document.querySelector(`#${this.dataset.hide}`).classList.add('u--blur-fadeout');
-  document.querySelector(`#${this.dataset.show}`).classList.remove('u--blur-fadeout');
-}
-
-document.querySelector('#checkName').addEventListener('click', clear);
-function clear(){
-    const menu = document.querySelector('#menu');
-    menu.style.visibility = 'hidden';
-    const playerNameBox = document.querySelector('.player-name-box');
-    playerNameBox.style.display = 'none';
-}
-
-document.getElementById('checkName').addEventListener('click', addName);
-function addName() {
-    var name = document.getElementById('playerName').value;
-    localStorage.setItem('name', name);
-}
-
-document.getElementById('checkName').addEventListener('click', countPizza);
-document.querySelector('#startGame').addEventListener('click',toggleModal);
-
-document.querySelector('#scoresBox').addEventListener('click', toggleModal);
-document.querySelector('#scoresLink').addEventListener('click', toggleModal);
-
-const playerScore = document.querySelector('#scoresList');
-let list = JSON.parse(localStorage.getItem("bestList"));
-if (!list) {
-    playerScore.innerHTML = '';
-} else {
-    let result = '<table style="width:60%" align:"center"> ';
-list.forEach((item, index) =>
-result += "<tr><td>" + (index + 1) + '.</td><td>' + item.nick + '</td><td>' + item.point + 'p.') + '</td></tr>';
-playerScore.innerHTML = result + "</table>";
+function runFirstPageOfGame() {
+    document.querySelector('#aboutBox').addEventListener('click', toggleModal);
+    document.querySelector('#aboutLink').addEventListener('click', toggleModal);
+    
+    function toggleModal() {
+      document.querySelector(`#${this.dataset.hide}`).classList.add('u--blur-fadeout');
+      document.querySelector(`#${this.dataset.show}`).classList.remove('u--blur-fadeout');
+    }
+    document.querySelector('#checkName').addEventListener('click', clear);
+    
+    function clear(){
+        const menu = document.querySelector('#menu');
+        menu.style.visibility = 'hidden';
+        const playerNameBox = document.querySelector('.player-name-box');
+        playerNameBox.style.display = 'none';
+    }
+    document.getElementById('checkName').addEventListener('click', addName);
+    
+    function addName() {
+        var name = document.getElementById('playerName').value;
+        localStorage.setItem('name', name);
+    }
+    
+    document.getElementById('checkName').addEventListener('click', countPizza);
+    document.querySelector('#startGame').addEventListener('click', toggleModal);
+    document.querySelector('#scoresBox').addEventListener('click', toggleModal);
+    document.querySelector('#scoresLink').addEventListener('click', toggleModal);
+    
+    const playerScore = document.querySelector('#scoresList');
+    let list = JSON.parse(localStorage.getItem("bestList"));
+    
+    if (!list) {
+        playerScore.innerHTML = '';
+    } else {
+        let result = '<table style="width:60%" align:"center"> ';
+        list.forEach((item, index) =>
+        result += "<tr><td>" + (index + 1) + '.</td><td>' + item.nick + '</td><td>' + item.point + 'p.') + '</td></tr>';
+        playerScore.innerHTML = result + "</table>";
+    }
 }
 
 /*********************************************
@@ -65,14 +67,15 @@ function countPizza() {
 
     window.setTimeout(function(){
         countContainer.remove();
-        pizza();
+        document.querySelector('.game-container').style.display = 'none';
+        playGame();
     }, 5000);
 };
 
 /*********************************************
                 PIZZA MAKER
 *********************************************/
-function pizza(){
+function playGame(){
 
     function gameOver() {
         var clearScore = document.querySelector('.score-div');
@@ -93,7 +96,7 @@ function pizza(){
 
         function saveResult(){
             document.querySelector('.scores').style.display = 'none';
-           
+            
             const showScores = document.querySelector('#scoresBox'); 
             showScores.style.display = 'block';
             showScores.style.opacity = '1';
@@ -181,7 +184,6 @@ function pizza(){
             };
         }, 1000);
     };
-
 
     function formatTimer(val) {
         let valString = `${val}`;
@@ -671,6 +673,11 @@ function pizza(){
     /**************************************
                  START GAME 
     ***************************************/
-    
-pizzaGame();
-};
+    pizzaGame()    
+}
+function runGameOnSubmit() {
+    const $gameContainer = document.querySelector('.game-container');
+    $gameContainer.style.display = 'block';
+    runFirstPageOfGame();
+}
+
