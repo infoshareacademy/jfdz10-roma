@@ -225,6 +225,11 @@
         border-bottom: 2px solid #CC3333;
     }
 
+    .menu-device__link:hover {
+        color: #fff;
+        opacity: 1;
+    }
+
     .nav-toggle__input:checked ~ .menu-device {
         right: 0;
     }
