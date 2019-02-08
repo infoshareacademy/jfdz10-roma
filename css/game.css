@@ -15,6 +15,7 @@
     background-image: url("../img/game/background-image.png");
     z-index: 999;
     position: absolute;
+    line-height: normal;
 }
 
 /************** game starting page ***************/
@@ -191,7 +192,7 @@
     text-align: center;
     border: 1px solid white;
     cursor: pointer;
-    margin: 0 29%;
+    margin: 0 auto;
     background: rgba(173, 14, 14, 0.781);
     text-shadow: 0 0 0.2px;
     box-shadow: 0 0 20px; 
@@ -260,20 +261,6 @@
     width: 100vw;
 }
 
-/************** game ***************/
-
-/* body {
-    width: 100%;
-    height: 100vh;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-image: url("../img/background-image.png");
-} */
-
 .game-container .time {
     position: absolute;
     top: 10px;
@@ -316,7 +303,7 @@
     background-image: url("../img/game/pizza.png");
     width: 360px;
     height: 360px;
-   
+    top: -100px;
 }
 
 .game-container .ingredient {

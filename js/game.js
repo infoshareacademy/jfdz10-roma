@@ -310,7 +310,7 @@ function playGame(){
                 // remove element from array
                 const found = elementsToFind.findIndex((el) => el === that.dataset.id);
                 elementsToFind.splice(found, 1);
-                that.style.left =  `calc(${getRandomInt(40, 52)}%)`;
+                that.style.left =  `calc(${getRandomInt(44, 52)}%)`;
                 that.style.top = `calc(${getRandomInt(39,50)}%)`;
                 that.style.animation = `linear`;
                 that.removeEventListener('click', findElement);
@@ -363,9 +363,9 @@ function playGame(){
         }
     
         function topLeftRandom() {
-            let random = getRandomInt(0, 90);
+            let random = getRandomInt(10, 80);
             for (let i = 0; random > 37 && random < 55; i++) {
-                random = getRandomInt(0, 90);
+                random = getRandomInt(10, 80);
             }
     
             return `${random}%`;
