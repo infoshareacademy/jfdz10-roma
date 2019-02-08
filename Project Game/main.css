@@ -306,12 +306,9 @@ body {
 
 .ingredient {
     position: absolute;
-    font-size: 4rem;
-    padding: 0.4rem;
     width: 90px;
     height: 90px;
     top: -4rem;
-    line-height: 1;
     left: calc(0%);
     transition: all .5s;
     transform: translateY(0);
