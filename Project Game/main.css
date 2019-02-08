@@ -175,7 +175,7 @@ input {
     text-align: center;
     border: 1px solid white;
     cursor: pointer;
-    margin: 0 29%;
+    margin: 0 auto;
     background: rgba(173, 14, 14, 0.781);
     text-shadow: 0 0 0.2px;
     box-shadow: 0 0 20px; 
@@ -301,22 +301,19 @@ body {
     background-image: url("img/pizza.png");
     width: 360px;
     height: 360px;
-   
+    top: -50px;
 }
 
 .ingredient {
     position: absolute;
-    font-size: 4rem;
-    padding: 0.4rem;
     width: 90px;
     height: 90px;
-    top: -4rem;
-    line-height: 1;
     left: calc(0%);
     transition: all .5s;
     transform: translateY(0);
     transform: translateX(0);
-    z-index: 9999;
+    margin-top: 50px;
+    margin-left: 100px;
 }
 
 .wrong-action {
