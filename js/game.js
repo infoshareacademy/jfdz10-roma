@@ -156,7 +156,7 @@ function playGame(){
     }
 
     // Setup timer and total seconds for playing
-    const mins = .1;
+    const mins = 2;
     let totalSeconds = mins * 60;
 
     function createTimer() {

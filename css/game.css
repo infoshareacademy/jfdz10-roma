@@ -126,7 +126,6 @@
     display: flex;
     flex-flow: column;
     align-items: center;
-    justify-content: space-evenly;
     text-align: center;
     border: 2px solid white;
     box-shadow: 0 0 40px; 
@@ -203,16 +202,19 @@
 }
 
 .game-container .scoresElement {
+    width: 100%;
     font-size: 2rem;
     display: flex;
     justify-content: center;
     line-height: 1.15;
-    padding-left: 1rem;
-    margin: 1rem 1rem 1rem 0;
+    padding-left: 3rem;
+    margin: 2rem 2rem 2rem 0;
 }
 
 .game-container .title {
     font-weight: bold;
+    font-size: 2rem;
+    margin: 1rem;
 }
 
 @media (max-width: 416px){
