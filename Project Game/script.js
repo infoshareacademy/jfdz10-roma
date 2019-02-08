@@ -361,11 +361,10 @@ function pizza(){
         }
     
         function topLeftRandom() {
-            let random = getRandomInt(0, 90);
-            for (let i = 0; random > 37 && random < 55; i++) {
-                random = getRandomInt(0, 90);
+            let random = getRandomInt(10, 70);
+            for (let i = 0; random > 35 && random < 50; i++) {
+                random = getRandomInt(10, 70);
             }
-    
             return `${random}%`;
         }
     
