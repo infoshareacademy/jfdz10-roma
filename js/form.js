@@ -8,7 +8,7 @@ function validation(){
         document.getElementById("imail").innerHTML = "Wpisz swój adres e-mail";
         return false;
     } else {
-        
+        runGameOnSubmit();
         return false;
     } 
 }
