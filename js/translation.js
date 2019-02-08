@@ -2,7 +2,6 @@
     const $langButton = $('div.lang-button');
     const $translationsText = $('[data-lang]');
     const $translationsFormPlaceholder = $('[data-langplaceholder]');
-    const $translationsFormTitle = $('[data-langtitle]');
     let prevLang;
 
     function languageSwitch() {
@@ -16,11 +15,6 @@
             prevLang = $(this).attr('placeholder');
             $(this).attr('placeholder', ($(this).attr('data-langplaceholder')));
             $(this).attr('data-langplaceholder', prevLang)
-        })
-        $translationsFormTitle.each(function() {
-            prevLang = $(this).attr('title');
-            $(this).attr('title', ($(this).attr('data-langtitle')));
-            $(this).attr('data-langtitle', prevLang)
         })
 
         if (localStorage.language === 'english') {
