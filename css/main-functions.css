@@ -2,7 +2,10 @@
     max-width: 100%;
     display: flex;
     justify-content: center;
-    padding: 50px 0 70px 0;
+    padding: 1% 0 2% 0;
+    background-image: url(/img/main-functions_background.jpg);
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 .main-functions-container {
@@ -10,7 +13,7 @@
     width: 100%;
 }
 
-.main-functions__heading {	
+.main-functions__heading {
     font-size: 2.5rem;	
     text-align: center;	
     padding: 2rem;	
@@ -28,12 +31,13 @@
     display: inline-block;	
     height: auto;
     flex-basis: 20%;	
-    border: 5px solid #ffcc66;
+    border: 2px solid #ffcc66;
+    background: #ffaa0009;
     border-radius: 15px;	
 }	
 
 .main-function__img-container:hover {
-    background: #ffcc66;
+    background: #ffe3ab;
 }
 
 .main-function__img {	
@@ -43,9 +47,9 @@
 }	
 
 .main-function__caption {	
-    font-size: 1.5rem;	
+    font-size: 1.2rem;	
     text-align: center;	
-    padding: 0 0 1rem 0;
+    padding: 0 1rem 1rem 1rem;
     font-family: 'Lato', cursive;
 }
 
