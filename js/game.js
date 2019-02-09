@@ -2,43 +2,45 @@
                 FIRST PAGE
 *********************************************/
 
-document.querySelector('#aboutBox').addEventListener('click', toggleModal);
-document.querySelector('#aboutLink').addEventListener('click', toggleModal);
-
-function toggleModal() {
-  document.querySelector(`#${this.dataset.hide}`).classList.add('u--blur-fadeout');
-  document.querySelector(`#${this.dataset.show}`).classList.remove('u--blur-fadeout');
-}
-
-document.querySelector('#checkName').addEventListener('click', clear);
-function clear(){
-    const menu = document.querySelector('#menu');
-    menu.style.visibility = 'hidden';
-    const playerNameBox = document.querySelector('.player-name-box');
-    playerNameBox.style.display = 'none';
-}
-
-document.getElementById('checkName').addEventListener('click', addName);
-function addName() {
-    var name = document.getElementById('playerName').value;
-    localStorage.setItem('name', name);
-}
-
-document.getElementById('checkName').addEventListener('click', countPizza);
-document.querySelector('#startGame').addEventListener('click',toggleModal);
-
-document.querySelector('#scoresBox').addEventListener('click', toggleModal);
-document.querySelector('#scoresLink').addEventListener('click', toggleModal);
-
-const playerScore = document.querySelector('#scoresList');
-let list = JSON.parse(localStorage.getItem("bestList"));
-if (!list) {
-    playerScore.innerHTML = '';
-} else {
-    let result = '<table style="width:60%" align:"center"> ';
-list.forEach((item, index) =>
-result += "<tr><td>" + (index + 1) + '.</td><td>' + item.nick + '</td><td>' + item.point + 'p.') + '</td></tr>';
-playerScore.innerHTML = result + "</table>";
+function runFirstPageOfGame() {
+    document.querySelector('#aboutBox').addEventListener('click', toggleModal);
+    document.querySelector('#aboutLink').addEventListener('click', toggleModal);
+    
+    function toggleModal() {
+      document.querySelector(`#${this.dataset.hide}`).classList.add('u--blur-fadeout');
+      document.querySelector(`#${this.dataset.show}`).classList.remove('u--blur-fadeout');
+    }
+    document.querySelector('#checkName').addEventListener('click', clear);
+    
+    function clear(){
+        const menu = document.querySelector('#menu');
+        menu.style.visibility = 'hidden';
+        const playerNameBox = document.querySelector('.player-name-box');
+        playerNameBox.style.display = 'none';
+    }
+    document.getElementById('checkName').addEventListener('click', addName);
+    
+    function addName() {
+        var name = document.getElementById('playerName').value;
+        localStorage.setItem('name', name);
+    }
+    
+    document.getElementById('checkName').addEventListener('click', countPizza);
+    document.querySelector('#startGame').addEventListener('click', toggleModal);
+    document.querySelector('#scoresBox').addEventListener('click', toggleModal);
+    document.querySelector('#scoresLink').addEventListener('click', toggleModal);
+    
+    const playerScore = document.querySelector('#scoresList');
+    let list = JSON.parse(localStorage.getItem("bestList"));
+    
+    if (!list) {
+        playerScore.innerHTML = '';
+    } else {
+        let result = '<table style="width:60%" align:"center"> ';
+        list.forEach((item, index) =>
+        result += "<tr><td>" + (index + 1) + '.</td><td>' + item.nick + '</td><td>' + item.point + 'p.') + '</td></tr>';
+        playerScore.innerHTML = result + "</table>";
+    }
 }
 
 /*********************************************
@@ -46,9 +48,9 @@ playerScore.innerHTML = result + "</table>";
 *********************************************/
 
 function countPizza() {
-    const body = document.querySelector('body');
+    const $gameContainer = document.querySelector('.game-container');
     const countContainer = document.createElement('div');
-        body.prepend(countContainer);
+        $gameContainer.prepend(countContainer);
         countContainer.classList.add('count-container-pizza');
     let timer = document.createElement('p');
         countContainer.prepend(timer);
@@ -65,14 +67,15 @@ function countPizza() {
 
     window.setTimeout(function(){
         countContainer.remove();
-        pizza();
+        // document.querySelector('.game-container').style.display = 'none';
+        playGame();
     }, 5000);
 };
 
 /*********************************************
                 PIZZA MAKER
 *********************************************/
-function pizza(){
+function playGame(){
 
     function gameOver() {
         var clearScore = document.querySelector('.score-div');
@@ -87,13 +90,13 @@ function pizza(){
         $pizzaBox !== null ? $pizzaBox.remove() : $pizzaBox;
         window.onkeyup = null;
 
-        const body = document.querySelector('body');
+        const $gameContainer = document.querySelector('.game-container');
         const scores = document.createElement('div');
         scores.classList.add('scores');
 
         function saveResult(){
             document.querySelector('.scores').style.display = 'none';
-           
+            
             const showScores = document.querySelector('#scoresBox'); 
             showScores.style.display = 'block';
             showScores.style.opacity = '1';
@@ -147,7 +150,7 @@ function pizza(){
         scores.prepend(addButton);
         scores.prepend(scoresText);
         
-        body.prepend(scores);
+        $gameContainer.prepend(scores);
 
         document.querySelector('.save__button').addEventListener('click',saveResult);
     }
@@ -158,11 +161,11 @@ function pizza(){
 
     function createTimer() {
         // Create timer HTML
-        const body = document.querySelector('body');
+        const $gameContainer = document.querySelector('.game-container');
         const timer = document.createElement('div');
         timer.classList.add('time');
         timer.innerHTML = ':';
-        body.prepend(timer);
+        $gameContainer.prepend(timer);
         const minutes = document.createElement('span');
         minutes.textContent = formatTimer(parseInt(totalSeconds / 60));
         timer.prepend(minutes);
@@ -182,7 +185,6 @@ function pizza(){
         }, 1000);
     };
 
-
     function formatTimer(val) {
         let valString = `${val}`;
         if (valString.length < 2) {
@@ -197,7 +199,7 @@ function pizza(){
     let totalScores = 0;
 
     function createScores() {
-        const body = document.querySelector('body');
+        const $gameContainer = document.querySelector('.game-container');
         const scoresContainer = document.createElement('div');
         scoresContainer.classList.add('score-div');
 
@@ -210,7 +212,7 @@ function pizza(){
         scoresCounter.classList.add('score-counter');        
         scoresCounter.innerText = 0;
         scoresContainer.append(scoresCounter);
-        body.prepend(scoresContainer);
+        $gameContainer.prepend(scoresContainer);
         scoresContainer.appendChild(scoresCounter);
     };
     createScores();
@@ -232,10 +234,10 @@ function pizza(){
         const winner = document.querySelector(".winner");
         winner ? winner.remove() : winner;
 
-        const body = document.querySelector('body');
+        const $gameContainer = document.querySelector('.game-container');
         const pizzaContainer = document.createElement('div');
-        pizzaContainer.classList.add('pizza'); ////////////////////////
-        body.prepend(pizzaContainer);
+        pizzaContainer.classList.add('pizza');
+        $gameContainer.prepend(pizzaContainer);
         const box = document.createElement('div');
         box.classList.add('box');
         box.textContent = ' ';
@@ -243,22 +245,22 @@ function pizza(){
 
         let ingredientsBox = document.createElement('div');
         ingredientsBox.classList.add('ingredients_box');
-        body.prepend(ingredientsBox);
+        $gameContainer.prepend(ingredientsBox);
 
         const toDisplay = 20; // level of hardness (how many random element without element fo find)
         let displayIngredients = [];
         let elementsToFind = []; // array of items to find
         let allIngredients;
         const ingredients = [
-            { icon: backgroundImage = "url('img/cheese.png')", id: 'ser' },
-            { icon: backgroundImage = "url('img/mushroom.png')", id: 'pieczarki' },
-            { icon: backgroundImage = "url('img/tomato.png')", id: 'pomidor' },
-            { icon: backgroundImage = "url('img/chilli.png')", id: 'chilli' },
-            { icon: backgroundImage = "url('img/ham.png')", id: 'szynka' },
-            { icon: backgroundImage = "url('img/onion.png')", id: 'cebula' },
-            { icon: backgroundImage = "url('img/peppers.png')", id: 'papryka' },
-            { icon: backgroundImage = "url('img/rucola.png')", id: 'rukola' },
-            { icon: backgroundImage = "url('img/corn.png')", id: 'kukurydza' },
+            { icon: backgroundImage = "url('img/game/cheese.png')", id: 'ser' },
+            { icon: backgroundImage = "url('img/game/mushroom.png')", id: 'pieczarki' },
+            { icon: backgroundImage = "url('img/game/tomato.png')", id: 'pomidor' },
+            { icon: backgroundImage = "url('img/game/chilli.png')", id: 'chilli' },
+            { icon: backgroundImage = "url('img/game/ham.png')", id: 'szynka' },
+            { icon: backgroundImage = "url('img/game/onion.png')", id: 'cebula' },
+            { icon: backgroundImage = "url('img/game/peppers.png')", id: 'papryka' },
+            { icon: backgroundImage = "url('img/game/rucola.png')", id: 'rukola' },
+            { icon: backgroundImage = "url('img/game/corn.png')", id: 'kukurydza' },
         ];
     
         function createIngredients() {
@@ -274,7 +276,7 @@ function pizza(){
                 displayIngredients.push(ingredients[index]);
             };
             ingredients.push({
-                icon: backgroundImage = "url('img/killer-mushroom.png')",
+                icon: backgroundImage = "url('img/game/killer-mushroom.png')",
                 id: 'killer',
             });
             displayIngredients.push(ingredients[ingredients.length - 1]);
@@ -308,7 +310,7 @@ function pizza(){
                 // remove element from array
                 const found = elementsToFind.findIndex((el) => el === that.dataset.id);
                 elementsToFind.splice(found, 1);
-                that.style.left =  `calc(${getRandomInt(40, 52)}%)`;
+                that.style.left =  `calc(${getRandomInt(44, 52)}%)`;
                 that.style.top = `calc(${getRandomInt(39,50)}%)`;
                 that.style.animation = `linear`;
                 that.removeEventListener('click', findElement);
@@ -343,7 +345,7 @@ function pizza(){
         function clickKillerIngredient() {
             totalSeconds = 0;
             const $loser = document.createElement("div");
-            body.prepend($loser);
+            $gameContainer.prepend($loser);
             $loser.classList.add("loser");
             $loser.innerHTML = 'Muchomor sromotnikowy! <br> Twój klient nie żyje!'
             setTimeout(() => {
@@ -361,10 +363,11 @@ function pizza(){
         }
     
         function topLeftRandom() {
-            let random = getRandomInt(10, 70);
-            for (let i = 0; random > 35 && random < 50; i++) {
-                random = getRandomInt(10, 70);
+            let random = getRandomInt(10, 80);
+            for (let i = 0; random > 37 && random < 55; i++) {
+                random = getRandomInt(10, 80);
             }
+    
             return `${random}%`;
         }
     
@@ -390,10 +393,10 @@ function pizza(){
     
     // DELIVER GAME is in one big function
     const deliverGame = function() {
-        const body = document.querySelector('body');
+        const $gameContainer = document.querySelector('.game-container');
         const deliverContainer = document.createElement('div');
         deliverContainer.classList.add('deliver-map');
-        body.prepend(deliverContainer);
+        $gameContainer.prepend(deliverContainer);
         const car = document.createElement('div');
         car.classList.add('car');
         car.dataset.px = 'px';
@@ -406,7 +409,7 @@ function pizza(){
     
         // Div for wrong way effect (red flashback) and for winner effect (full green screen with capture "winner")
         const drivingEffect = document.createElement('div');
-        body.prepend(drivingEffect);
+        $gameContainer.prepend(drivingEffect);
     
         const totalWidth = Number(getComputedStyle(deliverContainer).getPropertyValue('width').slice(0, -2));
         const totalHeight = Number(getComputedStyle(deliverContainer).getPropertyValue('height').slice(0, -2));
@@ -633,9 +636,9 @@ function pizza(){
         const homes = document.querySelectorAll('.home');
         homes.forEach((home, index) => {
             if (index % 2 === 0) {
-                home.style.backgroundImage = "url('img/bulding-top-2.png')";
+                home.style.backgroundImage = "url('img/game/bulding-top-2.png')";
             } else if (index % 3 === 0) {
-                home.style.backgroundImage = "url('img/bulding-top-3.png')";
+                home.style.backgroundImage = "url('img/game/bulding-top-3.png')";
             }
         });
         // Create empty array for every home's cords (left, top) values
@@ -670,6 +673,16 @@ function pizza(){
     /**************************************
                  START GAME 
     ***************************************/
-    
-pizzaGame();
-};
+    pizzaGame()    
+}
+
+function runGameOnSubmit() {
+    const $gameContainer = document.querySelector('.game-container');
+    const $body = document.querySelector('body');
+    const $website = document.querySelector('.website');
+    $website.style.display = 'none';
+    $body.style.height = '0px';
+    $gameContainer.style.display = 'flex';
+    $gameContainer.style.zIndex = '99999999';
+    runFirstPageOfGame();
+}
