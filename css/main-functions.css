@@ -6,14 +6,15 @@
 }
 
 .main-functions-container {
-    width: 70%;
+    max-width: 1100px;
+    width: 100%;
 }
 
 .main-functions__heading {
     font-size: 2.5rem;	
     text-align: center;	
     padding: 2rem;	
-    font-family: 'Lato';
+    font-family: 'Lato', cursive;
 }	
 
 .main-functions__box {		
@@ -23,36 +24,14 @@
     align-content: space-between;   
 }	
 
-.main-function__img-container1,
-.main-function__img-container2,
-.main-function__img-container3,
-.main-function__img-container4 {	
+.main-function__img-container {	
     display: inline-block;	
-    height: 400px;
-    flex-basis: 24%;	
+    height: auto;
+    flex-basis: 20%;	
+    border: 2px solid #ffcc66;
     background: #ffaa0009;
-    border-radius: 15px;
+    border-radius: 15px;	
 }	
-
-.main-function__img-container1 {
-    background-image: url(/img/main-functions1.jpg);
-    background-size: cover;
-}
-
-.main-function__img-container2 {
-    background-image: url(/img/main-functions2.jpg);
-    background-size: cover;
-}
-
-.main-function__img-container3 {
-    background-image: url(/img/main-functions3.jpg);
-    background-size: cover;
-}
-
-.main-function__img-container4 {
-    background-image: url(/img/main-functions4.jpg);
-    background-size: cover;
-}
 
 .main-function__img-container:hover {
     background: #ffe3ab;
@@ -65,21 +44,10 @@
 }	
 
 .main-function__caption {	
-    font-size: 2rem;	
+    font-size: 1.2rem;	
     text-align: center;	
-    font-family: 'Mali';
-    color: #ffe3ab00;
-    height: 100%;
-}
-
-.main-function__caption:hover {
-    color: #ffe3ab;
-    background: rgba(0, 0, 0, 0.719);
-    border-radius: 15px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    transition: .7s;
+    padding: 0 1rem 1rem 1rem;
+    font-family: 'Lato', cursive;
 }
 
 @media (max-width: 935px) {

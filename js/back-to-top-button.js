@@ -2,8 +2,7 @@
   
     function trackScroll() {
       let scrolled = window.pageYOffset;
-      let goTopBtn = document.querySelector('.back-to-top-button');
-      
+  
       if (scrolled > 50) {
         goTopBtn.classList.add('back-to-top-button-show');
       }
@@ -11,6 +10,8 @@
         goTopBtn.classList.remove('back-to-top-button-show');
       }
     }
+  
+    let goTopBtn = document.querySelector('.back-to-top-button');
   
     window.addEventListener('scroll', trackScroll);
   })();
