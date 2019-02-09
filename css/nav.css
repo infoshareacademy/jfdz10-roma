@@ -69,10 +69,16 @@
     opacity: 0.7;
     text-decoration: none;
 }
+
 .active-link {
-    text-shadow: 2px 2px 6px #FFF;
+    text-shadow: 2px 2px 6px #000;
     font-size: 1.4rem;
     color: #241c14 !important;
+}
+
+.lang-button {
+    margin: 0 1rem;
+    cursor: pointer;
 }
 
 @media (max-width: 995px) {
@@ -152,7 +158,7 @@
         z-index: 2;
     }
 
-    .nav-toggle span {
+    .nav-toggle__line {
         display: flex;
         width: 32px;
         height: 3px;
@@ -167,11 +173,11 @@
                     opacity 0.55s ease;
     }
 
-    .nav-toggle span:first-child {
+    .nav-toggle__line:first-child {
         transform-origin: 0% 0%;
     }
 
-    .nav-toggle span:nth-last-child(1) {
+    .nav-toggle__line:nth-last-child(1) {
         transform-origin: 0% 100%;
     }
 
@@ -223,6 +229,11 @@
         margin: 1rem 0;
         padding: 1rem 0;
         border-bottom: 2px solid #CC3333;
+    }
+
+    .menu-device__link:hover {
+        color: #fff;
+        opacity: 1;
     }
 
     .nav-toggle__input:checked ~ .menu-device {

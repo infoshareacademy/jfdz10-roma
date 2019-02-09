@@ -686,4 +686,3 @@ function runGameOnSubmit() {
     $gameContainer.style.zIndex = '99999999';
     runFirstPageOfGame();
 }
-
