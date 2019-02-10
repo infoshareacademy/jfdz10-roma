@@ -117,14 +117,16 @@ function playGame(){
                     menu.style.visibility = 'visible';
                     const playerBox = document.querySelector('.player-name-box');
                     playerBox.style.visibility = 'visible';
+                  
                     const scoresLink = document.querySelector('#scoresLink');
                     scoresLink.addEventListener('click', showScors)
                     function showScors(){
                         const showScore = document.querySelector('#scoresBox'); 
                         showScore.style.visibility = 'visible';
                     }
+                    const scoreDiv =  document.querySelector('.score-div');
+                    scoreDiv.style.visibility = 'visible';
                     }
-
 
 
             const playerScore = document.querySelector('#scoresList');
