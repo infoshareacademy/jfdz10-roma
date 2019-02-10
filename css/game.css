@@ -126,6 +126,7 @@
     display: flex;
     flex-flow: column;
     align-items: center;
+    justify-content: space-evenly;
     text-align: center;
     border: 2px solid white;
     box-shadow: 0 0 40px; 

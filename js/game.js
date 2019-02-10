@@ -105,12 +105,10 @@ function playGame(){
 
             const addButton = document.createElement('div');
             addButton.classList.add('back__button');
-
             addButton.innerText = 'Powrót';
             showScores.append(addButton);
-            
 
-            /*document.querySelector('.back__button').addEventListener('click', goBack);
+            document.querySelector('.back__button').addEventListener('click', goBack);
 
                 function goBack(){
                     const showScore = document.querySelector('#scoresBox'); 
@@ -125,7 +123,7 @@ function playGame(){
                         const showScore = document.querySelector('#scoresBox'); 
                         showScore.style.visibility = 'visible';
                     }
-                    }*/
+                    }
 
 
 
