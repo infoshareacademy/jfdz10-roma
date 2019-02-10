@@ -16,7 +16,7 @@ function runFirstPageOfGame() {
         const menu = document.querySelector('#menu');
         menu.style.visibility = 'hidden';
         const playerNameBox = document.querySelector('.player-name-box');
-        playerNameBox.style.display = 'none';
+        playerNameBox.style.visibility = 'hidden';
     }
     document.getElementById('checkName').addEventListener('click', addName);
     
@@ -101,6 +101,32 @@ function playGame(){
             showScores.style.display = 'block';
             showScores.style.opacity = '1';
             showScores.style.filter = 'none';
+
+            const addButton = document.createElement('div');
+            addButton.classList.add('back__button');
+
+            addButton.innerText = 'Powrót';
+            showScores.append(addButton);
+            
+
+            /*document.querySelector('.back__button').addEventListener('click', goBack);
+
+                function goBack(){
+                    const showScore = document.querySelector('#scoresBox'); 
+                    showScore.style.visibility = 'hidden';
+                    const menu = document.querySelector('#menu');
+                    menu.style.visibility = 'visible';
+                    const playerBox = document.querySelector('.player-name-box');
+                    playerBox.style.visibility = 'visible';
+                    const scoresLink = document.querySelector('#scoresLink');
+                    scoresLink.addEventListener('click', showScors)
+                    function showScors(){
+                        const showScore = document.querySelector('#scoresBox'); 
+                        showScore.style.visibility = 'visible';
+                    }
+                    }*/
+
+
 
             const playerScore = document.querySelector('#scoresList');
             let list = JSON.parse(localStorage.getItem("bestList"));
@@ -686,3 +712,4 @@ function runGameOnSubmit() {
     $gameContainer.style.zIndex = '99999999';
     runFirstPageOfGame();
 }
+
