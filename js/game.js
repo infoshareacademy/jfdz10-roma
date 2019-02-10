@@ -24,12 +24,13 @@ function runFirstPageOfGame() {
         var name = document.getElementById('playerName').value;
         localStorage.setItem('name', name);
     }
-    
+
+    document.querySelector('#exitGame').addEventListener('click', () => location.reload());
     document.getElementById('checkName').addEventListener('click', countPizza);
     document.querySelector('#startGame').addEventListener('click', toggleModal);
     document.querySelector('#scoresBox').addEventListener('click', toggleModal);
-    document.querySelector('#scoresLink').addEventListener('click', toggleModal);
-    
+    document.querySelector('#scoresLink').addEventListener('click', toggleModal); 
+
     const playerScore = document.querySelector('#scoresList');
     let list = JSON.parse(localStorage.getItem("bestList"));
     
