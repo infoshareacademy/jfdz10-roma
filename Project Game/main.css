@@ -108,6 +108,7 @@ input {
     background-color: rgb(241,205,124);
     display: flex;
     flex-flow: column;
+    justify-content: space-evenly;
     align-items: center;
     justify-content: space-evenly;
     text-align: center;

@@ -24,10 +24,34 @@
   </head>
 <body>
 
+<<<<<<< HEAD
   <nav class="main-nav" role="navigation">
     <div class="main-nav__container">
       <div class="logo-container">
         <img class="logo-container__logo" src="img/logo-txt.svg" alt="pizzerium logo">
+=======
+  <div class="website">
+    <nav class="main-nav" role="navigation">
+      <div class="main-nav__container">
+        <div class="logo-container">
+          <img class="logo-container__logo" src="img/logo-txt.svg" alt="pizzerium logo">
+        </div>
+        <div class="nav-toggle">
+          <input class="nav-toggle__input" type="checkbox" />
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+          <span class="nav-toggle__line"></span>
+          <ul class="menu-desktop menu-device">
+            <li class="menu__element menu__element-main"><a class="menu-desktop__link menu-device__link" href="#main-functions" data-lang="features">funkcje
+            </a></li>
+            <li class="menu__element menu__element-offer"><a class="menu-desktop__link menu-device__link" href="#offer" data-lang="offer">oferta</a></li>
+            <li class="menu__element menu__element-form"><a class="menu-desktop__link menu-device__link" href="#form">newsletter</a></li>
+            <li class="menu__element menu__element-about"><a class="menu-desktop__link menu-device__link" href="#about-us" data-lang="about us">o nas</a></li>
+            <li class="menu__element menu__element-translation">
+              <div class="lang-button" data-lang="<img src='img/flag_pl.png' height='30' width='40'/>">
+              <img src="img/flag_uk.png" height='30' width='40'/></div>
+          </li>
+>>>>>>> 15539992d0bbf8854f51aea8c63b99f05018f2b7
       </div>
       <div class="nav-toggle">
         <input class="nav-toggle__input" type="checkbox" />
@@ -49,6 +73,7 @@
         </ul>
       </div>
     </div>
+<<<<<<< HEAD
   </nav>
 
   <section id="hero" class="hero">
@@ -63,6 +88,59 @@
           <div class = "header__slide1">
             <div class = "header__slide1__text">
               <h1>Pizzerium</h1>
+=======
+  
+  
+    <div id="offer" class="all-functions">
+      <section class="all-functions__container">
+        <h2 class="all-functions__title" data-lang="Why our app is so cool?">Co fajnego oferujemy?</h2>
+    
+        <div class="all-functions__features">
+          <div class="feature">
+            <div class="feature__title">
+              <i class="feature__title--icon fas fa-hand-holding"></i>
+              <h3 class="feature__headline" data-lang="Choose ingredients">Wybierz składniki</h3>
+            </div>
+            <div class="feature__description" data-lang="Create your own pizza with your favourite ones.">Skomponuj pizzę ze swoich ulubionych składników.</div>
+          </div>
+    
+          <div class="feature">
+            <div class="feature__title">
+              <i class="feature__title--icon fas fa-apple-alt"></i>
+              <h3 class="feature__headline">Vege pizza</h3>
+            </div>
+            <div class="feature__description" data-lang="We are vegan friendly.">Wybór pizzy ze specjalnych składników dla wegan.</div>
+          </div>
+    
+          <div class="feature">
+            <div class="feature__title">
+              <i class="feature__title--icon fas fa-dollar-sign"></i>
+              <h3 class="feature__headline" data-lang="The best price">Najlepsza cena</h3>
+            </div>
+            <div class="feature__description" data-lang="Find your dream pizza at the best price.">Znajdź wybarzoną pizzę w najlepszej cenie w okolicy.</div>
+          </div>
+    
+          <div class="feature">
+            <div class="feature__title">
+              <i class="feature__title--icon fas fa-map-marked-alt"></i>
+              <h3 class="feature__headline" data-lang="Find pizzeria">Znajdź pizzerię</h3>
+            </div>
+            <div class="feature__description" data-lang="Choose a local pizza place.">Wybierz pizzerię ze swojej okolicy.</div>
+          </div>
+        
+          <div class="feature">
+            <div class="feature__title">
+              <i class="feature__title--icon fas fa-check"></i>
+              <h3 class="feature__headline" data-lang="Only tried and tested">Sprawdzone lokale</h3>
+            </div>
+            <div class="feature__description" data-lang="We only work with the bests.">Promujemy tylko bezpieczne i sprawdzone lokale.</div>
+          </div>
+    
+          <div class="feature">
+            <div class="feature__title">
+              <i class="feature__title--icon fas fa-car"></i>
+              <h3 class="feature__headline" data-lang="Place your order">Zamów danie</h3>
+>>>>>>> 15539992d0bbf8854f51aea8c63b99f05018f2b7
             </div>
           </div>
         </div>
@@ -279,11 +357,49 @@
           
             </div>
       
+<<<<<<< HEAD
         </div>        
         
 
     </div>
     
+=======
+
+  </div>
+    
+  
+<!-- GAME -->
+<div class="game-container">
+  <div class="menu-container u--visible" id="menu">
+      <div class="menu" id="menuBox">
+          <h1 class="menu__title">Pizza Game</h1>
+          <ul>
+              <li class="menu__button" id="startGame" data-show="stagePlayerName" data-hide="menuBox">Start</li>
+              <li class="menu__button" id="scoresLink" data-show="scoresBox" data-hide="menuBox">Ranking</li>
+              <li class="menu__button" id="aboutLink" data-show="aboutBox" data-hide="menuBox">Instrukcja</li>
+              <li class="menu__button" id="exitGame" data-show="aboutBox" data-hide="menuBox">Wyjście</li>
+          </ul>
+          <div class="menu-img">
+          <img src="img/game/building-front-2-pizzerium.svg">
+          </div>
+      </div>
+      
+      <div class="slide-player-name u--visible u--blur-fadeout" id="stagePlayerName" data-show="menuBox" data-hide="stagePlayerName">
+              <div class="player-name-box">
+                  <label for="playerName">Nazwa gracza:</label>
+                  <input type="text" id="playerName" class="player-name" maxlength="10" />
+                  <button class="name__button" id="checkName">Rozpocznij grę</button>
+              </div>
+          </div>
+      
+      <div class="about u--visible u--blur-fadeout" id="aboutBox" data-show="menuBox" data-hide="aboutBox">
+          <h1 class="about__title">Zasady Gry</h1>
+          <div class="about__ button--teal button--about">
+              <p class="about__text">Złóż pizzę ze wskazanych składników i dowieź jeszcze ciepłą pod wybrany adres. Im szybciej to zrobisz, tym więcej punktów zdobędziesz.<br><br> W pierwszym etapie gry klikaj na właściwe składniki myszką, w drugim użyj klawiatury.</p></div>
+          <div class="about__img"><img src="img/game/arrows.png"></div>
+          <p class="about__text">P.S. Uważaj na grzyby!</p>
+      </div>
+>>>>>>> 15539992d0bbf8854f51aea8c63b99f05018f2b7
 
 </div>
 

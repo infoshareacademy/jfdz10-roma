@@ -2,6 +2,7 @@
                 FIRST PAGE
 *********************************************/
 
+<<<<<<< HEAD:Project Game/script.js
 document.querySelector('#aboutBox').addEventListener('click', toggleModal);
 document.querySelector('#aboutLink').addEventListener('click', toggleModal);
 
@@ -39,6 +40,48 @@ if (!list) {
 list.forEach((item, index) =>
 result += "<tr><td>" + (index + 1) + '.</td><td>' + item.nick + '</td><td>' + item.point + 'p.') + '</td></tr>';
 playerScore.innerHTML = result + "</table>";
+=======
+function runFirstPageOfGame() {
+    document.querySelector('#aboutBox').addEventListener('click', toggleModal);
+    document.querySelector('#aboutLink').addEventListener('click', toggleModal);
+    
+    function toggleModal() {
+      document.querySelector(`#${this.dataset.hide}`).classList.add('u--blur-fadeout');
+      document.querySelector(`#${this.dataset.show}`).classList.remove('u--blur-fadeout');
+    }
+    document.querySelector('#checkName').addEventListener('click', clear);
+    
+    function clear(){
+        const menu = document.querySelector('#menu');
+        menu.style.visibility = 'hidden';
+        const playerNameBox = document.querySelector('.player-name-box');
+        playerNameBox.style.display = 'none';
+    }
+    document.getElementById('checkName').addEventListener('click', addName);
+    
+    function addName() {
+        var name = document.getElementById('playerName').value;
+        localStorage.setItem('name', name);
+    }
+
+    document.querySelector('#exitGame').addEventListener('click', () => location.reload());
+    document.getElementById('checkName').addEventListener('click', countPizza);
+    document.querySelector('#startGame').addEventListener('click', toggleModal);
+    document.querySelector('#scoresBox').addEventListener('click', toggleModal);
+    document.querySelector('#scoresLink').addEventListener('click', toggleModal); 
+
+    const playerScore = document.querySelector('#scoresList');
+    let list = JSON.parse(localStorage.getItem("bestList"));
+    
+    if (!list) {
+        playerScore.innerHTML = '';
+    } else {
+        let result = '<table style="width:60%" align:"center"> ';
+        list.forEach((item, index) =>
+        result += "<tr><td>" + (index + 1) + '.</td><td>' + item.nick + '</td><td>' + item.point + 'p.') + '</td></tr>';
+        playerScore.innerHTML = result + "</table>";
+    }
+>>>>>>> 15539992d0bbf8854f51aea8c63b99f05018f2b7:js/game.js
 }
 
 /*********************************************
