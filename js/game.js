@@ -408,9 +408,9 @@ function playGame() {
     }
 
     function topLeftRandom() {
-      let random = getRandomInt(10, 80);
-      for (let i = 0; random > 37 && random < 55; i++) {
-        random = getRandomInt(10, 80);
+      let random = getRandomInt(10, 85);
+      for (let i = 0; random > 35 && random < 55; i++) {
+        random = getRandomInt(10, 85);
       }
 
       return `${random}%`;

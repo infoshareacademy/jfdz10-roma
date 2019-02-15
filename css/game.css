@@ -327,8 +327,9 @@
     position: absolute;
     font-size: 4rem;
     padding: 0.4rem;
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
+    background-size: contain;
     top: -4rem;
     line-height: 1;
     left: calc(0%);
@@ -393,9 +394,7 @@
     height: 720px;
     background: lightgray;
     position: relative;
-    display: grid;
-    grid-template-columns: 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px 80px;
-    grid-template-rows: 80px 80px 80px 80px 80px 80px 80px 80px 80px;
+    transform: scale(0.75);
 }
 
 .game-container .home {
@@ -440,6 +439,17 @@
     100% {
         transform: translateY(-20px);
     }
+}
+
+.game-container .wrong-way {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 99999;
+    background-color: red;
+    transition: all 0.1s;
 }
 
 .game-container .loser {
