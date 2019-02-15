@@ -19,7 +19,6 @@ html, body {
     font-family: 'Lato', sans-serif;
 }
 
-
 ul {
     padding: 0;
     list-style-type: none;
@@ -29,7 +28,6 @@ a {
     text-decoration: none;
     color: black;
 }
-
 
 /*************************************
         BACK TO TOP BUTTON
@@ -53,7 +51,7 @@ a {
     visibility: hidden;
     transition: 0.4s all;
 }
-  
+
 .back-to-top-button:hover {
     background: #fae6a3;
     text-decoration: none;
@@ -66,10 +64,8 @@ a {
 }
 
 @media (max-width: 768px) {
-
-    .back-to-top-button{
+    .back-to-top-button {
         bottom: 10px;
         right: 10px;
     }
-
 }
