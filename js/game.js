@@ -60,8 +60,8 @@ function runFirstPageOfGame() {
 }
 
 /*********************************************
-                3 2 1 PIZZA
-*********************************************/
+				  3 2 1 PIZZA
+  *********************************************/
 
 function countPizza() {
   const $gameContainer = document.querySelector(".game-container");
@@ -89,8 +89,8 @@ function countPizza() {
 }
 
 /*********************************************
-                PIZZA MAKER
-*********************************************/
+				  PIZZA MAKER
+  *********************************************/
 function playGame() {
   function gameOver() {
     var clearScore = document.querySelector(".score-div");
@@ -435,8 +435,8 @@ function playGame() {
   };
 
   /***********************************
-             DELIVER GAME
-    ***********************************/
+			   DELIVER GAME
+	  ***********************************/
 
   // DELIVER GAME is in one big function
   const deliverGame = function() {
@@ -529,6 +529,7 @@ function playGame() {
       if (cordsX) {
         carPositionX;
         subtractTime();
+        wrongWay();
       } else {
         car.style.transition = `top 0.5s, left 0.5s, transform 0.1s`;
         deg = 90;
@@ -564,6 +565,7 @@ function playGame() {
       if (cordsX) {
         carPositionX;
         subtractTime();
+        wrongWay();
       } else {
         if (deg === 0) {
           car.style.transition = `top 0.5s, left 0.5s, transform 0.1s`;
@@ -609,6 +611,7 @@ function playGame() {
       if (cordsY) {
         carPositionY;
         subtractTime();
+        wrongWay();
       } else {
         car.style.transition = `top 0.5s, left 0.5s, transform 0.1s`;
         deg = 180;
@@ -644,6 +647,7 @@ function playGame() {
       if (cordsY) {
         carPositionY;
         subtractTime();
+        wrongWay();
       } else {
         if (deg === 270) {
           car.style.transition = `top 0.5s, left 0.5s, transform 0.1s`;
@@ -690,8 +694,8 @@ function playGame() {
     window.onkeyup = addKeys;
 
     /*********************************************
-                        CREATE HOUSES
-        **********************************************/
+						  CREATE HOUSES
+		  **********************************************/
 
     function createRow(startX, endX, startY) {
       for (let x = startX; x <= endX; x += 80) {
@@ -795,8 +799,8 @@ function playGame() {
   };
 
   /**************************************
-                 START GAME 
-    ***************************************/
+				   START GAME 
+	  ***************************************/
   pizzaGame();
 }
 
